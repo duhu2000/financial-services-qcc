@@ -25,9 +25,55 @@ metadata:
   industry: "Financial Services - PE/VC/Investment Banking"
 ---
 
+## MCP 配置要求
+
+**⚠️ 重要：使用本SKILL前，必须确保企查查MCP服务器已配置**
+
+### 检查清单：
+1. ✅ `~/.claude/.mcp.json` 文件存在且配置正确
+2. ✅ `QCC_MCP_API_KEY` 环境变量已设置
+3. ✅ Claude Code 已重启加载MCP配置
+
+### 配置方法：
+```bash
+# 1. 创建 MCP 配置文件
+cat > ~/.claude/.mcp.json << 'EOF'
+{
+  "mcpServers": {
+    "qcc-company": {
+      "url": "https://mcp.qcc.com/data/company/stream",
+      "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
+    },
+    "qcc-risk": {
+      "url": "https://mcp.qcc.com/data/risk/stream",
+      "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
+    },
+    "qcc-ipr": {
+      "url": "https://mcp.qcc.com/data/ipr/stream",
+      "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
+    },
+    "qcc-operation": {
+      "url": "https://mcp.qcc.com/data/operation/stream",
+      "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
+    }
+  }
+}
+EOF
+
+# 2. 设置 API Key
+export QCC_MCP_API_KEY="your_api_key_here"
+
+# 3. 重启 Claude Code
+```
+
+详见文档：https://github.com/duhu2000/financial-services-qcc/blob/main/docs/MCP_CONFIGURATION.md
+
+---
+
 ## UNIVERSAL RULES (适用于所有IC Memo任务)
 
-- **NEVER** 仅凭目标企业提供的材料完成尽调——必须使用企查查MCP交叉验证
+- **NEVER** 仅凭目标企业提供的材料完成尽调——**必须**通过企查查MCP工具获取官方数据
+- **NEVER** 使用网页搜索代替企查查MCP——所有中国企业数据必须通过 qcc-company/qcc-risk/qcc-ipr/qcc-operation MCP工具获取
 - **NEVER** 忽视知识产权的权利状态——必须核查专利是否有效、商标是否被撤销
 - **NEVER** 对存在重大司法风险的企业直接给出"建议投资"结论
 - **ALWAYS** 明确标注数据来源和时间——所有企查查数据必须标注查询时点
