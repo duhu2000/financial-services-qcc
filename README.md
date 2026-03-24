@@ -1,6 +1,11 @@
 # 💼 Financial Services QCC MCP Plugins
+# 金融机构企查查MCP增强版插件
 
-> **金融机构企查查MCP增强版插件** - 为银行KYB、投资尽调提供实时企业数据支持
+> **Know Your Business (KYB) Automation & Investment Committee Memorandum (IC Memo) Due Diligence**
+>
+> **企业客户身份识别自动化核验 & 投资委员会备忘录全维度尽职调查**
+
+> 为银行KYB、投资尽调提供实时中国企业数据支持
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
@@ -39,8 +44,18 @@
 ### 我们的方案
 
 集成 **企查查MCP**，为金融机构提供：
-- ✅ **30秒KYB核验** - 主体合法性+18类风险自动扫描
-- ✅ **全维度IC Memo** - 工商/股权/知产/诉讼一键尽调
+
+**方案一：KYB 自动化核验 (Know Your Business Automation)**
+- 全称：**Know Your Business**（了解你的企业客户）
+- 适用：银行开户、信贷审批、反洗钱合规
+- 功能：✅ **30秒自动核验** - 主体合法性+18类风险实时扫描
+
+**方案二：IC Memo 全维度背调 (Investment Committee Memorandum)**
+- 全称：**Investment Committee Memorandum**（投资委员会备忘录）
+- 适用：PE/VC投资尽调、并购重组、战略投资
+- 功能：✅ **一键生成尽调报告** - 工商/股权/知产/诉讼全维度扫描
+
+**通用能力**：
 - ✅ **智能决策支持** - 自动评级+准入建议+风险缓释
 - ✅ **合规可追溯** - 所有数据来自官方+时间戳记录
 
@@ -102,9 +117,14 @@ bash install_qcc_mcp_financial.sh
 
 ## 使用场景
 
-### 场景一：银行/金融机构 KYB 自动化核验
+### 场景一：KYB 自动化核验
+**Know Your Business (KYB) Automation**
 
-**适用对象**: 银行对公客户经理、信贷审批员、合规风控
+**适用对象**: 银行对公客户经理、信贷审批员、合规风控、反洗钱专员
+
+**英文全称**: **Know Your Business** — 了解你的企业客户
+
+**中文含义**: 金融机构在为企业客户提供服务前，必须完成的客户身份识别和尽职调查流程，是反洗钱(AML)合规的核心要求
 
 **核心价值**:
 - 30秒完成传统2小时的人工尽调
@@ -142,9 +162,14 @@ KYB核验报告 - 企查查MCP增强版
 
 ---
 
-### 场景二：投资人/FA 投融资全维度背调
+### 场景二：IC Memo 全维度背调
+**Investment Committee Memorandum (IC Memo) Full-Dimensional Due Diligence**
 
-**适用对象**: PE/VC投资经理、投行分析师、企业战投
+**适用对象**: PE/VC投资经理、投行分析师、企业战投、FA财务顾问
+
+**英文全称**: **Investment Committee Memorandum** — 投资委员会备忘录
+
+**中文含义**: 投资机构内部决策机构（投资委员会）审议投资项目时使用的正式决策文档，包含投资逻辑、风险评估、回报测算等核心内容，是PE/VC投资流程中的关键文件
 
 **核心价值**:
 - 一键生成投资委员会备忘录
@@ -174,8 +199,14 @@ KYB核验报告 - 企查查MCP增强版
 ## SKILL详解
 
 ### 1. KYB Verification QCC
+**Know Your Business Verification**
 
-**文件**: `skills/kyb-verification-qcc/SKILL.md`
+| 项目 | 说明 |
+|------|------|
+| **英文全称** | Know Your Business |
+| **中文名称** | 企业客户身份识别与核验 |
+| **文件路径** | `skills/kyb-verification-qcc/SKILL.md` |
+| **核心用途** | 银行开户、信贷审批、反洗钱合规、企业年检 |
 
 **4阶段工作流**:
 
@@ -209,8 +240,14 @@ KYB核验报告 - 企查查MCP增强版
 ---
 
 ### 2. IC Memo QCC
+**Investment Committee Memorandum**
 
-**文件**: `skills/ic-memo-qcc/SKILL.md`
+| 项目 | 说明 |
+|------|------|
+| **英文全称** | Investment Committee Memorandum |
+| **中文名称** | 投资委员会备忘录 / 投资决策文档 |
+| **文件路径** | `skills/ic-memo-qcc/SKILL.md` |
+| **核心用途** | PE/VC投资尽调、并购重组决策、战略投资审批、投委会汇报 |
 
 **7章节结构**:
 
@@ -332,15 +369,30 @@ financial-services-qcc/
 
 ---
 
+## 术语对照表
+
+| 缩写 | 英文全称 | 中文名称 | 说明 |
+|------|---------|---------|------|
+| **KYB** | Know Your Business | 了解你的企业客户 | 金融机构对企业客户的身份识别和尽职调查 |
+| **IC Memo** | Investment Committee Memorandum | 投资委员会备忘录 | 投资决策机构审议项目的正式决策文档 |
+| **KYC** | Know Your Customer | 了解你的客户 | 金融机构对个人客户的身份识别 |
+| **AML** | Anti-Money Laundering | 反洗钱 | 防止利用金融系统进行洗钱活动 |
+| **UBO** | Ultimate Beneficial Owner | 最终受益所有人 | 对企业实施最终控制的自然人 |
+| **PE/VC** | Private Equity / Venture Capital | 私募股权/风险投资 | 投资机构类型 |
+| **DD** | Due Diligence | 尽职调查 | 投资前对目标企业的全面调查 |
+| **MCP** | Model Context Protocol | 模型上下文协议 | AI与数据源交互的标准协议 |
+
+---
+
 ## 核心对比
 
 | 功能 | Anthropic原版 | QCC MCP增强版 |
 |------|--------------|---------------|
-| **数据来源** | 公开渠道/人工输入 | 企查查MCP官方数据 |
+| **数据来源** | Bloomberg/Refinitiv/Orbis | 企查查MCP官方数据 |
 | **核验速度** | 2-3小时 | **30秒** |
 | **覆盖范围** | 海外企业为主 | **中国企业全覆盖** |
 | **风险扫描** | 基础合规 | **18类风险实时** |
-| **股权穿透** | 人工处理 | **自动识别受益所有人** |
+| **股权穿透** | 人工处理 | **自动识别受益所有人(UBO)** |
 | **知产尽调** | 多平台查询 | **一键全量扫描** |
 | **报告生成** | 手动编写 | **自动填充IC Memo** |
 
