@@ -66,16 +66,22 @@
 ### 1分钟快速体验
 
 ```bash
-# 1. 一键安装
+# 1. 一键安装（自动配置 MCP）
 bash <(curl -sL https://raw.githubusercontent.com/duhu2000/financial-services-qcc/main/install_qcc_mcp_financial.sh)
 
 # 2. 配置API Key（从 https://mcp.qcc.com 申请）
 export QCC_MCP_API_KEY="your_api_key_here"
 
-# 3. 开始KYB核验
+# 3. ⚠️ 重要：重启 Claude Code 以加载 MCP 配置
+# 完全退出 Claude Code，然后重新启动
+
+# 4. 验证 MCP 配置（重启后）
+# 你应该能看到可用的 MCP 工具：qcc-company, qcc-risk, qcc-ipr, qcc-operation
+
+# 5. 开始KYB核验
 /kyb-verification-qcc 华为技术有限公司
 
-# 4. 或生成IC Memo
+# 6. 或生成IC Memo
 /ic-memo-qcc 北京字节跳动科技有限公司
 ```
 
@@ -112,6 +118,33 @@ git clone https://github.com/duhu2000/financial-services-qcc.git
 cd financial-services-qcc
 bash install_qcc_mcp_financial.sh
 ```
+
+#### 步骤4: ⚠️ 重启 Claude Code（关键步骤）
+
+**必须完全退出并重新启动 Claude Code**，否则 MCP 配置不会生效。
+
+```bash
+# 完全退出 Claude Code（不是只关闭窗口，要彻底退出进程）
+# macOS: Cmd+Q
+# Linux: 关闭终端或 kill 进程
+
+# 然后重新启动
+claude
+```
+
+#### 步骤5: 验证 MCP 配置
+
+重启后，Claude Code 应该能识别到企查查 MCP 工具。你可以通过以下方式验证：
+
+1. **观察工具列表**：使用 `/kyb-verification-qcc` 时，Claude 应该显示 "调用 qcc-company/get_company_registration_info" 等 MCP 工具
+2. **避免网页搜索**：如果配置正确，Claude 不会使用 "网页搜索" 来获取企业信息
+
+**如果看到 "网页搜索" 而不是 MCP 工具调用，说明配置未生效，请检查：**
+- `.mcp.json` 文件是否在 `~/.claude/.mcp.json`
+- 是否已设置 `QCC_MCP_API_KEY`
+- 是否已重启 Claude Code
+
+详见 [MCP 配置指南](./docs/MCP_CONFIGURATION.md)
 
 ---
 

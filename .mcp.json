@@ -1,0 +1,242 @@
+{
+  "mcpServers": {
+    "qcc-company": {
+      "url": "https://mcp.qcc.com/data/company/stream",
+      "headers": {
+        "Authorization": "Bearer ${QCC_MCP_API_KEY}"
+      },
+      "description": "企查查企业基座 - 提供工商登记、股东信息、变更记录、分支机构等企业基础信息服务",
+      "tools": [
+        {
+          "name": "get_company_registration_info",
+          "description": "获取企业工商登记信息，包括法定代表人、注册资本、成立日期、登记状态、注册地址等"
+        },
+        {
+          "name": "get_shareholder_info",
+          "description": "获取企业股东信息，包括股东名称、持股比例、认缴金额等"
+        },
+        {
+          "name": "get_key_personnel",
+          "description": "获取企业主要人员信息，包括董事、监事、高管等"
+        },
+        {
+          "name": "get_change_records",
+          "description": "获取企业工商变更记录"
+        },
+        {
+          "name": "get_branches",
+          "description": "获取企业分支机构信息"
+        },
+        {
+          "name": "get_external_investments",
+          "description": "获取企业对外投资信息"
+        },
+        {
+          "name": "get_annual_reports",
+          "description": "获取企业工商年报信息"
+        },
+        {
+          "name": "get_contact_info",
+          "description": "获取企业联系方式，包括电话、邮箱、官网等"
+        },
+        {
+          "name": "get_equity_freeze",
+          "description": "获取企业股权冻结信息"
+        },
+        {
+          "name": "get_equity_pledge",
+          "description": "获取企业股权出质信息"
+        },
+        {
+          "name": "get_chattel_mortgage",
+          "description": "获取企业动产抵押信息"
+        },
+        {
+          "name": "get_business_exception",
+          "description": "获取企业经营异常名录信息"
+        }
+      ]
+    },
+    "qcc-risk": {
+      "url": "https://mcp.qcc.com/data/risk/stream",
+      "headers": {
+        "Authorization": "Bearer ${QCC_MCP_API_KEY}"
+      },
+      "description": "企查查风控大脑 - 提供失信、被执行、限高、破产、行政处罚等18类风险信息",
+      "tools": [
+        {
+          "name": "get_dishonest_info",
+          "description": "获取企业失信信息（失信被执行人）"
+        },
+        {
+          "name": "get_judgment_debtor_info",
+          "description": "获取企业被执行人信息"
+        },
+        {
+          "name": "get_high_consumption_restriction",
+          "description": "获取企业限制高消费信息"
+        },
+        {
+          "name": "get_bankruptcy_reorganization",
+          "description": "获取企业破产重整信息"
+        },
+        {
+          "name": "get_liquidation_info",
+          "description": "获取企业清算信息"
+        },
+        {
+          "name": "get_final_case",
+          "description": "获取企业终本案件信息"
+        },
+        {
+          "name": "get_judicial_auction",
+          "description": "获取企业司法拍卖信息"
+        },
+        {
+          "name": "get_administrative_penalty",
+          "description": "获取企业行政处罚信息"
+        },
+        {
+          "name": "get_environmental_penalty",
+          "description": "获取企业环保处罚信息"
+        },
+        {
+          "name": "get_tax_arrears_notice",
+          "description": "获取企业欠税公告信息"
+        },
+        {
+          "name": "get_tax_violation",
+          "description": "获取企业税收违法信息"
+        },
+        {
+          "name": "get_abnormal_tax",
+          "description": "获取企业税务非正常户信息"
+        },
+        {
+          "name": "get_serious_violation",
+          "description": "获取企业严重违法信息"
+        },
+        {
+          "name": "get_cancellation_filing",
+          "description": "获取企业注销备案信息"
+        },
+        {
+          "name": "get_lawsuit_info",
+          "description": "获取企业涉诉信息"
+        },
+        {
+          "name": "get_court_announcement",
+          "description": "获取企业法院公告信息"
+        }
+      ]
+    },
+    "qcc-ipr": {
+      "url": "https://mcp.qcc.com/data/ipr/stream",
+      "headers": {
+        "Authorization": "Bearer ${QCC_MCP_API_KEY}"
+      },
+      "description": "企查查知产引擎 - 提供专利、商标、软件著作权、作品著作权等知识产权信息",
+      "tools": [
+        {
+          "name": "get_patent_info",
+          "description": "获取企业专利信息，包括发明、实用新型、外观设计"
+        },
+        {
+          "name": "get_trademark_info",
+          "description": "获取企业商标信息"
+        },
+        {
+          "name": "get_software_copyright_info",
+          "description": "获取企业软件著作权信息"
+        },
+        {
+          "name": "get_copyright_work_info",
+          "description": "获取企业作品著作权信息"
+        },
+        {
+          "name": "get_standard_info",
+          "description": "获取企业参与制定的标准信息"
+        }
+      ]
+    },
+    "qcc-operation": {
+      "url": "https://mcp.qcc.com/data/operation/stream",
+      "headers": {
+        "Authorization": "Bearer ${QCC_MCP_API_KEY}"
+      },
+      "description": "企查查经营罗盘 - 提供招投标、资质证书、行政许可、信用评级、舆情监控等经营信息",
+      "tools": [
+        {
+          "name": "get_bidding_info",
+          "description": "获取企业招投标信息"
+        },
+        {
+          "name": "get_qualifications",
+          "description": "获取企业资质证书信息"
+        },
+        {
+          "name": "get_administrative_license",
+          "description": "获取企业行政许可信息"
+        },
+        {
+          "name": "get_credit_evaluation",
+          "description": "获取企业信用评级信息"
+        },
+        {
+          "name": "get_spot_check_info",
+          "description": "获取企业抽查检查信息"
+        },
+        {
+          "name": "get_news_sentiment",
+          "description": "获取企业新闻舆情信息"
+        },
+        {
+          "name": "get_recruitment_info",
+          "description": "获取企业招聘信息"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "kyb-verification-qcc": {
+      "description": "金融机构KYB（Know Your Business）自动化核验Skill - 专为银行、券商、信托等金融机构设计，实现企业客户开户、授信、尽调时的自动化主体核验",
+      "commands": [
+        {
+          "name": "/kyb-verification-qcc",
+          "description": "执行KYB自动化核验",
+          "parameters": {
+            "company_name": "企业名称（必填）",
+            "credit_code": "统一社会信用代码（可选）"
+          },
+          "example": "/kyb-verification-qcc 华为技术有限公司 9144030019238XXXX"
+        }
+      ],
+      "required_mcp_servers": ["qcc-company", "qcc-risk"]
+    },
+    "ic-memo-qcc": {
+      "description": "投资委员会备忘录(IC Memo)自动化生成Skill - 专为PE/VC投资机构、投资银行、企业战投部门设计，实现投融资尽调的自动化数据收集与风险分析",
+      "commands": [
+        {
+          "name": "/ic-memo-qcc",
+          "description": "生成IC Memo全维度尽调报告",
+          "parameters": {
+            "company_name": "目标企业名称（必填）",
+            "sector": "行业领域（可选）"
+          },
+          "example": "/ic-memo-qcc 北京字节跳动科技有限公司 --sector 互联网"
+        }
+      ],
+      "required_mcp_servers": ["qcc-company", "qcc-risk", "qcc-ipr", "qcc-operation"]
+    }
+  },
+  "configuration": {
+    "required_env_vars": ["QCC_MCP_API_KEY"],
+    "optional_env_vars": [],
+    "setup_instructions": [
+      "1. 从 https://mcp.qcc.com 申请API Key",
+      "2. 设置环境变量: export QCC_MCP_API_KEY='your_api_key_here'",
+      "3. 重启Claude Code以加载MCP配置",
+      "4. 使用 /kyb-verification-qcc 或 /ic-memo-qcc 开始尽调"
+    ]
+  }
+}

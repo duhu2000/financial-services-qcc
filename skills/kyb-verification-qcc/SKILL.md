@@ -24,9 +24,47 @@ metadata:
   industry: "Financial Services - Banking/Securities/Trust"
 ---
 
+## MCP 配置要求
+
+**⚠️ 重要：使用本SKILL前，必须确保企查查MCP服务器已配置**
+
+### 检查清单：
+1. ✅ `~/.claude/.mcp.json` 文件存在且配置正确
+2. ✅ `QCC_MCP_API_KEY` 环境变量已设置
+3. ✅ Claude Code 已重启加载MCP配置
+
+### 配置方法：
+```bash
+# 1. 创建 MCP 配置文件
+cat > ~/.claude/.mcp.json << 'EOF'
+{
+  "mcpServers": {
+    "qcc-company": {
+      "url": "https://mcp.qcc.com/data/company/stream",
+      "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
+    },
+    "qcc-risk": {
+      "url": "https://mcp.qcc.com/data/risk/stream",
+      "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
+    }
+  }
+}
+EOF
+
+# 2. 设置 API Key
+export QCC_MCP_API_KEY="your_api_key_here"
+
+# 3. 重启 Claude Code
+```
+
+详见文档：https://github.com/duhu2000/financial-services-qcc/blob/main/docs/MCP_CONFIGURATION.md
+
+---
+
 ## UNIVERSAL RULES (适用于所有KYB任务)
 
-- **NEVER** 仅凭客户提供的信息完成KYB核验——必须与企查查MCP官方数据交叉验证
+- **NEVER** 仅凭客户提供的信息完成KYB核验——**必须**通过企查查MCP工具获取官方数据
+- **NEVER** 使用网页搜索代替企查查MCP——所有中国企业数据必须通过 `qcc-company` / `qcc-risk` 等MCP工具获取
 - **NEVER** 忽视注册资本实缴与认缴的差异——标注"认缴"并提示实缴情况未知
 - **NEVER** 将存在股权冻结、失信、被执行的企业直接评级为"低风险"
 - **ALWAYS** 明确标注数据时效性和数据来源——所有企查查数据必须标注查询时间
