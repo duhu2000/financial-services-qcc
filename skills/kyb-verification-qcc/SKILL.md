@@ -40,11 +40,11 @@ cat > ~/.claude/.mcp.json << 'EOF'
 {
   "mcpServers": {
     "qcc-company": {
-      "url": "https://mcp.qcc.com/data/company/stream",
+      "url": "https://agent.qcc.com/mcp/company/stream",
       "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
     },
     "qcc-risk": {
-      "url": "https://mcp.qcc.com/data/risk/stream",
+      "url": "https://agent.qcc.com/mcp/risk/stream",
       "headers": { "Authorization": "Bearer ${QCC_MCP_API_KEY}" }
     }
   }

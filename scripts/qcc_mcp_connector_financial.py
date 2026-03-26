@@ -166,10 +166,10 @@ class QccMcpConnectorFinancial:
 
     # MCP Server端点配置 (2024最新定义)
     MCP_SERVERS = {
-        "qcc_company": "https://mcp.qcc.com/data/company/stream",
-        "qcc_risk": "https://mcp.qcc.com/data/risk/stream",
-        "qcc_ipr": "https://mcp.qcc.com/data/ipr/stream",
-        "qcc_operation": "https://mcp.qcc.com/data/operation/stream",
+        "qcc_company": "https://agent.qcc.com/mcp/company/stream",
+        "qcc_risk": "https://agent.qcc.com/mcp/risk/stream",
+        "qcc_ipr": "https://agent.qcc.com/mcp/ipr/stream",
+        "qcc_operation": "https://agent.qcc.com/mcp/operation/stream",
     }
 
     # KYB关键风险指标 - 30秒快速核验核心指标

@@ -238,7 +238,7 @@ V2支持多路径配置查找（按优先级）：
 {
   "mcpServers": {
     "qcc-company": {
-      "url": "https://mcp.qcc.com/data/company/stream",
+      "url": "https://agent.qcc.com/mcp/company/stream",
       "headers": {
         "Authorization": "Bearer ${QCC_MCP_API_KEY}"
       }

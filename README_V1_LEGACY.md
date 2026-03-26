@@ -360,10 +360,10 @@ qcc_operation (7个工具)
 
 ```python
 MCP_SERVERS = {
-    "qcc_company": "https://mcp.qcc.com/data/company/stream",
-    "qcc_risk": "https://mcp.qcc.com/data/risk/stream",
-    "qcc_ipr": "https://mcp.qcc.com/data/ipr/stream",
-    "qcc_operation": "https://mcp.qcc.com/data/operation/stream",
+    "qcc_company": "https://agent.qcc.com/mcp/company/stream",
+    "qcc_risk": "https://agent.qcc.com/mcp/risk/stream",
+    "qcc_ipr": "https://agent.qcc.com/mcp/ipr/stream",
+    "qcc_operation": "https://agent.qcc.com/mcp/operation/stream",
 }
 ```
 

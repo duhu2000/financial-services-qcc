@@ -28,28 +28,28 @@ cat > ~/.claude/.mcp.json << 'EOF'
 {
   "mcpServers": {
     "qcc-company": {
-      "url": "https://mcp.qcc.com/data/company/stream",
+      "url": "https://agent.qcc.com/mcp/company/stream",
       "headers": {
         "Authorization": "Bearer ${QCC_MCP_API_KEY}"
       },
       "description": "企查查企业基座 - 提供工商登记、股东信息、变更记录等企业基础信息服务"
     },
     "qcc-risk": {
-      "url": "https://mcp.qcc.com/data/risk/stream",
+      "url": "https://agent.qcc.com/mcp/risk/stream",
       "headers": {
         "Authorization": "Bearer ${QCC_MCP_API_KEY}"
       },
       "description": "企查查风控大脑 - 提供失信、被执行、限高、破产等18类风险信息"
     },
     "qcc-ipr": {
-      "url": "https://mcp.qcc.com/data/ipr/stream",
+      "url": "https://agent.qcc.com/mcp/ipr/stream",
       "headers": {
         "Authorization": "Bearer ${QCC_MCP_API_KEY}"
       },
       "description": "企查查知产引擎 - 提供专利、商标、软件著作权等知识产权信息"
     },
     "qcc-operation": {
-      "url": "https://mcp.qcc.com/data/operation/stream",
+      "url": "https://agent.qcc.com/mcp/operation/stream",
       "headers": {
         "Authorization": "Bearer ${QCC_MCP_API_KEY}"
       },
@@ -151,7 +151,7 @@ echo $QCC_MCP_API_KEY
 
 # 测试 API 连通性
 curl -H "Authorization: Bearer $QCC_MCP_API_KEY" \
-  https://mcp.qcc.com/data/company/stream
+  https://agent.qcc.com/mcp/company/stream
 ```
 
 ### Q3: 如何确认 Claude Code 支持 MCP？
@@ -185,7 +185,7 @@ claude --version
 {
   "mcpServers": {
     "qcc-company": {
-      "url": "https://mcp.qcc.com/data/company/stream",
+      "url": "https://agent.qcc.com/mcp/company/stream",
       "headers": {
         "Authorization": "Bearer ${QCC_MCP_API_KEY}"
       },
