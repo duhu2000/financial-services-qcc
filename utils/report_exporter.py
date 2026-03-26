@@ -294,6 +294,7 @@ class ReportExporter:
             from pptx import Presentation
             from pptx.util import Inches, Pt
             from pptx.enum.text import PP_ALIGN
+            from pptx.dml.color import RGBColor
 
             prs = Presentation()
             prs.slide_width = Inches(10)
@@ -661,6 +662,7 @@ class ReportExporter:
         try:
             from pptx import Presentation
             from pptx.util import Inches, Pt
+            from pptx.dml.color import RGBColor
 
             prs = Presentation()
             prs.slide_width = Inches(10)
@@ -953,6 +955,7 @@ IC Memo - {company_name}
         try:
             from pptx import Presentation
             from pptx.util import Inches, Pt
+            from pptx.dml.color import RGBColor
 
             prs = Presentation()
             prs.slide_width = Inches(10)
@@ -1102,6 +1105,7 @@ IC Memo - {company_name}
         :param header_color: 标题栏颜色（可选）
         """
         from pptx.util import Inches, Pt
+        from pptx.dml.color import RGBColor
 
         # 添加边框矩形
         border = slide.shapes.add_shape(
