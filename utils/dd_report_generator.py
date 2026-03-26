@@ -1,10 +1,12 @@
 """
 Due Diligence Report Generator - V2 融合增强版
 基于 Manus 版本 + V1 7章尽调结构
+支持 Markdown/Word/PPT 三格式导出
 """
 import json
 from typing import Dict, List, Any
 from .qcc_mcp_client import QccMcpClient
+from .report_exporter import ReportExporter
 
 
 class DDReportGenerator:
@@ -20,13 +22,15 @@ class DDReportGenerator:
     7. 投资建议与风险提示 (Investment Recommendation)
     """
 
-    def __init__(self, mcp_config_path="../.mcp.json"):
+    def __init__(self, mcp_config_path="../.mcp.json", output_dir="./reports"):
         self.qcc_client = QccMcpClient(mcp_config_path)
+        self.exporter = ReportExporter(output_dir)
 
     def generate_full_dd_profile(self, company_name: str,
                                   user_api_key: str = None,
                                   investment_round: str = None,
-                                  sector: str = None) -> dict:
+                                  sector: str = None,
+                                  export_format: str = "all") -> dict:
         """
         生成投融资标的全维度背调报告
 
@@ -34,7 +38,8 @@ class DDReportGenerator:
         :param user_api_key: 用户提供的企查查 API Key
         :param investment_round: 投资轮次（可选）
         :param sector: 行业领域（可选）
-        :return: 全维度背调报告字典
+        :param export_format: 导出格式 (md/docx/pptx/all)
+        :return: 全维度背调报告字典，包含导出文件路径
         """
         print(f"\n{'='*60}")
         print(f"[DDReportGenerator] 开始生成尽调报告")
@@ -73,7 +78,7 @@ class DDReportGenerator:
             self._chapter_2_company_overview(company_name, user_api_key)
 
         # Chapter 3: 知识产权与核心竞争力
-        print("\n" + "="*60")
+        print("\n" + "="*60)
         print("[Chapter 3] 知识产权与核心竞争力")
         print("="*60)
         report["chapters"]["chapter_3_intellectual_property"] = \
@@ -117,6 +122,18 @@ class DDReportGenerator:
         report["summary"] = self._generate_executive_summary(report)
         report["status"] = "完成"
         report["generated_at"] = self._get_timestamp()
+
+        # 导出报告
+        if export_format:
+            print(f"\n{'='*60}")
+            print("[导出] 生成报告文件...")
+            print(f"{'='*60}")
+            exported_files = self.exporter.export_ic_memo(report, company_name, export_format)
+            report["exported_files"] = exported_files
+
+            for fmt, path in exported_files.items():
+                if path:
+                    print(f"  ✅ {fmt.upper()}: {path}")
 
         print(f"\n{'='*60}")
         print(f"[DDReportGenerator] 尽调报告生成完成")

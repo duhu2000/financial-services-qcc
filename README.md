@@ -271,7 +271,7 @@ KYB评级: A
 /qcc-kyb-profile 北京字节跳动科技有限公司 91110108MA00xxxxxx
 ```
 
-**输出：** A/B/C/D四级评级 + 详细核验报告
+**输出：** A/B/C/D四级评级 + 详细核验报告（支持三种格式）
 
 #### 全维度尽调
 
@@ -280,7 +280,28 @@ KYB评级: A
 /qcc-full-dd-profile 宁德时代新能源科技股份有限公司 --round Pre-IPO --sector 新能源
 ```
 
-**输出：** 7章IC Memo尽调报告
+**输出：** 7章IC Memo尽调报告（支持三种格式）
+
+#### 输出格式选择
+
+默认同时生成三种格式，可通过 `--format` 参数指定：
+
+```bash
+# 仅生成Markdown（便于系统对接）
+/qcc-kyb-profile 华为技术有限公司 --format md
+
+# 仅生成Word（适合风控审批、打印盖章）
+/qcc-full-dd-profile 目标企业名称 --format docx
+
+# 仅生成PPT（适合快速汇报、路演展示）
+/qcc-kyb-profile 华为技术有限公司 --format pptx
+```
+
+| 格式 | 扩展名 | 适用场景 |
+|------|--------|---------|
+| Markdown | .md | 系统对接、API传输、数据入库 |
+| Word | .docx | 风控审批、投委会审阅、打印盖章 |
+| PPT | .pptx | 管理层汇报、投资路演、快速展示 |
 
 ### 方式二：Skills（兼容V1）
 

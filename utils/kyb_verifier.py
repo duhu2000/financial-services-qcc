@@ -2,10 +2,12 @@
 KYB Verifier - V2 融合增强版
 基于 Manus 版本 + V1 业务逻辑完整实现
 支持 A/B/C/D 四级评级和 18类风险扫描
+支持 Markdown/Word/PPT 三格式导出
 """
 import json
 from typing import Dict, List, Any, Tuple, Optional
 from .qcc_mcp_client import QccMcpClient
+from .report_exporter import ReportExporter
 
 
 class KYBVerifier:
@@ -24,12 +26,14 @@ class KYBVerifier:
     D级: 禁止准入 - 存在关键风险项
     """
 
-    def __init__(self, mcp_config_path: str = "../.mcp.json"):
+    def __init__(self, mcp_config_path: str = "../.mcp.json", output_dir: str = "./reports"):
         self.qcc_client = QccMcpClient(mcp_config_path)
+        self.exporter = ReportExporter(output_dir)
 
     def verify_company(self, company_name: str,
                        credit_code: str = None,
-                       user_api_key: str = None) -> Dict:
+                       user_api_key: str = None,
+                       export_format: str = "all") -> Dict:
         """
         执行企业 KYB 自动化核验（30秒快检）
         基于 V1 4阶段工作流 + Manus 技术实现
@@ -37,7 +41,8 @@ class KYBVerifier:
         :param company_name: 企业名称
         :param credit_code: 统一社会信用代码（可选，用于交叉验证）
         :param user_api_key: 用户API Key（可选）
-        :return: 完整核验结果
+        :param export_format: 导出格式 (md/docx/pptx/all)
+        :return: 完整核验结果，包含导出文件路径
         """
         print(f"\n{'='*60}")
         print(f"[KYBVerifier] 开始企业 KYB 自动化核验")
@@ -104,6 +109,18 @@ class KYBVerifier:
         results["kyb_rating"] = rating
         results["verification_suggestion"] = suggestion
         results["status"] = "核验完成"
+
+        # 导出报告
+        if export_format:
+            print(f"\n{'='*60}")
+            print("[导出] 生成报告文件...")
+            print(f"{'='*60}")
+            exported_files = self.exporter.export_kyb_report(results, company_name, export_format)
+            results["exported_files"] = exported_files
+
+            for fmt, path in exported_files.items():
+                if path:
+                    print(f"  ✅ {fmt.upper()}: {path}")
 
         print(f"\n{'='*60}")
         print(f"[KYBVerifier] 核验完成")

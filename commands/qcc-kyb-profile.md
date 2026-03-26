@@ -12,6 +12,11 @@ arguments:
     type: string
     required: false
     description: 统一社会信用代码（可选，用于交叉验证）
+  - name: format
+    type: string
+    required: false
+    default: all
+    description: 输出格式（md/docx/pptx/all，默认为all同时生成三种格式）
 ---
 
 ## Command: /qcc-kyb-profile
@@ -21,8 +26,36 @@ arguments:
 ### 使用示例
 
 ```
+# 生成全部三种格式（默认）
 /qcc-kyb-profile 华为技术有限公司
+
+# 仅生成Markdown
+/qcc-kyb-profile 华为技术有限公司 --format md
+
+# 仅生成Word（适合风控审批）
+/qcc-kyb-profile 华为技术有限公司 --format docx
+
+# 仅生成PPT（适合快速汇报）
+/qcc-kyb-profile 华为技术有限公司 --format pptx
+
+# 带统一社会信用代码交叉验证
 /qcc-kyb-profile 北京字节跳动科技有限公司 91110108MA00xxxxxx
+```
+
+### 输出格式说明
+
+**三种格式同时生成（默认）：**
+| 格式 | 文件扩展名 | 适用场景 |
+|------|-----------|---------|
+| Markdown | .md | 系统对接、API传输、数据入库 |
+| Word | .docx | 风控审批、打印盖章、合规留档 |
+| PPT | .pptx | 管理层汇报、快速风险展示 |
+
+**文件命名规范：**
+```
+KYB核验报告-[企业名称]-YYYYMMDD.md
+KYB核验报告-[企业名称]-YYYYMMDD.docx
+KYB核验报告-[企业名称]-YYYYMMDD.pptx
 ```
 
 ### 执行流程

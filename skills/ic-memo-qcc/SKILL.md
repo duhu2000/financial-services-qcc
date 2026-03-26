@@ -515,11 +515,35 @@ Total Time: < 30秒
 ```
 
 ### Step 5: 输出与导出 (Output)
+
+**支持三种格式同时生成：**
+
 ```
-输出格式:
-├─ Markdown (可编辑)
-├─ PDF (可打印提交投委会)
-└─ 关键数据Excel (财务/股权/风险清单)
+输出格式 (默认全部生成):
+├─ Markdown (.md)     - 可编辑原始文本，便于系统对接
+├─ Word (.docx)       - 专业排版，可打印盖章，适合投委会审阅
+└─ PPT (.pptx)        - 一页摘要，适合路演汇报
+
+使用方式:
+/ic-memo-qcc [企业名称] [--format md]       # 仅生成Markdown
+/ic-memo-qcc [企业名称] [--format docx]     # 仅生成Word
+/ic-memo-qcc [企业名称] [--format pptx]     # 仅生成PPT
+/ic-memo-qcc [企业名称] [--format all]      # 生成全部三种格式（默认）
+```
+
+**格式选择建议：**
+| 场景 | 推荐格式 | 说明 |
+|------|---------|------|
+| 内部尽调存档 | Word (.docx) | 专业排版，支持打印盖章，投委会签字 |
+| 投委会汇报展示 | PPT (.pptx) | 一页摘要， quadrant 布局，30秒速览 |
+| 系统对接/API传输 | Markdown (.md) | 纯文本，便于数据提取和结构化存储 |
+| 综合需求 | All (默认) | 一次生成三种格式，按需使用 |
+
+**文件命名规范：**
+```
+IC-Memo-投资尽调报告-[企业名称]-YYYYMMDD.md
+IC-Memo-投资尽调报告-[企业名称]-YYYYMMDD.docx
+IC-Memo-投资尽调报告-[企业名称]-YYYYMMDD.pptx
 ```
 
 ## NEVER DO THESE

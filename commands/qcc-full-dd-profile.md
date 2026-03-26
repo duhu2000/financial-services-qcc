@@ -16,6 +16,11 @@ arguments:
     type: string
     required: false
     description: 行业领域（可选）
+  - name: format
+    type: string
+    required: false
+    default: all
+    description: 输出格式（md/docx/pptx/all，默认为all同时生成三种格式）
 ---
 
 ## Command: /qcc-full-dd-profile
@@ -25,9 +30,36 @@ arguments:
 ### 使用示例
 
 ```
+# 生成全部三种格式（默认）
 /qcc-full-dd-profile 华为技术有限公司
-/qcc-full-dd-profile 北京字节跳动科技有限公司 --round Series B --sector 互联网
-/qcc-full-dd-profile 宁德时代新能源科技股份有限公司 --round Pre-IPO --sector 新能源
+
+# 仅生成Markdown
+/qcc-full-dd-profile 华为技术有限公司 --format md
+
+# 仅生成Word（适合投委会审阅）
+/qcc-full-dd-profile 北京字节跳动科技有限公司 --format docx
+
+# 仅生成PPT（适合路演汇报）
+/qcc-full-dd-profile 宁德时代新能源科技股份有限公司 --format pptx
+
+# 带投资轮次和行业信息
+/qcc-full-dd-profile 北京字节跳动科技有限公司 --round Series B --sector 互联网 --format all
+```
+
+### 输出格式说明
+
+**三种格式同时生成（默认）：**
+| 格式 | 文件扩展名 | 适用场景 |
+|------|-----------|---------|
+| Markdown | .md | 系统对接、API传输、数据入库 |
+| Word | .docx | 投委会审阅、打印盖章、合规留档 |
+| PPT | .pptx | 投资路演、管理层快速汇报 |
+
+**文件命名规范：**
+```
+IC-Memo-投资尽调报告-[企业名称]-YYYYMMDD.md
+IC-Memo-投资尽调报告-[企业名称]-YYYYMMDD.docx
+IC-Memo-投资尽调报告-[企业名称]-YYYYMMDD.pptx
 ```
 
 ### 报告结构（7章IC Memo）
