@@ -303,7 +303,7 @@ qcc_operation (经营罗盘) - 7个工具
 ## 致谢
 
 - 原版作者 [Anthropics](https://github.com/anthropics/financial-services-plugins) 的优秀金融合规框架
-- [企查查MCP](https://mcp.qcc.com) - Agent-Native企业数据基座
+- [企查查MCP](https://agent.qcc.com) - Agent-Native企业数据基座
 - [Anthropic](https://anthropic.com) 的 Claude Code
 
 ---

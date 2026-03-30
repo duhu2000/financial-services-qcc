@@ -231,5 +231,5 @@ echo 'export QCC_MCP_API_KEY="your_api_key_here"' >> ~/.bashrc # Linux
 
 如有问题，请联系：
 - 邮箱：duhu@qcc.com
-- 官网：https://mcp.qcc.com
+- 官网：https://agent.qcc.com
 - GitHub Issues：https://github.com/duhu2000/financial-services-qcc/issues

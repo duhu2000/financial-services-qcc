@@ -73,7 +73,7 @@ bash scripts/install_qcc_mcp_financial.sh
 ### 安装前准备
 
 1. **获取API Key**
-   - 访问 [企查查MCP平台](https://mcp.qcc.com)
+   - 访问 [企查查MCP平台](https://agent.qcc.com)
    - 注册账号并获取API Key
 
 2. **设置环境变量**
@@ -319,7 +319,7 @@ rm -f ~/.claude/.mcp.json
 
 ## 技术支持
 
-- 企查查MCP平台: https://mcp.qcc.com
+- 企查查MCP平台: https://agent.qcc.com
 - GitHub Issues: https://github.com/duhu2000/financial-services-qcc/issues
 - 邮箱: duhu@qcc.com
 
