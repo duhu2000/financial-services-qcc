@@ -10,7 +10,7 @@
 
 ---
 
-## 12个技能总览
+## 16个技能总览
 
 ### 核心技能（2个）
 
@@ -38,6 +38,15 @@
 | **诉讼风险分析** | `/litigation-analysis-qcc` | 法务、投资机构 | 涉诉全景扫描，案件性质与执行风险深度分析 |
 | **供应链风险评估** | `/supply-chain-risk-qcc` | 制造业、procurement | 供应商风险、集中度、韧性评估 |
 | **高管背景调查** | `/executive-background-qcc` | HR、投资机构 | 法定代表人/董监高/实控人背景核查 |
+
+### 研究辅助技能（4个）—— 低优先级
+
+| 技能 | 命令 | 目标用户 | 核心场景 |
+|------|------|---------|---------|
+| **行业分析辅助** | `/industry-analysis-qcc` | 研究所、咨询 | 基于招投标+资质的行业规模与格局分析 |
+| **竞争格局分析** | `/competitive-map-qcc` | 战略投资、咨询 | 竞争对手识别、多维对标、生态位分析 |
+| **并购筛查** | `/merger-screening-qcc` | MA、战略投资 | 潜在标的筛查、匹配度分析、交易可行性 |
+| **融资动态追踪** | `/fundraising-tracker-qcc` | VC、FA | 融资历史、估值趋势、投资方画像、竞品对比 |
 
 ---
 
@@ -68,6 +77,10 @@
 | 诉讼风险分析 | ✅ | ✅ | — | — |
 | 供应链风险评估 | ✅ | ✅ | — | ✅ |
 | 高管背景调查 | ✅ | ✅ | — | — |
+| 行业分析辅助 | ✅ | — | — | ✅ |
+| 竞争格局分析 | ✅ | — | — | ✅ |
+| 并购筛查 | ✅ | ✅ | ✅ | ✅ |
+| 融资动态追踪 | ✅ | — | — | ✅ |
 
 ---
 
@@ -128,6 +141,18 @@ bash install_qcc_mcp_financial.sh
 
 # 高管背景调查（⭐新增）
 /executive-background-qcc 企业名称 --person 高管姓名
+
+# 行业分析辅助（⭐新增）
+/industry-analysis-qcc 新能源行业 --region 全国
+
+# 竞争格局分析（⭐新增）
+/competitive-map-qcc 企业名称 --scope 全景
+
+# 并购筛查（⭐新增）
+/merger-screening-qcc 收购方企业 --industry 目标行业
+
+# 融资动态追踪（⭐新增）
+/fundraising-tracker-qcc 企业名称 --sector 行业
 ```
 
 > 验证MCP是否生效：执行命令后应看到 `调用 qcc-company/get_company_registration_info` 等工具调用，而非"网页搜索"。
@@ -150,6 +175,13 @@ bash install_qcc_mcp_financial.sh
 | `/litigation-analysis-qcc` | 诉讼风险分析 | ~3分钟 | Word/Markdown |
 | `/supply-chain-risk-qcc` | 供应链风险评估 | ~5分钟 | Word/Markdown |
 | `/executive-background-qcc` | 高管背景调查 | ~3分钟 | Word/Markdown |
+| `/credit-rating-qcc` | 企业信用评级 | ~2分钟 | Word/Markdown |
+| `/ip-due-diligence-qcc` | 知识产权尽调 | ~5分钟 | Word/Markdown |
+| `/litigation-analysis-qcc` | 诉讼风险分析 | ~3分钟 | Word/Markdown |
+| `/industry-analysis-qcc` | 行业分析辅助 | ~3分钟 | Markdown |
+| `/competitive-map-qcc` | 竞争格局分析 | ~5分钟 | Word/Markdown |
+| `/merger-screening-qcc` | 并购筛查 | ~5分钟 | Word/Markdown |
+| `/fundraising-tracker-qcc` | 融资动态追踪 | ~3分钟 | Markdown |
 
 详见 [MCP配置指南](./docs/MCP_CONFIGURATION.md)
 
@@ -449,7 +481,7 @@ ESG基金拟投某新能源企业
 
 ```
 financial-services-qcc/
-├── skills/                          # 12个技能（核心）
+├── skills/                          # 16个技能（核心）
 │   ├── kyb-verification-qcc/        # KYB企业核验
 │   │   └── SKILL.md
 │   ├── ic-memo-qcc/                 # IC Memo投资备忘录
@@ -464,15 +496,23 @@ financial-services-qcc/
 │   │   └── SKILL.md
 │   ├── related-party-qcc/           # 关联方穿透识别
 │   │   └── SKILL.md
-│   ├── credit-rating-qcc/           # 企业信用评级 ⭐新增
+│   ├── credit-rating-qcc/           # 企业信用评级
 │   │   └── SKILL.md
-│   ├── ip-due-diligence-qcc/        # 知识产权尽调 ⭐新增
+│   ├── ip-due-diligence-qcc/        # 知识产权尽调
 │   │   └── SKILL.md
-│   ├── litigation-analysis-qcc/     # 诉讼风险分析 ⭐新增
+│   ├── litigation-analysis-qcc/     # 诉讼风险分析
 │   │   └── SKILL.md
-│   ├── supply-chain-risk-qcc/       # 供应链风险评估 ⭐新增
+│   ├── supply-chain-risk-qcc/       # 供应链风险评估
 │   │   └── SKILL.md
-│   └── executive-background-qcc/    # 高管背景调查 ⭐新增
+│   ├── executive-background-qcc/    # 高管背景调查
+│   │   └── SKILL.md
+│   ├── industry-analysis-qcc/       # 行业分析辅助 ⭐新增
+│   │   └── SKILL.md
+│   ├── competitive-map-qcc/         # 竞争格局分析 ⭐新增
+│   │   └── SKILL.md
+│   ├── merger-screening-qcc/        # 并购筛查 ⭐新增
+│   │   └── SKILL.md
+│   └── fundraising-tracker-qcc/     # 融资动态追踪 ⭐新增
 │       └── SKILL.md
 ├── commands/                        # 快捷命令
 │   ├── qcc-kyb-profile.md
