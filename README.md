@@ -10,7 +10,7 @@
 
 ---
 
-## 7个技能总览
+## 12个技能总览
 
 ### 核心技能（2个）
 
@@ -19,7 +19,7 @@
 | **KYB企业核验** | `/kyb-verification-qcc` | 银行/券商/信托合规风控 | 企业开户核验、授信前尽调、反洗钱AML | ~30秒 |
 | **IC Memo投资备忘录** | `/ic-memo-qcc` | PE/VC投资经理、IBD分析师 | Pre-IPO/并购/战投尽调，自动生成投委会备忘录 | ~30秒 |
 
-### 增强技能（5个）—— 本次新增
+### 增强技能（5个）—— 高优先级
 
 | 技能 | 命令 | 目标用户 | 核心场景 |
 |------|------|---------|---------|
@@ -28,6 +28,16 @@
 | **合规风险监控** | `/compliance-monitor-qcc` | 银行合规部、投后管理 | 7×24小时风险信号监控，贷后/投后管理 |
 | **ESG风险评估** | `/esg-assessment-qcc` | ESG基金、绿色金融 | E/S/G三维评分，可持续投资筛选 |
 | **关联方穿透识别** | `/related-party-qcc` | 投行IPO项目组、审计 | 股权穿透、实控人识别、关联交易核查 |
+
+### 专业扩展技能（5个）—— 中优先级
+
+| 技能 | 命令 | 目标用户 | 核心场景 |
+|------|------|---------|---------|
+| **企业信用评级** | `/credit-rating-qcc` | 银行信贷、供应链金融 | 多维度信用评分，授信额度与利率建议 |
+| **知识产权尽调** | `/ip-due-diligence-qcc` | 科技投资、IPO项目组 | 专利/商标/软著全维度尽调，技术竞争力评估 |
+| **诉讼风险分析** | `/litigation-analysis-qcc` | 法务、投资机构 | 涉诉全景扫描，案件性质与执行风险深度分析 |
+| **供应链风险评估** | `/supply-chain-risk-qcc` | 制造业、procurement | 供应商风险、集中度、韧性评估 |
+| **高管背景调查** | `/executive-background-qcc` | HR、投资机构 | 法定代表人/董监高/实控人背景核查 |
 
 ---
 
@@ -53,6 +63,11 @@
 | 合规风险监控 | ✅ | ✅ | — | ✅ |
 | ESG风险评估 | ✅ | ✅ | — | ✅ |
 | 关联方穿透识别 | ✅ | ✅ | — | — |
+| 企业信用评级 | ✅ | ✅ | — | ✅ |
+| 知识产权尽调 | ✅ | ✅ | ✅ | — |
+| 诉讼风险分析 | ✅ | ✅ | — | — |
+| 供应链风险评估 | ✅ | ✅ | — | ✅ |
+| 高管背景调查 | ✅ | ✅ | — | — |
 
 ---
 
@@ -98,9 +113,43 @@ bash install_qcc_mcp_financial.sh
 
 # 关联方穿透
 /related-party-qcc 企业名称 --depth 5
+
+# 企业信用评级（⭐新增）
+/credit-rating-qcc 企业名称 --sector 制造业
+
+# 知识产权尽调（⭐新增）
+/ip-due-diligence-qcc 企业名称 --peer 竞品企业名称
+
+# 诉讼风险分析（⭐新增）
+/litigation-analysis-qcc 企业名称 --period 近3年
+
+# 供应链风险评估（⭐新增）
+/supply-chain-risk-qcc 企业名称 --tier 1 --depth 3
+
+# 高管背景调查（⭐新增）
+/executive-background-qcc 企业名称 --person 高管姓名
 ```
 
 > 验证MCP是否生效：执行命令后应看到 `调用 qcc-company/get_company_registration_info` 等工具调用，而非"网页搜索"。
+
+---
+
+## 快速命令参考
+
+| 命令 | 功能 | 典型耗时 | 输出格式 |
+|------|------|---------|---------|
+| `/kyb-verification-qcc` | KYB企业核验 | ~30秒 | Word/PPT/Markdown |
+| `/ic-memo-qcc` | IC Memo投资备忘录 | ~30秒 | Word/PPT/Markdown |
+| `/strip-profile-qcc` | 企业画像速览 | ~3分钟 | PPT/Markdown |
+| `/dd-checklist-qcc` | 尽调清单自动化 | ~5分钟 | Markdown |
+| `/compliance-monitor-qcc` | 合规风险监控 | ~2分钟 | Markdown/报告 |
+| `/esg-assessment-qcc` | ESG风险评估 | ~3分钟 | Markdown |
+| `/related-party-qcc` | 关联方穿透识别 | ~2分钟 | Markdown/图表 |
+| `/credit-rating-qcc` | 企业信用评级 | ~2分钟 | Word/Markdown |
+| `/ip-due-diligence-qcc` | 知识产权尽调 | ~5分钟 | Word/Markdown |
+| `/litigation-analysis-qcc` | 诉讼风险分析 | ~3分钟 | Word/Markdown |
+| `/supply-chain-risk-qcc` | 供应链风险评估 | ~5分钟 | Word/Markdown |
+| `/executive-background-qcc` | 高管背景调查 | ~3分钟 | Word/Markdown |
 
 详见 [MCP配置指南](./docs/MCP_CONFIGURATION.md)
 
@@ -400,7 +449,7 @@ ESG基金拟投某新能源企业
 
 ```
 financial-services-qcc/
-├── skills/                          # 7个技能（核心）
+├── skills/                          # 12个技能（核心）
 │   ├── kyb-verification-qcc/        # KYB企业核验
 │   │   └── SKILL.md
 │   ├── ic-memo-qcc/                 # IC Memo投资备忘录
@@ -413,7 +462,17 @@ financial-services-qcc/
 │   │   └── SKILL.md
 │   ├── esg-assessment-qcc/          # ESG风险评估
 │   │   └── SKILL.md
-│   └── related-party-qcc/           # 关联方穿透识别
+│   ├── related-party-qcc/           # 关联方穿透识别
+│   │   └── SKILL.md
+│   ├── credit-rating-qcc/           # 企业信用评级 ⭐新增
+│   │   └── SKILL.md
+│   ├── ip-due-diligence-qcc/        # 知识产权尽调 ⭐新增
+│   │   └── SKILL.md
+│   ├── litigation-analysis-qcc/     # 诉讼风险分析 ⭐新增
+│   │   └── SKILL.md
+│   ├── supply-chain-risk-qcc/       # 供应链风险评估 ⭐新增
+│   │   └── SKILL.md
+│   └── executive-background-qcc/    # 高管背景调查 ⭐新增
 │       └── SKILL.md
 ├── commands/                        # 快捷命令
 │   ├── qcc-kyb-profile.md
