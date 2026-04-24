@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 运行期产物（真实报告，不应入库）
+outputs/
+*.docx.tmp
+*.pdf.tmp
+
+# 环境
+.env
+.env.local
+venv/
+.venv/
+
+# MCP 凭据（示例文件除外）
+mcp_config.json
+!mcp_config_example.json

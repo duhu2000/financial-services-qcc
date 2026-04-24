@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "qcc-company": {
+      "command": "npx",
+      "args": ["-y", "@qcc/mcp-company"],
+      "env": {
+        "QCC_API_KEY": "${QCC_API_KEY}",
+        "QCC_API_SECRET": "${QCC_API_SECRET}"
+      }
+    },
+    "qcc-risk": {
+      "command": "npx",
+      "args": ["-y", "@qcc/mcp-risk"],
+      "env": {
+        "QCC_API_KEY": "${QCC_API_KEY}",
+        "QCC_API_SECRET": "${QCC_API_SECRET}"
+      }
+    },
+    "qcc-ipr": {
+      "command": "npx",
+      "args": ["-y", "@qcc/mcp-ipr"],
+      "env": {
+        "QCC_API_KEY": "${QCC_API_KEY}",
+        "QCC_API_SECRET": "${QCC_API_SECRET}"
+      }
+    },
+    "qcc-operation": {
+      "command": "npx",
+      "args": ["-y", "@qcc/mcp-operation"],
+      "env": {
+        "QCC_API_KEY": "${QCC_API_KEY}",
+        "QCC_API_SECRET": "${QCC_API_SECRET}"
+      }
+    },
+    "qcc-history": {
+      "command": "npx",
+      "args": ["-y", "@qcc/mcp-history"],
+      "env": {
+        "QCC_API_KEY": "${QCC_API_KEY}",
+        "QCC_API_SECRET": "${QCC_API_SECRET}"
+      },
+      "_comment": "规划中的 MCP，2026 Q2 上线"
+    },
+    "qcc-executive": {
+      "command": "npx",
+      "args": ["-y", "@qcc/mcp-executive"],
+      "env": {
+        "QCC_API_KEY": "${QCC_API_KEY}",
+        "QCC_API_SECRET": "${QCC_API_SECRET}"
+      },
+      "_comment": "规划中的 MCP，2026 Q2 上线"
+    }
+  },
+  "_instructions": {
+    "1": "将 QCC_API_KEY 与 QCC_API_SECRET 设置为环境变量，或直接替换为你的 API 凭据",
+    "2": "qcc-history 与 qcc-executive 为规划中的 MCP，若未上线可暂时删除对应条目",
+    "3": "API 凭据申请地址：https://cloud.qcc.com/",
+    "4": "Claude Desktop 配置路径：~/.config/claude/mcp.json（Linux/macOS）"
+  }
+}

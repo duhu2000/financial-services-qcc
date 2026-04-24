@@ -1,0 +1,14 @@
+# qcc-history-skill V1.0.2 · Python 依赖
+# Python 3.9+
+
+python-docx>=1.1.0   # DOCX 生成
+matplotlib>=3.6.0    # 时间轴 PNG 渲染（V1.0.2 新增）
+
+# 字体依赖（系统级，择一即可）：
+#   macOS：PingFang SC（系统自带）
+#   Linux：noto-cjk 或 fonts-droid-fallback
+#   Windows：Microsoft YaHei（系统自带）
+# 构建器会自动探测第一个可用的字体。
+
+# LibreOffice / soffice 需系统级安装（用于 DOCX → PDF 转换）
+# 可选：pandoc（用于备选 PDF 转换路径）
