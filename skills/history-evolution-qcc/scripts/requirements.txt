@@ -1,8 +1,10 @@
-# qcc-history-skill V1.0.2 · Python 依赖
+# qcc-history-skill V1.2 · Python 依赖
 # Python 3.9+
 
 python-docx>=1.1.0   # DOCX 生成
-matplotlib>=3.6.0    # 时间轴 PNG 渲染（V1.0.2 新增）
+matplotlib>=3.6.0    # 时间轴 PNG 渲染（V1.0.2 起）
+pydantic>=2.0        # 数据契约（V1.2 起，必装；不装则 schema 校验失效）
+reportlab>=4.0       # PDF 直生成（可选）
 
 # 字体依赖（系统级，择一即可）：
 #   macOS：PingFang SC（系统自带）

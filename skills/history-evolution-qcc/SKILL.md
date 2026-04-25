@@ -2,30 +2,76 @@
 name: history-evolution-qcc
 description: >
   企业历史沿革与发展历程分析 Skill — 企查查MCP驱动的KYB立体叙事报告生成器。
-  基于企查查 MCP 146 个工具自动生成 9 章 + 附录的 KYB 历史沿革报告。
+  基于企查查 MCP 146 个工具自动生成 11 章 + 附录的 KYB 历史沿革报告。
+
+  V1.2 核心特性（schema-driven · 防编造）：
+  - **USCC 校验位**：GB 32100-2015 校验位算法，编造的统一社会信用代码会被拦截
+  - **count ≡ rows**：股东/历史股东/董监高/对外投资等列表，声明数量必须等于实际行数
+  - **evidence 锚点**：每个字段都有 `(tool_name, json_path, snapshot_ts, raw_value)` 四元组溯源
+  - **跨章节一致性**：处罚状态禁止"已处置/已闭环"等需 MCP 显式返回的状态词；
+    专利年度分布加和必等于总数；时间合理性自检
+  - **manifest.json**：每份报告产出字段级溯源链，可用于审计回溯
 
   核心功能：
-  - 9 章结构：§0 里程碑总览 / §1 公司概况 / §2 注册资本 / §3 名称变更 / §4 股权演变
-    / §5 经营轨迹 / §6 地址变迁 / §7 总结 / §8 发展综览 / §附录 工商变更大事年表
+  - 11 章结构：§1 公司概况 / §2 发展里程碑 / §3 注册资本 / §4 名称变更 / §5 股权演变
+    / §6 经营轨迹 / §7 地址变迁 / §8 总结 / §9 发展综览 / §10 附录 / §11 审计留档
   - 立体叙事：许可资质矩阵、知识产权布局、业务扩张与员工规模、行业地位与荣誉
   - 档位自适应：小微（¥4.5）/ 融资（¥13）/ 上市（¥18）三档自动识别并差异化调用
-  - 视觉风格：圆点+竖线时间轴 + kyb-opus 风格表格，可直接出 DOCX/PDF
+  - 视觉风格：圆点+竖线时间轴 + kyb-opus 风格蓝色章节条 + 斑马纹表格，直接出 PDF
 
-  适用场景：投前尽调（PE/VC）、IC Memo 附件生成、银行授信 KYB、IPO 辅导前历史梳理、
-  供应商主体背调、管理层背景与发展历程核查。
+  适用场景：投前尽调（PE/VC）、IC Memo 附件生成、银行授信 KYB、供应商主体背调、
+  管理层背景与发展历程核查。
 
   使用方式：/history-evolution-qcc 企业名称 [统一社会信用代码]
+  客户体验：一句话指令 → 60 秒自动生成 MD + PDF + manifest.json，零干预、零编造。
 
 license: Apache-2.0
 metadata:
   author: Anthropic Financial Services (Enhanced with QCC MCP)
-  version: "1.1.3"
+  version: "1.2.0"
   plugin-commands: "/history-evolution-qcc"
   mcp-integrations: "QCC MCP (Company/Risk/IPR/Operation/History/Executive)"
   industry: "Financial Services - Investment DD / Banking / Supply Chain"
 ---
 
-# 企业历史沿革与发展历程分析 SKILL（V1.1.3）
+# 企业历史沿革与发展历程分析 SKILL（V1.2 · schema-driven）
+
+> 🚨 **AI 加载本 SKILL 后必须遵守的 5 条防编造硬约束（V1.2 红线）** 🚨
+>
+> 历史教训：本 SKILL V1.1.3 版本的示例报告曾出现 13 项数据错误（统一社会信用代码编造、
+> 股东漏列、专利数错位、行政处罚状态编造等）。V1.2 通过以下 5 条**绝对硬约束**根除这类问题。
+> AI 在生成报告的每一步、每一个字段，都必须自检以下规则：
+>
+> 1. **统一社会信用代码（USCC）禁止任何形式的编造或猜测**
+>    - USCC 必须直接来自 MCP 工具 `qcc-company.get_company_registration_info` 的返回字段
+>    - 如果 MCP 没返回，就标注「未披露」
+>    - **不允许**根据企业名称、注册地推测 USCC
+>    - 18 位 USCC 的最后一位是 GB 32100-2015 校验位，编造的 USCC 大概率过不了校验
+>
+> 2. **任何"列表"型字段必须全量展示，禁止省略中间项**
+>    - 当前股东、历史股东、历任董监高、对外投资 等
+>    - 如果 MCP 摘要里说"共 X 条"，渲染的表格行数就必须等于 X
+>    - **不允许**为"美观"或"重要性"截断中间项
+>    - 如果数据量真的太大，写"完整列表见附录"而非省略
+>
+> 3. **行政处罚 / 司法记录的「处置状态」字段，仅当 MCP 显式返回时才能写**
+>    - 严禁写"已处置 / 已闭环 / 当期整改 / 整改完毕"等结论性状态
+>    - MCP 没返回的字段（如违法行为类型详情），写"违规细节未公开"
+>    - 处罚日期、处罚机关、决定书文号必须**直引** MCP 返回的原文
+>
+> 4. **统计字段（年度分布、级别分布、数量统计）必须从原始数据 group-by 算出**
+>    - 专利年度分布、荣誉级别分布、资质类别统计
+>    - **不允许**凭印象写数字
+>    - 加和必须严格等于总数（如 94 项专利的年度分布加和必须 = 94）
+>
+> 5. **MCP 没返回的字段，绝不"补全"或"合理化"**
+>    - LLM 倾向于让故事完整 — 这是 V1.1.3 编造"递交主板申报稿""2010 年最早专利"
+>      的根本原因
+>    - 严守纪律：MCP 给什么就写什么；没给的就明确标注「未披露」/「数据缺失」
+>    - 严禁基于行业常识、企业规模、发展轨迹"推测"或"补全"
+>
+> **如果你（AI）在生成内容时无法遵守上述 5 条，请明确拒绝并告知用户："本字段缺数据，
+> 不能在不违反防编造规则的前提下生成"。**
 
 ## 定位（V1.0 硬约束）
 
@@ -86,17 +132,242 @@ metadata:
 | §5.6 处罚与担保 | `get_administrative_penalty` / `get_guarantee_info` / `get_equity_pledge_info` 任一返回非空 |
 | §7 财务摘要 | 档位 = 上市档（A 股 + 发债） 且 `get_financial_key_indicators` 返回非空 |
 
-### 步骤 5 · 生成 DOCX / PDF
+### 步骤 5 · 生成报告（双模式）
 
-调用 `scripts/build_docx.py`：
+V1.2 提供两种渲染模式 —— AI 应根据所处运行环境自动选择：
+
+#### 模式 A · Prompt 严约束直接生成 MD（默认，所有 AI 应用通用）
+
+适用：百炼 / Coze / OpenClaw / 任何不能直接跑 Python 的云端 AI 应用
+
+AI 严格遵守上方"5 条防编造硬约束"，按以下模板生成 Markdown 报告：
+
+````markdown
+# 企业历史沿革与发展历程报告
+
+## {企业名称}
+
+**目标企业：** {MCP 直接返回}
+**统一社会信用代码：** {MCP 直接返回 — 严禁编造}
+**报告版本：** v1.2
+**报告生成：** {当前日期}
+
+---
+
+## 执行摘要（Decision Pack）
+
+> **一句话结论：** {基于 MCP 真实数据组织的总结，含「N 次注册资本变更、N 次更名、
+> N 次办公地迁移、N 位股东退出、当前 N 位股东」等具体数字 — 数字必须与下方各章节
+> 一致，不允许"约""大约""若干"等模糊词}
+
+---
+
+## 一、公司概况
+
+| 字段 | 值 |
+| --- | --- |
+| 企业名称 | {get_company_registration_info → 企业名称} |
+| 统一社会信用代码 | {同上 → 统一社会信用代码} |
+| 法定代表人 | {同上 → 法定代表人} |
+| 成立日期 | {同上 → 成立日期} |
+| 注册资本 / 实缴资本 | {同上 → 注册资本/实缴资本} |
+| 企业类型 | {同上 → 企业类型} |
+| 行业 | {同上 → 国标行业} |
+| 登记状态 | {同上 → 登记状态} |
+| 登记机关 | {同上 → 登记机关} |
+| 核准日期 | {同上 → 核准日期} |
+| 所属地区 | {同上 → 所属地区} |
+| 注册地址 | {同上 → 注册地址} |
+| 参保人数 | {同上 → 参保人数} 人 |
+
+---
+
+## 二、发展里程碑
+
+按时间排序的关键节点（**仅来自工商登记 + 国家级首次荣誉**，不允许编造未来事件
+如"递交主板申报稿"等）：
+
+| 日期 | 里程碑 | 说明 |
+| --- | --- | --- |
+| {成立日期} | 企业成立 | {设立时名称} |
+| {历史名称变更日期} | 名称变更 | {旧名} → {新名} |
+| {国家级荣誉首次获得日期} | 获国家级『xxx』认定 | {发布单位} |
+
+---
+
+## 三、注册资本变更轨迹
+
+共 **N 个注册资本节点**（**N 必须等于 历史注册资本列表长度 + 1**）：
+
+| 变更日期 | 注册资本 | 有效期 |
+| --- | --- | --- |
+| {历史第一项的终止日期} 至今 | {当前注册资本} | 当前 |
+| ... | ... | ... |
+
+---
+
+## 四、名称变更时间线
+
+共 **N 个名称节点**（**N = 历史名称列表长度 + 1**）
+
+---
+
+## 五、股权演变
+
+### 5.1 当前股东与出资结构
+
+共 **N 位股东**（**N 必须等于 get_shareholder_info 摘要里的"共 X 条"**），按持股比例
+降序，**全量展示，禁止省略**：
+
+| 股东名称 | 持股比例 | 持股数 |
+| --- | --- | --- |
+| ... | ... | ... |
+
+### 5.3 股东进出历史
+
+共 **N 位股东已退出**（**N = 摘要里的"共 X 条"**），按退出日期倒序，**全量展示**：
+
+| 退出日期 | 股东名称 | 退出比例 | 认缴 | 类型 |
+| --- | --- | --- | --- | --- |
+| ... | ... | ... | ... | ... |
+
+### 5.4 实际控制人
+
+| 姓名 | 直接持股 | 总持股 | 表决权 |
+| --- | --- | --- | --- |
+| ... | ... | ... | ... |
+
+---
+
+## 六、经营轨迹
+
+### 6.1 对外投资
+
+共 **N 家**被投资企业（**N = get_external_investments 摘要里的"共 X 条"**），全量：
+
+| 被投资企业 | 持股比例 | 成立日期 | 状态 |
+| --- | --- | --- | --- |
+| ... | ... | ... | ... |
+
+### 6.2 现任董监高
+
+共 **N 人**（**N = 摘要里的"共 X 条"**）
+
+### 6.2.b 历任董监高
+
+共 **N 位已卸任**（**N = get_historical_executives 摘要里的"共 X 条"**），全量
+
+---
+
+## 七、地址变迁
+
+共 **N 个地址节点**
+
+---
+
+## 八、总结
+
+| 维度 | 评价 |
+| --- | --- |
+| 股权清洁度 | ... |
+| 经营合规 | {如果有处罚：处罚日期 + 处罚机关 + 决定书文号 + 罚款金额，
+| | **严禁写"已处置/已闭环"，写"违规细节及处置状态以原始公告为准"}** |
+| 成长轨迹 | ... |
+
+---
+
+## 九、发展综览
+
+### 9.1 许可与资质
+
+共 **N 项资质**（**N = get_qualifications 摘要里的"共 X 条"**），有效 **M 项**
+（**M = 资质表里 证书状态 = "有效" 的条数**）
+
+### 9.2 知识产权 - 专利
+
+共 **N 项专利**（**N = get_patent_info 摘要里的"共 X 条"**）
+
+**类型分布：** 发明授权 X 项、外观设计 Y 项（**X + Y 必须等于 N**）
+
+**申请年度分布：** {从 get_patent_info → 专利信息 list 里按 申请日期[:4] group-by 算出
+— **加和必须严格等于 N**}
+
+### 9.4 行业地位与荣誉
+
+共 **N 项荣誉**（**N = get_honor_info 摘要里的"共 X 条"**）
+
+---
+
+## 十、附录 · 工商变更大事年表
+
+MCP 工商变更总数：**N 条**（**N = get_change_records 摘要里的"共 X 条"**）
+
+### 行政处罚（共 N 条）
+
+| 处罚日期 | 处罚单位 | 决定书文号 | 处罚结果 |
+| --- | --- | --- | --- |
+| {直引 MCP} | {直引 MCP} | {直引 MCP} | {直引 MCP} |
+
+> 注：本字段直引 MCP `qcc-risk.get_administrative_penalty` 原始返回，
+> 严禁补全"已处置/已闭环/违法行为类型"等 MCP 未返回字段。
+
+---
+
+## 十一、审计留档
+
+| 项目 | 数据 |
+| --- | --- |
+| 报告编号 | SKILL-HE-QCC-{YYYYMMDD}-001 |
+| 数据源 | 企查查 MCP |
+| 防编造规则 | V1.2 5 条硬约束 |
+
+*本报告仅供尽调研究参考，不构成投资建议。*
+````
+
+#### 模式 B · Python 校验保险（如果环境支持）
+
+适用：Cursor / Claude Code / 任何能跑本地 Python 的 AI 应用。
+
+在生成 MD 后，AI 自动尝试调用 V1.2 schema 校验 + ReportLab PDF 渲染：
+
 ```bash
-python scripts/build_docx.py --input report_data.json --output "企业历史沿革_{企业名}_{YYYYMMDD}.docx"
+# 第 1 步：把 12 个 MCP 返回组装为 JSON
+# AI 把已收集的 MCP 数据写入 data/mcp_responses.json
+
+# 第 2 步：跑 V1.2 校验 + 出高质量 PDF
+cd skills/history-evolution-qcc
+python -m scripts.v1_2.render_pdf \
+    --uscc <USCC> \
+    --mcp-responses-json data/mcp_responses.json \
+    --report-id SKILL-HE-QCC-<YYYYMMDD>-001 \
+    --out output/<企业名>_历史沿革.pdf
 ```
 
-可选的 PDF 转换：
-```bash
-python scripts/build_docx.py --pdf
+**这一步会自动 enforce 5 条防编造规则**：
+- USCC 校验位算法（GB 32100-2015）
+- pydantic schema：count ≡ rows
+- 跨章节一致性：处罚状态词拦截、专利年度加和检查
+- 圆点时间轴 PNG 渲染（kyb-opus 风格）
+- 字段级 evidence 锚点 → 产出 manifest.json 溯源链
+
+如果任一规则触发，**Python 会直接 raise**，这时 AI 应该回看自己生成的 MD，找出问题并重新生成。
+
+#### AI 决策树：选择哪种模式？
+
 ```
+1. 当前 AI 应用能不能跑 Python（执行 bash 命令）？
+   ├── 不能（如 百炼 / Coze 云端） → 用模式 A，仅出 MD
+   │   告知用户："已生成 MD 报告，遵循 V1.2 防编造规则。
+   │              如需高保真 PDF（圆点时间轴），请联系企查查云端服务。"
+   │
+   └── 能（如 Cursor / Claude Code / 本地 Cowork）
+       └── 先用模式 A 生成 MD，再用模式 B 跑 V1.2 校验
+           ├── 校验通过 → 出 PDF + MD + manifest，三件套交付
+           └── 校验失败 → 回看 MD，找出冲突字段，修正后重新生成
+```
+
+> **关键原则：无论模式 A 还是 B，5 条防编造规则都必须遵守。**
+> 模式 A 靠 AI 自律（prompt enforce），模式 B 多一道代码 enforce 保险。
 
 ## 关键原则
 
@@ -106,41 +377,121 @@ python scripts/build_docx.py --pdf
 4. **行级溯源**：每个写入章节的字段需附 `[来源: qcc-xxx/tool_name · snapshot=YYYY-MM-DD]` 标签（build_docx 自动处理）
 5. **不得虚构**：如工具返回空，章节条目留空或不生成，不得补写"推测"、"可能"
 
-## 文件结构
+## 文件结构（V1.2）
 
 ```
-qcc-history-skill-v1.0/
-├── SKILL.md                        # 本文件：入口与工作流
-├── README.md                       # GitHub 落地页
-├── CHANGELOG.md                    # 版本记录
-├── mcp_config_example.json         # MCP 连接示例
+history-evolution-qcc/
+├── SKILL.md                            # 本文件：入口与工作流
+├── README.md                           # GitHub 落地页
+├── CHANGELOG.md                        # 版本记录
+├── mcp_config_example.json             # MCP 连接示例
 ├── references/
-│   ├── 01_方案文档.md              # V1.0 方案全貌
-│   ├── 02_报告模板.md              # 7 章报告模板
-│   ├── 03_MCP字段映射表.md         # 字段→MCP 工具映射
-│   ├── 04_档位识别规则.md          # 三档决策树
-│   ├── 05_工具调用清单.md          # 按档位工具清单 + 成本
-│   ├── 06_V2.0客户自升级指引.md    # 客户自扩展指南
-│   └── 07_升级建议稿.md            # Part A–H 分析留档
+│   ├── 01_方案文档.md
+│   ├── 02_报告模板.md
+│   ├── 03_MCP字段映射表.md
+│   ├── 04_档位识别规则.md
+│   ├── 05_工具调用清单.md
+│   ├── 06_V2.0客户自升级指引.md
+│   └── 07_升级建议稿.md
 ├── scripts/
-│   ├── tier_detector.py            # 档位识别
-│   ├── cost_counter.py             # 100c 封顶保护
-│   ├── mcp_orchestrator.py         # MCP 批量调用
-│   ├── build_docx.py               # DOCX 生成
-│   └── requirements.txt
+│   ├── tier_detector.py                # 档位识别
+│   ├── cost_counter.py                 # 100c 封顶保护
+│   ├── mcp_orchestrator.py             # MCP 批量调用
+│   ├── build_timeline.py               # 圆点+竖线时间轴 PNG（DPI 240）
+│   ├── build_docx.py                   # V1.1.3 legacy DOCX/PDF（保留）
+│   ├── requirements.txt                # pydantic ≥ 2.0 / reportlab ≥ 4.0 ...
+│   └── v1_2/                           # ★ V1.2 schema-driven 框架（默认入口）
+│       ├── uscc_validator.py           # GB 32100-2015 USCC 校验位算法
+│       ├── evidence.py                 # MCP 调用 evidence 锚点 + manifest
+│       ├── data_contract.py            # pydantic schema（count ≡ rows 强约束）
+│       ├── data_extractor.py           # MCP 返回 → ReportSchema 转换
+│       ├── consistency_check.py        # 跨章节一致性 + 状态词编造拦截
+│       ├── render_md.py                # Schema → MD 渲染
+│       ├── render_pdf.py               # Schema → PDF 渲染（圆点时间轴）
+│       ├── build_report_v1_2.py        # 主入口（同时出 MD + manifest）
+│       ├── test_v1_2.py                # 红绿对照测试（7 项 V1.1.3 事故回归）
+│       ├── README.md                   # V1.2 框架文档
+│       └── sample_data/
+│           └── mcp_responses_qcc.json  # 企查查科技完整 12 工具数据快照
 └── assets/
-    ├── 示例_企查查科技_报告.docx
-    └── 示例_企查查科技_报告.pdf
+    ├── 示例_上市档_企查查科技_V1.2.md
+    ├── 示例_上市档_企查查科技_V1.2.pdf
+    └── 示例_上市档_企查查科技_V1.2.manifest.json   # 字段级 evidence 溯源
 ```
 
-## 快速开始
+## 客户快速开始（一键化体验）
 
-1. 在 Claude 环境中连接企查查 MCP（参考 `mcp_config_example.json`）
-2. 向 Claude 提问：「帮我生成企查查科技股份有限公司的企业历史沿革报告」
-3. Claude 自动按工作流执行，约 1–3 分钟产出 DOCX + PDF
-4. 成本：小微 ¥1.5–3 / 融资 ¥5–8 / 上市 封顶 ¥10
+### 安装（一次性）
+
+```bash
+# 1. 拉取 SKILL
+git clone https://github.com/<org>/financial-services-qcc.git
+cd financial-services-qcc/skills/history-evolution-qcc
+
+# 2. 创建虚拟环境（推荐）
+python3 -m venv .venv
+source .venv/bin/activate              # Windows: .venv\Scripts\activate
+
+# 3. 装依赖
+pip install -r scripts/requirements.txt
+
+# 4. 跑一次 V1.2 自检（应该 7 项测试全过）
+python -m scripts.v1_2.test_v1_2
+```
+
+### 使用（每次报告）
+
+#### 方式 A · 在 Claude Code / Cowork 中（推荐，零编码）
+
+```
+客户 → Claude：帮我生成企查查科技股份有限公司的企业历史沿革报告
+```
+
+Claude 会自动：
+1. 读 SKILL.md 知道怎么做
+2. 调用 12 个企查查 MCP 工具拉真实数据
+3. 通过 V1.2 框架生成 PDF + MD + manifest（schema 校验 + 一致性自检）
+4. 回复客户产出文件路径
+
+**约 60-90 秒完成**，零干预。
+
+#### 方式 B · 命令行（高级用户）
+
+```bash
+# 自己抓 MCP 数据存为 JSON（或先用 sample_data 跑通流程）
+python -m scripts.v1_2.render_pdf \
+    --uscc 91320594088140947F \
+    --mcp-responses-json scripts/v1_2/sample_data/mcp_responses_qcc.json \
+    --out output/qcc_history.pdf
+```
+
+### 成本
+
+| 档位 | 成本 | 触发条件 |
+|---|---|---|
+| 小微档 | ¥1.5–3 | 无上市、无融资、注册资本 ≤ 1000 万 或 ≤ 50 人 |
+| 融资档 | ¥5–8 | 未上市但有融资记录（天使—Pre-IPO 任一轮）|
+| 上市档 | 封顶 ¥10 | 已上市 或 发债 |
+
+## 客户报告与原厂示例的等价保证
+
+> **客户在自己的 Claude 环境跑 SKILL 拿到的报告，与官网示例报告（`mcp_web/apps/web/public/examples/history-evolution-opus.{md,pdf}`）质量等同。**
+
+原因：
+1. **同一份代码** — 客户从 GitHub 下载的就是我们打磨过的 V1.2 schema-driven 框架
+2. **同一套防御机制** — USCC 校验位 / count ≡ rows / evidence 锚点全部被代码 enforce
+3. **同一种渲染** — 圆点时间轴 + 蓝色章节条 + 斑马表，由 ReportLab 自动生成
+4. **同一份样本** — `scripts/v1_2/sample_data/mcp_responses_qcc.json` 是企查查科技真实数据快照，可直接复现示例
+
+**客户不需要做的事**（这是我们 V1.0 → V1.2 演进过程中踩过的坑，已经在代码层闭合）：
+- ❌ 不需要写"schema-driven + USCC 校验位 + count ≡ rows + evidence 锚点"代码框架（V1.2 已写好）
+- ❌ 不需要逐字段对照 MCP 真实返回核验数据（schema 校验自动做）
+- ❌ 不需要担心 LLM"自信地编造"上市信息 / 行政处罚状态（一致性检查自动拦截）
+- ❌ 不需要写时间轴 PNG 渲染代码（build_timeline.py 已就绪）
+- ❌ 不需要本地搭 LaTeX/xelatex 环境（V1.2 用 ReportLab 直接出 PDF）
 
 ## 版本策略
 
-- **V1.0（本版本）**：MCP-only，Anthropic / 企查查 官方维护
+- **V1.2（本版本）**：schema-driven、防编造硬约束、配套圆点时间轴 PDF 渲染器
+- **V1.1.3（legacy）**：保留 `scripts/build_docx.py` + `build_timeline.py` 作为兼容层
 - **V2.0（客户自升级）**：客户在私域追加尽调底稿 / 承诺函 / 关联交易明细等，参见 `references/06_V2.0客户自升级指引.md`

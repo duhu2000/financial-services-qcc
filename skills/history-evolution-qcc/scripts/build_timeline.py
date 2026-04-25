@@ -182,7 +182,8 @@ def _draw_mixed(ax, x: float, y: float, text: str, *,
 
 def _render_to_bytes(fig) -> bytes:
     buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=160, bbox_inches="tight", facecolor="white")
+    # DPI 提高到 240 以避免 PDF 嵌入缩放后的字形粘连/糊化
+    fig.savefig(buf, format="png", dpi=240, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     buf.seek(0)
     return buf.getvalue()
