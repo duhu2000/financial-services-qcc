@@ -336,6 +336,17 @@ class PatentSection(BaseModel if PYDANTIC_OK else object):
             dist[t] = dist.get(t, 0) + 1
         return dist
 
+    def top_patents(self, n: int = 12, types: tuple = ("发明授权",)) -> list:
+        """按公开（公告）日期倒序取 Top N 重点专利（默认仅发明授权，过滤外观设计）。
+
+        业务价值：业务人员关心的是「这家公司有哪些有含金量的发明专利」，
+        而不是「哪一年申请了几项」的纯统计。本方法返回真正有内容的专利记录，
+        用于时间轴渲染（参照荣誉时间轴的『从市级到国家级地位爬升』思路）。
+        """
+        filtered = [p for p in self.patents if p.patent_type in types]
+        filtered.sort(key=lambda p: (p.publish_date or "", p.application_date or ""), reverse=True)
+        return filtered[:n]
+
 
 class AdministrativePenalty(BaseModel if PYDANTIC_OK else object):
     """行政处罚 — 严禁加 MCP 没返回的字段（如"违法行为类型"、"已处置"）。"""
@@ -359,6 +370,11 @@ class AdministrativePenaltySection(BaseModel if PYDANTIC_OK else object):
                 f"行政处罚声明 {self.total_count} 但实际 {len(self.penalties)}"
             )
         return self
+
+
+# 注：招投标（qcc-operation.get_bidding_info）属于经营动态而非历史沿革范畴，
+# 本 SKILL 不纳入。如需"客户群 / 中标记录"维度，请使用单独的 SKILL（如
+# 经营轨迹分析、商业能力评估等），保持本 SKILL 焦点为「主体演变脉络」。
 
 
 # ---------------------------------------------------------------------------

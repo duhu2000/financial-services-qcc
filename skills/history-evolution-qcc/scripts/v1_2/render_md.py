@@ -78,31 +78,38 @@ def _render_executive_summary(r) -> str:
 
 
 def _render_section_1_company(r) -> str:
+    """§1 公司概况 — 单一表格 + 业务化表头「项目 / 内容」。
+    字段顺序按「主体识别 → 注册信息 → 经营状态」逻辑排列。
+    """
     c = r.company
     rows = [
+        # 主体识别
         ("企业名称", c.name),
         ("统一社会信用代码", c.uscc),
         ("法定代表人", c.legal_rep),
+        ("企业类型", c.enterprise_type),
+        ("所属行业", c.industry),
+        # 注册信息
         ("成立日期", c.establish_date),
         ("注册资本", c.registered_capital),
     ]
-    if c.paid_capital: rows.append(("实缴资本", c.paid_capital))
-    rows += [
-        ("企业类型", c.enterprise_type),
-        ("行业", c.industry),
-        ("登记状态", c.registration_status),
-        ("登记机关", c.registration_authority),
-    ]
-    if c.approval_date: rows.append(("核准日期", c.approval_date))
-    if c.region: rows.append(("所属地区", c.region))
+    if c.paid_capital:
+        rows.append(("实缴资本", c.paid_capital))
     rows.append(("注册地址", c.registered_address))
+    if c.region:
+        rows.append(("所属地区", c.region))
+    # 经营状态
+    rows.append(("登记状态", c.registration_status))
+    rows.append(("登记机关", c.registration_authority))
+    if c.approval_date:
+        rows.append(("最近核准日期", c.approval_date))
     if c.insured_count is not None:
         rows.append(("参保人数", f"{c.insured_count} 人"))
 
     body = "\n".join(f"| {k} | {v} |" for k, v in rows)
     return (
         f"\n## 一、公司概况\n\n"
-        f"| 字段 | 值 |\n| --- | --- |\n{body}\n\n"
+        f"| 项目 | 内容 |\n| --- | --- |\n{body}\n\n"
         f"---\n"
     )
 
@@ -310,7 +317,7 @@ def _render_section_8_summary(r) -> str:
                  f"股东进出 {r.historical_shareholders.total_count} 次"))
 
     body = "\n".join(f"| {k} | {v} |" for k, v in rows)
-    parts.append(f"\n| 维度 | 评价 |\n| --- | --- |\n{body}\n")
+    parts.append(f"\n| 评价维度 | 结论 |\n| --- | --- |\n{body}\n")
     parts.append("\n> 注：本报告聚焦组织演变脉络；财务能力评估请参见 IC Memo / 信贷尽调报告。\n")
     parts.append("\n---\n")
     return "\n".join(parts)
@@ -323,19 +330,24 @@ def _render_section_9_overview(r) -> str:
     parts.append(f"\n### 9.1 许可与资质\n")
     parts.append(f"\n共 {r.qualifications.total_count} 项资质，当前有效 {r.qualifications.valid_count} 项。\n")
 
-    # 9.2 专利
+    # 9.2 专利 — 业务化：摘要 + 重点专利时间轴（不再单列纯数字年度统计）
     parts.append(f"\n### 9.2 知识产权\n")
-    parts.append(f"\n共 {r.patents.total_count} 项专利。\n")
     type_dist = r.patents.type_distribution()
-    if type_dist:
+    type_str = "、".join(f"{k} {v} 项" for k, v in type_dist.items()) if type_dist else "—"
+    parts.append(f"\n共 **{r.patents.total_count} 项**专利（{type_str}）。\n")
+
+    top = r.patents.top_patents(n=12, types=("发明授权",))
+    if top:
         parts.append(
-            "\n**类型分布：** " + "、".join(f"{k} {v} 项" for k, v in type_dist.items()) + "\n"
+            f"\n**近期重点发明专利（按公开日期倒序，展示 {len(top)} 项）：**\n"
         )
-    yearly = r.patents.yearly_distribution()
-    parts.append(f"\n**申请年度分布（数据由 schema 自动 group-by 生成，加和必等于 {r.patents.total_count}）：**\n")
-    parts.append(f"\n| 年份 | 专利数 |\n| --- | --- |")
-    for year in sorted(yearly.keys(), reverse=True):
-        parts.append(f"| {year} | {yearly[year]} |")
+        parts.append(f"\n| 公开日期 | 专利名称 | 类型 | 申请号 |\n"
+                     f"| --- | --- | --- | --- |")
+        for p in top:
+            parts.append(
+                f"| {p.publish_date or '—'} | {p.title} | "
+                f"{p.patent_type} | {p.application_no} |"
+            )
 
     # 9.4 荣誉
     parts.append(f"\n\n### 9.4 行业地位与荣誉\n")
@@ -351,28 +363,21 @@ def _render_section_9_overview(r) -> str:
 
 
 def _render_section_10_appendix(r) -> str:
+    """§10 附录 · 工商变更大事年表。
+
+    注：行政处罚不在本节单独成表 —— 关键事件已在 §8 总结的"经营合规"
+    维度叙述（含日期、机关、文号、金额）。本节仅保留工商变更总数。
+    """
     parts = ["\n## 十、附录 · 工商变更大事年表\n"]
     parts.append(f"\nMCP 工商变更总数：{r.change_records_count} 条。\n")
-
-    # 行政处罚
-    if r.administrative_penalties.total_count > 0:
-        parts.append(f"\n### 行政处罚（共 {r.administrative_penalties.total_count} 条）\n")
-        parts.append(f"\n> 数据来源：MCP `qcc-risk.get_administrative_penalty`\n")
-        parts.append(f"\n| 处罚日期 | 处罚单位 | 决定书文号 | 处罚结果 |\n"
-                     f"| --- | --- | --- | --- |")
-        for p in r.administrative_penalties.penalties:
-            parts.append(
-                f"| {p.penalty_date} | {p.penalty_authority} | {p.decision_no} | "
-                f"{p.penalty_result or '—'} |"
-            )
-    parts.append("\n\n---\n")
+    parts.append("\n---\n")
     return "\n".join(parts)
 
 
 def _render_section_11_audit(r) -> str:
     return (
         f"\n## 十一、审计留档\n\n"
-        f"| 项目 | 数据 |\n| --- | --- |\n"
+        f"| 留档项目 | 内容 |\n| --- | --- |\n"
         f"| 报告编号 | {r.report_id} |\n"
         f"| 生成时间 | {r.generated_at} |\n"
         f"| 数据源 | 企查查 MCP（schema-driven · v1.2 框架）|\n"

@@ -50,6 +50,7 @@ from .evidence import ManifestBuilder
 from .data_extractor import ReportExtractor
 from .consistency_check import assert_consistency, ConsistencyError
 from .render_md import render_markdown
+from .render_pdf import render_pdf
 
 
 def generate_report(
@@ -102,12 +103,17 @@ def generate_report(
     md_path = out_path / f"{extractor.report_id}.md"
     md_path.write_text(md, encoding="utf-8")
 
-    # Step 6 · 输出 manifest.json（字段级 evidence 链）
+    # Step 6 · 渲染 PDF（保留 V1.1.3 圆点时间轴样式）
+    pdf_path = out_path / f"{extractor.report_id}.pdf"
+    render_pdf(report, pdf_path)
+
+    # Step 7 · 输出 manifest.json（字段级 evidence 链）
     manifest_path = out_path / f"{extractor.report_id}.manifest.json"
     extractor.manifest.write(str(manifest_path))
 
     return {
         "md_path": str(md_path),
+        "pdf_path": str(pdf_path),
         "manifest_path": str(manifest_path),
         "warnings": warnings,
         "report_id": extractor.report_id,
@@ -145,7 +151,8 @@ def main() -> int:
         report_id=args.report_id,
     )
 
-    print(f"✓ 报告生成成功：{result['md_path']}")
+    print(f"✓ MD 生成成功：{result['md_path']}")
+    print(f"✓ PDF 生成成功：{result['pdf_path']}")
     print(f"✓ 溯源 manifest：{result['manifest_path']}")
     print(f"  报告号：{result['report_id']}")
     print(f"  企业：{result['company_name']}")

@@ -331,31 +331,39 @@ def _render_executive_summary(r, st, flow):
 
 
 def _render_section_1(r, st, flow):
+    """§1 公司概况 — 业务化呈现：单一表格 + 业务化表头「项目 / 内容」。
+    字段顺序按「主体识别 → 注册信息 → 经营状态」逻辑排列，无需多余分组表头。
+    """
     flow.append(_h1_bar("一、公司概况", st))
     c = r.company
     rows = [
+        # 主体识别
         ["企业名称", c.name],
         ["统一社会信用代码", c.uscc],
         ["法定代表人", c.legal_rep],
+        ["企业类型", c.enterprise_type],
+        ["所属行业", c.industry],
+        # 注册信息
         ["成立日期", c.establish_date],
         ["注册资本", c.registered_capital],
     ]
     if c.paid_capital:
         rows.append(["实缴资本", c.paid_capital])
-    rows += [
-        ["企业类型", c.enterprise_type],
-        ["行业", c.industry],
-        ["登记状态", c.registration_status],
-        ["登记机关", c.registration_authority],
-    ]
-    if c.approval_date:
-        rows.append(["核准日期", c.approval_date])
+    rows.append(["注册地址", c.registered_address])
     if c.region:
         rows.append(["所属地区", c.region])
-    rows.append(["注册地址", c.registered_address])
+    # 经营状态
+    rows.append(["登记状态", c.registration_status])
+    rows.append(["登记机关", c.registration_authority])
+    if c.approval_date:
+        rows.append(["最近核准日期", c.approval_date])
     if c.insured_count is not None:
         rows.append(["参保人数", f"{c.insured_count} 人"])
-    flow.append(_mk_table(["字段", "值"], rows, col_widths=[5 * cm, 11 * cm], st=st))
+
+    flow.append(_mk_table(
+        ["项目", "内容"], rows,
+        col_widths=[4 * cm, 12 * cm], st=st,
+    ))
 
 
 def _render_section_2(r, st, flow):
@@ -588,7 +596,7 @@ def _render_section_8(r, st, flow):
          f"股东进出 {r.historical_shareholders.total_count} 次"),
     ])
     flow.append(_mk_table(
-        ["维度", "评价"], rows,
+        ["评价维度", "结论"], rows,
         col_widths=[3.5 * cm, 12.5 * cm], st=st,
     ))
     flow.append(Spacer(1, 4))
@@ -619,30 +627,33 @@ def _render_section_9(r, st, flow):
 
     # 9.2 专利
     flow.append(_h2_bar("9.2 知识产权", st))
-    flow.append(Paragraph(
-        f"共 <b>{r.patents.total_count} 项</b>专利。", st["body"],
-    ))
 
-    # 类型分布（schema 算法）
+    # 类型分布（业务摘要：发明 X 项、外观 Y 项 — 不再单列纯数字时间轴）
     type_dist = r.patents.type_distribution()
-    if type_dist:
-        type_str = "、".join(f"{k} {v} 项" for k, v in type_dist.items())
-        flow.append(Paragraph(f"<b>类型分布：</b>{type_str}", st["body"]))
-
-    # 年度分布（schema 算法）
-    yearly = r.patents.yearly_distribution()
+    type_str = "、".join(f"{k} {v} 项" for k, v in type_dist.items()) if type_dist else "—"
     flow.append(Paragraph(
-        f"<b>申请年度分布（自动 group-by，加和必等于 {r.patents.total_count}）：</b>",
+        f"共 <b>{r.patents.total_count} 项</b>专利（{type_str}）。",
         st["body"],
     ))
-    flow.append(Spacer(1, 4))
-    items = []
-    for year in sorted(yearly.keys(), reverse=True):
-        items.append({
-            "date": year, "content": f"{yearly[year]} 项",
-            "sub": "", "known": True,
-        })
-    flow.append(_timeline(items, width_cm=12, row_h=0.45))
+
+    # 重点专利时间轴（按公开日期倒序，Top 12 发明授权 — 真正有含金量的内容）
+    top = r.patents.top_patents(n=12, types=("发明授权",))
+    if top:
+        flow.append(Spacer(1, 4))
+        flow.append(Paragraph(
+            f"<b>近期重点发明专利（按公开日期倒序，展示 {len(top)} 项）：</b>",
+            st["body"],
+        ))
+        flow.append(Spacer(1, 4))
+        items = []
+        for p in top:
+            items.append({
+                "date": p.publish_date or "—",
+                "content": p.title,
+                "sub": f"{p.patent_type} · {p.application_no}",
+                "known": True,
+            })
+        flow.append(_timeline(items, width_cm=16, row_h=0.5))
 
     # 9.4 荣誉
     flow.append(_h2_bar("9.4 行业地位与荣誉", st))
@@ -713,26 +724,16 @@ def _extract_qualification_milestones(r):
 
 
 def _render_section_10(r, st, flow):
+    """§10 附录 · 工商变更大事年表。
+
+    注：行政处罚不再在本节单独成表 —— 关键事件已在 §8 总结中"经营合规"
+    维度叙述（含日期、机关、文号、金额）。本节仅保留工商变更总数。
+    """
     flow.append(_h1_bar("十、附录 · 工商变更大事年表", st))
     flow.append(Paragraph(
-        f"MCP 工商变更总数：{r.change_records_count} 条。", st["body"],
+        f"MCP 工商变更总数：{r.change_records_count} 条。",
+        st["body"],
     ))
-    if r.administrative_penalties.total_count > 0:
-        flow.append(_h2_bar(
-            f"行政处罚（共 {r.administrative_penalties.total_count} 条）", st,
-        ))
-        rows = []
-        for p in r.administrative_penalties.penalties:
-            rows.append([
-                p.penalty_date, p.penalty_authority,
-                p.decision_no, p.penalty_result or "—",
-            ])
-        flow.append(_mk_table(
-            ["处罚日期", "处罚单位", "决定书文号", "处罚结果"],
-            rows,
-            col_widths=[2.5 * cm, 4 * cm, 5 * cm, 4.5 * cm],
-            st=st,
-        ))
 
 
 def _render_section_11(r, st, flow):
@@ -745,7 +746,7 @@ def _render_section_11(r, st, flow):
         ["一致性自检", "通过（如有异常本报告无法生成）"],
     ]
     flow.append(_mk_table(
-        ["项目", "数据"], rows,
+        ["留档项目", "内容"], rows,
         col_widths=[4 * cm, 12 * cm], st=st,
     ))
     flow.append(Spacer(1, 6))

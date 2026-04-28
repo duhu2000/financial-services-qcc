@@ -1,0 +1,2342 @@
+{
+  "report_id": "SKILL-HE-QCC-V1.2-20260427",
+  "company_name": "企查查科技股份有限公司",
+  "uscc": "91320594088140947F",
+  "created_at": "2026-04-27T08:00:59.257189+00:00",
+  "field_count": 233,
+  "evidence_count": 233,
+  "fields": {
+    "company.注册资本": {
+      "evidence_id": "ev_1158e69f2184"
+    },
+    "company.企业名称": {
+      "evidence_id": "ev_c6a0d9a0140e"
+    },
+    "company.统一社会信用代码": {
+      "evidence_id": "ev_693c66c90a01"
+    },
+    "company.法定代表人": {
+      "evidence_id": "ev_31f0567557b5"
+    },
+    "company.成立日期": {
+      "evidence_id": "ev_f9ea54f64940"
+    },
+    "company.实缴资本": {
+      "evidence_id": "ev_026d33770a23"
+    },
+    "company.企业类型": {
+      "evidence_id": "ev_9602c4d2446c"
+    },
+    "company.国标行业": {
+      "evidence_id": "ev_b50317b3e161"
+    },
+    "company.登记状态": {
+      "evidence_id": "ev_8350ca32ed03"
+    },
+    "company.登记机关": {
+      "evidence_id": "ev_51a962d774c3"
+    },
+    "company.核准日期": {
+      "evidence_id": "ev_390befc18a25"
+    },
+    "company.所属地区": {
+      "evidence_id": "ev_a709565a7a5b"
+    },
+    "company.注册地址": {
+      "evidence_id": "ev_a35ed619446f"
+    },
+    "company.参保人数": {
+      "evidence_id": "ev_6015126e983f"
+    },
+    "historical_capital[0]": {
+      "evidence_id": "ev_6a9aee97eeb8"
+    },
+    "historical_capital[1]": {
+      "evidence_id": "ev_3fc9143d39a6"
+    },
+    "historical_capital[2]": {
+      "evidence_id": "ev_322b8534bba0"
+    },
+    "historical_capital[3]": {
+      "evidence_id": "ev_b199af96bd09"
+    },
+    "historical_capital[4]": {
+      "evidence_id": "ev_6f6ad5d7dbc3"
+    },
+    "historical_capital[5]": {
+      "evidence_id": "ev_6499545d8739"
+    },
+    "historical_capital[6]": {
+      "evidence_id": "ev_852575335e5d"
+    },
+    "historical_capital[7]": {
+      "evidence_id": "ev_08a62c4f1d3a"
+    },
+    "historical_capital[8]": {
+      "evidence_id": "ev_ff2e7b1e8100"
+    },
+    "historical_capital[9]": {
+      "evidence_id": "ev_5e33d491e09c"
+    },
+    "historical_name[0]": {
+      "evidence_id": "ev_aad4c2d3ea2b"
+    },
+    "historical_name[1]": {
+      "evidence_id": "ev_327825fee83d"
+    },
+    "historical_address[0]": {
+      "evidence_id": "ev_677cc429a978"
+    },
+    "historical_address[1]": {
+      "evidence_id": "ev_65cfe67e04a4"
+    },
+    "historical_address[2]": {
+      "evidence_id": "ev_87223781dc4f"
+    },
+    "historical_address[3]": {
+      "evidence_id": "ev_8712cfc6cada"
+    },
+    "historical_address[4]": {
+      "evidence_id": "ev_da1cf2ad0173"
+    },
+    "shareholders[0].name": {
+      "evidence_id": "ev_347517f20991"
+    },
+    "shareholders[1].name": {
+      "evidence_id": "ev_c696ec1a1e0b"
+    },
+    "shareholders[2].name": {
+      "evidence_id": "ev_f3ce9a00d3f8"
+    },
+    "shareholders[3].name": {
+      "evidence_id": "ev_c3c71b449f14"
+    },
+    "shareholders[4].name": {
+      "evidence_id": "ev_c054b9c03e58"
+    },
+    "shareholders[5].name": {
+      "evidence_id": "ev_8616618b60d0"
+    },
+    "shareholders[6].name": {
+      "evidence_id": "ev_30ccbaacb95f"
+    },
+    "shareholders[7].name": {
+      "evidence_id": "ev_b72b884bfc41"
+    },
+    "shareholders[8].name": {
+      "evidence_id": "ev_bae476ed5a15"
+    },
+    "shareholders[9].name": {
+      "evidence_id": "ev_7ae41bb7599f"
+    },
+    "shareholders[10].name": {
+      "evidence_id": "ev_ff0986abab57"
+    },
+    "shareholders[11].name": {
+      "evidence_id": "ev_8f78ce206d4b"
+    },
+    "shareholders[12].name": {
+      "evidence_id": "ev_47c144590e6e"
+    },
+    "historical_shareholders[0].name": {
+      "evidence_id": "ev_26ccdac352cc"
+    },
+    "historical_shareholders[1].name": {
+      "evidence_id": "ev_697abe070232"
+    },
+    "historical_shareholders[2].name": {
+      "evidence_id": "ev_7b357d066569"
+    },
+    "historical_shareholders[3].name": {
+      "evidence_id": "ev_d3a9f7adfe7a"
+    },
+    "historical_shareholders[4].name": {
+      "evidence_id": "ev_886bc0418b5d"
+    },
+    "historical_shareholders[5].name": {
+      "evidence_id": "ev_0d36825d9c74"
+    },
+    "historical_shareholders[6].name": {
+      "evidence_id": "ev_bec90aebd321"
+    },
+    "historical_shareholders[7].name": {
+      "evidence_id": "ev_e31264de15a8"
+    },
+    "historical_shareholders[8].name": {
+      "evidence_id": "ev_e2c647bd2ddc"
+    },
+    "historical_shareholders[9].name": {
+      "evidence_id": "ev_53465e5520fa"
+    },
+    "historical_shareholders[10].name": {
+      "evidence_id": "ev_31e2fe7f479d"
+    },
+    "historical_shareholders[11].name": {
+      "evidence_id": "ev_75c7a5336c29"
+    },
+    "historical_shareholders[12].name": {
+      "evidence_id": "ev_22d188c65592"
+    },
+    "historical_shareholders[13].name": {
+      "evidence_id": "ev_b8354bafce39"
+    },
+    "historical_shareholders[14].name": {
+      "evidence_id": "ev_4ccdaa6db797"
+    },
+    "historical_shareholders[15].name": {
+      "evidence_id": "ev_aaff80cc4ec9"
+    },
+    "historical_shareholders[16].name": {
+      "evidence_id": "ev_ed793b2f526f"
+    },
+    "current_executives[0].name": {
+      "evidence_id": "ev_de2edd557451"
+    },
+    "current_executives[1].name": {
+      "evidence_id": "ev_1f3826ab9ee9"
+    },
+    "current_executives[2].name": {
+      "evidence_id": "ev_efd61b95b5fc"
+    },
+    "current_executives[3].name": {
+      "evidence_id": "ev_d5bba64605de"
+    },
+    "current_executives[4].name": {
+      "evidence_id": "ev_5fdbb81db282"
+    },
+    "current_executives[5].name": {
+      "evidence_id": "ev_416d2863e915"
+    },
+    "current_executives[6].name": {
+      "evidence_id": "ev_8022f23197e5"
+    },
+    "current_executives[7].name": {
+      "evidence_id": "ev_3dd5113c64aa"
+    },
+    "current_executives[8].name": {
+      "evidence_id": "ev_0c498f27a72e"
+    },
+    "historical_executives[0].name": {
+      "evidence_id": "ev_cc8f2a31da43"
+    },
+    "historical_executives[1].name": {
+      "evidence_id": "ev_95db84e9155a"
+    },
+    "historical_executives[2].name": {
+      "evidence_id": "ev_b351cc757966"
+    },
+    "historical_executives[3].name": {
+      "evidence_id": "ev_ec6ba1fbe738"
+    },
+    "historical_executives[4].name": {
+      "evidence_id": "ev_74b030aec1a9"
+    },
+    "historical_executives[5].name": {
+      "evidence_id": "ev_b66fad10c222"
+    },
+    "historical_executives[6].name": {
+      "evidence_id": "ev_3542f6a18bf0"
+    },
+    "historical_executives[7].name": {
+      "evidence_id": "ev_158d0b180238"
+    },
+    "historical_executives[8].name": {
+      "evidence_id": "ev_c7e01821d7fd"
+    },
+    "historical_executives[9].name": {
+      "evidence_id": "ev_9c7684022633"
+    },
+    "investments[0].name": {
+      "evidence_id": "ev_96702a1cd9b9"
+    },
+    "investments[1].name": {
+      "evidence_id": "ev_87adae5cf113"
+    },
+    "investments[2].name": {
+      "evidence_id": "ev_b7a5a6c4b86f"
+    },
+    "investments[3].name": {
+      "evidence_id": "ev_ec4716e91b77"
+    },
+    "investments[4].name": {
+      "evidence_id": "ev_2c7a3e16a145"
+    },
+    "investments[5].name": {
+      "evidence_id": "ev_c74e678ed458"
+    },
+    "investments[6].name": {
+      "evidence_id": "ev_240694f7be10"
+    },
+    "qualifications[0].name": {
+      "evidence_id": "ev_b020d4271524"
+    },
+    "qualifications[1].name": {
+      "evidence_id": "ev_4e07e6434a79"
+    },
+    "qualifications[2].name": {
+      "evidence_id": "ev_f504a41fc9e0"
+    },
+    "qualifications[3].name": {
+      "evidence_id": "ev_837261dd015f"
+    },
+    "qualifications[4].name": {
+      "evidence_id": "ev_9f1602c2932c"
+    },
+    "qualifications[5].name": {
+      "evidence_id": "ev_85b9a9000adf"
+    },
+    "qualifications[6].name": {
+      "evidence_id": "ev_31cf33a2c406"
+    },
+    "qualifications[7].name": {
+      "evidence_id": "ev_c7698fb603fa"
+    },
+    "qualifications[8].name": {
+      "evidence_id": "ev_775b6ffb9621"
+    },
+    "qualifications[9].name": {
+      "evidence_id": "ev_6bcf91921253"
+    },
+    "qualifications[10].name": {
+      "evidence_id": "ev_1d1cd79f65a6"
+    },
+    "qualifications[11].name": {
+      "evidence_id": "ev_07ac613275c6"
+    },
+    "qualifications[12].name": {
+      "evidence_id": "ev_6ae0c3015073"
+    },
+    "qualifications[13].name": {
+      "evidence_id": "ev_b3cdd55d2324"
+    },
+    "qualifications[14].name": {
+      "evidence_id": "ev_1754426c4400"
+    },
+    "qualifications[15].name": {
+      "evidence_id": "ev_578505f942b6"
+    },
+    "qualifications[16].name": {
+      "evidence_id": "ev_b721b6a26604"
+    },
+    "qualifications[17].name": {
+      "evidence_id": "ev_7d0e570ca01e"
+    },
+    "qualifications[18].name": {
+      "evidence_id": "ev_c62c7dc683e8"
+    },
+    "qualifications[19].name": {
+      "evidence_id": "ev_1fdadaaea35f"
+    },
+    "qualifications[20].name": {
+      "evidence_id": "ev_8ce65016a3ed"
+    },
+    "qualifications[21].name": {
+      "evidence_id": "ev_aa0256d59bc2"
+    },
+    "qualifications[22].name": {
+      "evidence_id": "ev_cb582fbee14e"
+    },
+    "qualifications[23].name": {
+      "evidence_id": "ev_fa3992d2c9a5"
+    },
+    "qualifications[24].name": {
+      "evidence_id": "ev_ab1164625877"
+    },
+    "qualifications[25].name": {
+      "evidence_id": "ev_6d8803fc3da2"
+    },
+    "qualifications[26].name": {
+      "evidence_id": "ev_6c7fc85ff388"
+    },
+    "qualifications[27].name": {
+      "evidence_id": "ev_2b2b9263cc62"
+    },
+    "qualifications[28].name": {
+      "evidence_id": "ev_c3948f051d14"
+    },
+    "qualifications[29].name": {
+      "evidence_id": "ev_6e0f1fff1f22"
+    },
+    "honors[0].name": {
+      "evidence_id": "ev_9ad09dab44d8"
+    },
+    "honors[1].name": {
+      "evidence_id": "ev_e76f09a8892a"
+    },
+    "honors[2].name": {
+      "evidence_id": "ev_b531c4690802"
+    },
+    "honors[3].name": {
+      "evidence_id": "ev_ce8e9fedc895"
+    },
+    "honors[4].name": {
+      "evidence_id": "ev_0c59cf0e4b9a"
+    },
+    "honors[5].name": {
+      "evidence_id": "ev_e6812c317657"
+    },
+    "honors[6].name": {
+      "evidence_id": "ev_36f7fa5a8593"
+    },
+    "honors[7].name": {
+      "evidence_id": "ev_830931ae32a2"
+    },
+    "honors[8].name": {
+      "evidence_id": "ev_ffed71dc3861"
+    },
+    "honors[9].name": {
+      "evidence_id": "ev_08f2063f848a"
+    },
+    "honors[10].name": {
+      "evidence_id": "ev_78051315efd8"
+    },
+    "honors[11].name": {
+      "evidence_id": "ev_7c28246c95f0"
+    },
+    "honors[12].name": {
+      "evidence_id": "ev_87270446effd"
+    },
+    "honors[13].name": {
+      "evidence_id": "ev_53d7c004ef05"
+    },
+    "honors[14].name": {
+      "evidence_id": "ev_b0d925153a8c"
+    },
+    "honors[15].name": {
+      "evidence_id": "ev_8989fbc8e364"
+    },
+    "honors[16].name": {
+      "evidence_id": "ev_fc3f5b2171c7"
+    },
+    "honors[17].name": {
+      "evidence_id": "ev_0779f488e83b"
+    },
+    "honors[18].name": {
+      "evidence_id": "ev_d8943e81e0fa"
+    },
+    "honors[19].name": {
+      "evidence_id": "ev_d9671088ed2d"
+    },
+    "honors[20].name": {
+      "evidence_id": "ev_32da39466fac"
+    },
+    "patents[0].application_no": {
+      "evidence_id": "ev_7902f633e547"
+    },
+    "patents[1].application_no": {
+      "evidence_id": "ev_23f80b88b71f"
+    },
+    "patents[2].application_no": {
+      "evidence_id": "ev_c90ae755305f"
+    },
+    "patents[3].application_no": {
+      "evidence_id": "ev_04d190f8f857"
+    },
+    "patents[4].application_no": {
+      "evidence_id": "ev_ba006d172448"
+    },
+    "patents[5].application_no": {
+      "evidence_id": "ev_05082b95f10d"
+    },
+    "patents[6].application_no": {
+      "evidence_id": "ev_42d7a49db0f0"
+    },
+    "patents[7].application_no": {
+      "evidence_id": "ev_5b407e9bcaf9"
+    },
+    "patents[8].application_no": {
+      "evidence_id": "ev_62546e4f816b"
+    },
+    "patents[9].application_no": {
+      "evidence_id": "ev_df12fa19136e"
+    },
+    "patents[10].application_no": {
+      "evidence_id": "ev_ccf8bb4bd4fd"
+    },
+    "patents[11].application_no": {
+      "evidence_id": "ev_1b88690424ee"
+    },
+    "patents[12].application_no": {
+      "evidence_id": "ev_79867be3944a"
+    },
+    "patents[13].application_no": {
+      "evidence_id": "ev_58a8da39ee4e"
+    },
+    "patents[14].application_no": {
+      "evidence_id": "ev_4df883aee0bf"
+    },
+    "patents[15].application_no": {
+      "evidence_id": "ev_78a94909f822"
+    },
+    "patents[16].application_no": {
+      "evidence_id": "ev_9b175dc7b3b7"
+    },
+    "patents[17].application_no": {
+      "evidence_id": "ev_b992e6ef77f2"
+    },
+    "patents[18].application_no": {
+      "evidence_id": "ev_2b4fd96ada3e"
+    },
+    "patents[19].application_no": {
+      "evidence_id": "ev_6241aaf7602d"
+    },
+    "patents[20].application_no": {
+      "evidence_id": "ev_956c875afb66"
+    },
+    "patents[21].application_no": {
+      "evidence_id": "ev_e83f877c883e"
+    },
+    "patents[22].application_no": {
+      "evidence_id": "ev_15e1804938f4"
+    },
+    "patents[23].application_no": {
+      "evidence_id": "ev_6e5cc804e659"
+    },
+    "patents[24].application_no": {
+      "evidence_id": "ev_bfbc33a3962a"
+    },
+    "patents[25].application_no": {
+      "evidence_id": "ev_562ab223be6d"
+    },
+    "patents[26].application_no": {
+      "evidence_id": "ev_1e2707dbf784"
+    },
+    "patents[27].application_no": {
+      "evidence_id": "ev_e44bdd36ccfc"
+    },
+    "patents[28].application_no": {
+      "evidence_id": "ev_b3a5e4d170bf"
+    },
+    "patents[29].application_no": {
+      "evidence_id": "ev_cde58fb5a4d1"
+    },
+    "patents[30].application_no": {
+      "evidence_id": "ev_7810f800b53d"
+    },
+    "patents[31].application_no": {
+      "evidence_id": "ev_e88f3914edf3"
+    },
+    "patents[32].application_no": {
+      "evidence_id": "ev_3d511e174958"
+    },
+    "patents[33].application_no": {
+      "evidence_id": "ev_4631e8de0e05"
+    },
+    "patents[34].application_no": {
+      "evidence_id": "ev_7f960198d590"
+    },
+    "patents[35].application_no": {
+      "evidence_id": "ev_0360a4576268"
+    },
+    "patents[36].application_no": {
+      "evidence_id": "ev_31b2258f476e"
+    },
+    "patents[37].application_no": {
+      "evidence_id": "ev_9b4cd91bcc50"
+    },
+    "patents[38].application_no": {
+      "evidence_id": "ev_7de6135f7bb9"
+    },
+    "patents[39].application_no": {
+      "evidence_id": "ev_b7bea0540f57"
+    },
+    "patents[40].application_no": {
+      "evidence_id": "ev_e0c3bc7ba023"
+    },
+    "patents[41].application_no": {
+      "evidence_id": "ev_b338c8b017a2"
+    },
+    "patents[42].application_no": {
+      "evidence_id": "ev_192e7d2f8098"
+    },
+    "patents[43].application_no": {
+      "evidence_id": "ev_3f99ca6fec19"
+    },
+    "patents[44].application_no": {
+      "evidence_id": "ev_4749977c0eca"
+    },
+    "patents[45].application_no": {
+      "evidence_id": "ev_81749326be94"
+    },
+    "patents[46].application_no": {
+      "evidence_id": "ev_e22d47e851e5"
+    },
+    "patents[47].application_no": {
+      "evidence_id": "ev_b57e3ae6b116"
+    },
+    "patents[48].application_no": {
+      "evidence_id": "ev_1c0bd4166322"
+    },
+    "patents[49].application_no": {
+      "evidence_id": "ev_8ad595b18d31"
+    },
+    "patents[50].application_no": {
+      "evidence_id": "ev_b354b4fa54df"
+    },
+    "patents[51].application_no": {
+      "evidence_id": "ev_55b3a7ba1679"
+    },
+    "patents[52].application_no": {
+      "evidence_id": "ev_b13a77318a78"
+    },
+    "patents[53].application_no": {
+      "evidence_id": "ev_eb801bbded5d"
+    },
+    "patents[54].application_no": {
+      "evidence_id": "ev_e165b2715175"
+    },
+    "patents[55].application_no": {
+      "evidence_id": "ev_57b33c0c4ec5"
+    },
+    "patents[56].application_no": {
+      "evidence_id": "ev_3910282d519c"
+    },
+    "patents[57].application_no": {
+      "evidence_id": "ev_9420285ff9c8"
+    },
+    "patents[58].application_no": {
+      "evidence_id": "ev_8f542a566114"
+    },
+    "patents[59].application_no": {
+      "evidence_id": "ev_f5bbfae3e50f"
+    },
+    "patents[60].application_no": {
+      "evidence_id": "ev_89e478916e94"
+    },
+    "patents[61].application_no": {
+      "evidence_id": "ev_7e5268efca37"
+    },
+    "patents[62].application_no": {
+      "evidence_id": "ev_127181bf1a19"
+    },
+    "patents[63].application_no": {
+      "evidence_id": "ev_73fdbaad0e6e"
+    },
+    "patents[64].application_no": {
+      "evidence_id": "ev_bb7aa68f33c5"
+    },
+    "patents[65].application_no": {
+      "evidence_id": "ev_65e35abd3cb7"
+    },
+    "patents[66].application_no": {
+      "evidence_id": "ev_5cc32f12be49"
+    },
+    "patents[67].application_no": {
+      "evidence_id": "ev_c41bb927b9b5"
+    },
+    "patents[68].application_no": {
+      "evidence_id": "ev_863a9d7b2341"
+    },
+    "patents[69].application_no": {
+      "evidence_id": "ev_63ba95a4a6eb"
+    },
+    "patents[70].application_no": {
+      "evidence_id": "ev_2ff1475e82a2"
+    },
+    "patents[71].application_no": {
+      "evidence_id": "ev_c841935e34bc"
+    },
+    "patents[72].application_no": {
+      "evidence_id": "ev_5cd7e2df0443"
+    },
+    "patents[73].application_no": {
+      "evidence_id": "ev_cdf4d2147f3a"
+    },
+    "patents[74].application_no": {
+      "evidence_id": "ev_a4cdd51cbdc3"
+    },
+    "patents[75].application_no": {
+      "evidence_id": "ev_e4d032f9974d"
+    },
+    "patents[76].application_no": {
+      "evidence_id": "ev_dde8871e0964"
+    },
+    "patents[77].application_no": {
+      "evidence_id": "ev_4b8f35f9b098"
+    },
+    "patents[78].application_no": {
+      "evidence_id": "ev_dec411c7b26a"
+    },
+    "patents[79].application_no": {
+      "evidence_id": "ev_b50b4bfeefaf"
+    },
+    "patents[80].application_no": {
+      "evidence_id": "ev_7e1ed925a7d4"
+    },
+    "patents[81].application_no": {
+      "evidence_id": "ev_4280abade2ff"
+    },
+    "patents[82].application_no": {
+      "evidence_id": "ev_9570bec11a4d"
+    },
+    "patents[83].application_no": {
+      "evidence_id": "ev_5a0b214f31fd"
+    },
+    "patents[84].application_no": {
+      "evidence_id": "ev_3da0a8ed8711"
+    },
+    "patents[85].application_no": {
+      "evidence_id": "ev_092155fff306"
+    },
+    "patents[86].application_no": {
+      "evidence_id": "ev_5a8ed98d4baf"
+    },
+    "patents[87].application_no": {
+      "evidence_id": "ev_27043858f317"
+    },
+    "patents[88].application_no": {
+      "evidence_id": "ev_230fa3b6af53"
+    },
+    "patents[89].application_no": {
+      "evidence_id": "ev_d7c115ae5df4"
+    },
+    "patents[90].application_no": {
+      "evidence_id": "ev_f5ae51d5b842"
+    },
+    "patents[91].application_no": {
+      "evidence_id": "ev_899dd0089428"
+    },
+    "patents[92].application_no": {
+      "evidence_id": "ev_6cbd9e2e8c0a"
+    },
+    "patents[93].application_no": {
+      "evidence_id": "ev_bb12b7dc5cb7"
+    },
+    "penalties[0].decision_no": {
+      "evidence_id": "ev_9c44770530e0"
+    }
+  },
+  "evidence_pool": {
+    "ev_1158e69f2184": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "36225万元"
+    },
+    "ev_c6a0d9a0140e": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "企查查科技股份有限公司"
+    },
+    "ev_693c66c90a01": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.统一社会信用代码",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "91320594088140947F"
+    },
+    "ev_31f0567557b5": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.法定代表人",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "陈德强"
+    },
+    "ev_f9ea54f64940": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.成立日期",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "2014-03-12"
+    },
+    "ev_026d33770a23": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.实缴资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "36225万元"
+    },
+    "ev_9602c4d2446c": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.企业类型",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "股份有限公司（非上市、自然人投资或控股）"
+    },
+    "ev_b50317b3e161": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.国标行业",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "软件和信息技术服务业"
+    },
+    "ev_8350ca32ed03": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.登记状态",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "在业"
+    },
+    "ev_51a962d774c3": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.登记机关",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "苏州市数据局"
+    },
+    "ev_390befc18a25": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.核准日期",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "2025-10-15"
+    },
+    "ev_a709565a7a5b": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.所属地区",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "江苏省苏州市苏州工业园区"
+    },
+    "ev_a35ed619446f": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.注册地址",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "中国（江苏）自由贸易试验区苏州片区苏州工业园区汇智街8号"
+    },
+    "ev_6015126e983f": {
+      "tool_name": "qcc-company.get_company_registration_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.参保人数",
+      "snapshot_ts": "2026-04-27T08:00:59.257159+00:00",
+      "raw_value": "461"
+    },
+    "ev_6a9aee97eeb8": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[0].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "36000万元"
+    },
+    "ev_3fc9143d39a6": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[1].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "5319.149万元"
+    },
+    "ev_322b8534bba0": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[2].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "5000万元"
+    },
+    "ev_b199af96bd09": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[3].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "3000万元"
+    },
+    "ev_6f6ad5d7dbc3": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[4].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "345.4905万元"
+    },
+    "ev_6499545d8739": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[5].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "301.6283万元"
+    },
+    "ev_852575335e5d": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[6].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "264.3754万元"
+    },
+    "ev_08a62c4f1d3a": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[7].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "224.7191万元"
+    },
+    "ev_ff2e7b1e8100": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[8].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "200万元"
+    },
+    "ev_5e33d491e09c": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史注册资本列表[9].历史注册资本",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "50万元"
+    },
+    "ev_aad4c2d3ea2b": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史名称列表[0].历史名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "企查查科技有限公司"
+    },
+    "ev_327825fee83d": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史名称列表[1].历史名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "苏州朗动网络科技有限公司"
+    },
+    "ev_677cc429a978": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史地址列表[0].历史地址",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "苏州工业园区科创东区东石泾港路2号润港产业园6号楼10层1001室11工位(集群登记)"
+    },
+    "ev_65cfe67e04a4": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史地址列表[1].历史地址",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "苏州工业园区东长路88号C1幢5层503室"
+    },
+    "ev_87223781dc4f": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史地址列表[2].历史地址",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "苏州工业园区月亮湾路10号慧湖大厦A-901"
+    },
+    "ev_8712cfc6cada": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史地址列表[3].历史地址",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "苏州工业园区林泉街399号东南大学国家大学科技园（苏州）文昌院（8#）201室"
+    },
+    "ev_da1cf2ad0173": {
+      "tool_name": "qcc-history.get_historical_registration",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史地址列表[4].历史地址",
+      "snapshot_ts": "2026-04-27T08:00:59.257169+00:00",
+      "raw_value": "苏州工业园区东环路1500号现代创展大厦1幢1107室"
+    },
+    "ev_347517f20991": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[0].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "陈德强"
+    },
+    "ev_c696ec1a1e0b": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[1].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "上海荷花缘企业管理中心（有限合伙）"
+    },
+    "ev_f3ce9a00d3f8": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[2].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "杨京"
+    },
+    "ev_c3c71b449f14": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[3].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "苏州知彼信息科技中心（有限合伙）"
+    },
+    "ev_c054b9c03e58": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[4].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "苏州知己网络科技中心（有限合伙）"
+    },
+    "ev_8616618b60d0": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[5].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "杭州险峰投资合伙企业（有限合伙）"
+    },
+    "ev_30ccbaacb95f": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[6].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "施阳"
+    },
+    "ev_b72b884bfc41": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[7].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "苏州中新兴富新兴产业投资合伙企业（有限合伙）"
+    },
+    "ev_bae476ed5a15": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[8].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "苏州工业园区元禾鼎业创业投资合伙企业（有限合伙）"
+    },
+    "ev_7ae41bb7599f": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[9].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "苏州中新兴富数智创业投资合伙企业（有限合伙）"
+    },
+    "ev_ff0986abab57": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[10].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "上海国方构筑企业服务中心（有限合伙）"
+    },
+    "ev_8f78ce206d4b": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[11].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "中信证券投资有限公司"
+    },
+    "ev_47c144590e6e": {
+      "tool_name": "qcc-company.get_shareholder_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.股东信息[12].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257161+00:00",
+      "raw_value": "宁波君安控股有限公司"
+    },
+    "ev_26ccdac352cc": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[0].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "万得信息技术股份有限公司"
+    },
+    "ev_697abe070232": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[1].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "深圳前海燧石鼎天投资合伙企业（有限合伙）"
+    },
+    "ev_7b357d066569": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[2].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "宁波小溪聚合文创投资管理中心（有限合伙）"
+    },
+    "ev_d3a9f7adfe7a": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[3].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "江苏苏大天宫创业投资管理有限公司"
+    },
+    "ev_886bc0418b5d": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[4].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "苏州天宫一号投资中心（有限合伙）"
+    },
+    "ev_0d36825d9c74": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[5].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "深圳市创东方互联网金融投资企业（有限合伙）"
+    },
+    "ev_bec90aebd321": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[6].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "苏州企查查网络科技有限公司"
+    },
+    "ev_e31264de15a8": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[7].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "鹏元征信有限公司"
+    },
+    "ev_e2c647bd2ddc": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[8].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "重庆悉见企业管理合伙企业（有限合伙）"
+    },
+    "ev_53465e5520fa": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[9].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "宁波竑观聚益投资管理中心（有限合伙）"
+    },
+    "ev_31e2fe7f479d": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[10].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "苏州新麟二期创业投资企业（有限合伙）"
+    },
+    "ev_75c7a5336c29": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[11].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "成都鼎兴量子投资管理有限公司"
+    },
+    "ev_22d188c65592": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[12].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "苏州善登贸易有限公司"
+    },
+    "ev_b8354bafce39": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[13].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "深圳市易合君诚投资管理有限公司"
+    },
+    "ev_4ccdaa6db797": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[14].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "贵州数联铭品科技有限公司"
+    },
+    "ev_aaff80cc4ec9": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[15].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "马群"
+    },
+    "ev_ed793b2f526f": {
+      "tool_name": "qcc-history.get_historical_shareholders",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史股东信息[16].股东名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257163+00:00",
+      "raw_value": "李素芹"
+    },
+    "ev_de2edd557451": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[0].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "陈德强"
+    },
+    "ev_1f3826ab9ee9": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[1].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "杨京"
+    },
+    "ev_efd61b95b5fc": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[2].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "施阳"
+    },
+    "ev_d5bba64605de": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[3].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "马群"
+    },
+    "ev_5fdbb81db282": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[4].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "周立"
+    },
+    "ev_416d2863e915": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[5].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "宋瑜"
+    },
+    "ev_8022f23197e5": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[6].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "欧萍"
+    },
+    "ev_3dd5113c64aa": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[7].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "王洪成"
+    },
+    "ev_0c498f27a72e": {
+      "tool_name": "qcc-company.get_key_personnel",
+      "search_key": "91320594088140947F",
+      "json_path": "$.主要人员信息[8].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257164+00:00",
+      "raw_value": "邱晶晶"
+    },
+    "ev_cc8f2a31da43": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[0].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "陈玮"
+    },
+    "ev_95db84e9155a": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[1].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "杜虎"
+    },
+    "ev_b351cc757966": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[2].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "王金虎"
+    },
+    "ev_ec6ba1fbe738": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[3].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "张小龙"
+    },
+    "ev_74b030aec1a9": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[4].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "肖珂"
+    },
+    "ev_b66fad10c222": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[5].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "薛宏"
+    },
+    "ev_3542f6a18bf0": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[6].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "曾途"
+    },
+    "ev_158d0b180238": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[7].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "袁方"
+    },
+    "ev_c7e01821d7fd": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[8].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "刘朝阳"
+    },
+    "ev_9c7684022633": {
+      "tool_name": "qcc-history.get_historical_executives",
+      "search_key": "91320594088140947F",
+      "json_path": "$.历史主要人员信息[9].姓名",
+      "snapshot_ts": "2026-04-27T08:00:59.257166+00:00",
+      "raw_value": "徐建海"
+    },
+    "ev_96702a1cd9b9": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[0].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "上海知彼网络科技有限公司"
+    },
+    "ev_87adae5cf113": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[1].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "北京知彼科技有限公司"
+    },
+    "ev_b7a5a6c4b86f": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[2].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "苏州元禾纳芯股权投资合伙企业（有限合伙）"
+    },
+    "ev_ec4716e91b77": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[3].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "苏州企查查数据科技有限公司"
+    },
+    "ev_2c7a3e16a145": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[4].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "企查查（浙江）数据科技有限公司"
+    },
+    "ev_c74e678ed458": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[5].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "海南企查查网络科技有限公司"
+    },
+    "ev_240694f7be10": {
+      "tool_name": "qcc-company.get_external_investments",
+      "search_key": "91320594088140947F",
+      "json_path": "$.对外投资信息[6].被投资企业名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257167+00:00",
+      "raw_value": "QCC Tech Limited"
+    },
+    "ev_b020d4271524": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[0].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "信息安全管理体系认证"
+    },
+    "ev_4e07e6434a79": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[1].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件企业证书"
+    },
+    "ev_f504a41fc9e0": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[2].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "知识产权管理体系认证"
+    },
+    "ev_837261dd015f": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[3].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "其它管理体系认证"
+    },
+    "ev_9f1602c2932c": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[4].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "其它管理体系认证"
+    },
+    "ev_85b9a9000adf": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[5].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "信息安全管理体系认证"
+    },
+    "ev_31cf33a2c406": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[6].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "其它管理体系认证"
+    },
+    "ev_c7698fb603fa": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[7].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "信息技术服务管理体系认证"
+    },
+    "ev_775b6ffb9621": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[8].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "CMMI证书"
+    },
+    "ev_6bcf91921253": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[9].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "质量管理体系认证"
+    },
+    "ev_1d1cd79f65a6": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[10].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_07ac613275c6": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[11].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_6ae0c3015073": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[12].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "知识产权管理体系认证"
+    },
+    "ev_b3cdd55d2324": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[13].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "食品经营许可证"
+    },
+    "ev_1754426c4400": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[14].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_578505f942b6": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[15].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "电信业务经营许可证"
+    },
+    "ev_b721b6a26604": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[16].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_7d0e570ca01e": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[17].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "其它管理体系认证"
+    },
+    "ev_c62c7dc683e8": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[18].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "其它管理体系认证"
+    },
+    "ev_1fdadaaea35f": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[19].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "信息技术服务管理体系认证"
+    },
+    "ev_8ce65016a3ed": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[20].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_aa0256d59bc2": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[21].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_cb582fbee14e": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[22].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "信息安全管理体系认证"
+    },
+    "ev_fa3992d2c9a5": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[23].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "知识产权管理体系认证"
+    },
+    "ev_ab1164625877": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[24].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "ITSS证书"
+    },
+    "ev_6d8803fc3da2": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[25].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "企业征信机构备案"
+    },
+    "ev_6c7fc85ff388": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[26].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "信息安全管理体系认证"
+    },
+    "ev_2b2b9263cc62": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[27].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "软件产品证书"
+    },
+    "ev_c3948f051d14": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[28].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "质量管理体系认证"
+    },
+    "ev_6e0f1fff1f22": {
+      "tool_name": "qcc-operation.get_qualifications",
+      "search_key": "91320594088140947F",
+      "json_path": "$.资质证书信息[29].资质名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257170+00:00",
+      "raw_value": "DCMM证书"
+    },
+    "ev_9ad09dab44d8": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[0].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "高新技术企业"
+    },
+    "ev_e76f09a8892a": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[1].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "培育数据企业"
+    },
+    "ev_b531c4690802": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[2].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "ESG与可持续发展创新奖"
+    },
+    "ev_ce8e9fedc895": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[3].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "独角兽企业"
+    },
+    "ev_0c59cf0e4b9a": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[4].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "独角兽企业"
+    },
+    "ev_e6812c317657": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[5].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "独角兽企业"
+    },
+    "ev_36f7fa5a8593": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[6].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "数字社会重大场景项目优秀开发单位"
+    },
+    "ev_830931ae32a2": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[7].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "软件企业技术中心"
+    },
+    "ev_ffed71dc3861": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[8].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "“独角兽”培育企业"
+    },
+    "ev_08f2063f848a": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[9].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "重点软件企业"
+    },
+    "ev_78051315efd8": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[10].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "大数据产业发展示范企业"
+    },
+    "ev_7c28246c95f0": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[11].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "工程技术研究中心"
+    },
+    "ev_87270446effd": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[12].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "软件和信息技术服务业企业综合实力评估指数百家企业"
+    },
+    "ev_53d7c004ef05": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[13].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "总部企业"
+    },
+    "ev_b0d925153a8c": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[14].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "大数据产业发展试点示范项目"
+    },
+    "ev_8989fbc8e364": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[15].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "科技企业上市培育计划拟入库企业"
+    },
+    "ev_fc3f5b2171c7": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[16].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "重点软件企业入库培育企业"
+    },
+    "ev_0779f488e83b": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[17].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "新一代人工智能创新技术供给示范企业"
+    },
+    "ev_d8943e81e0fa": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[18].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "质量奖"
+    },
+    "ev_d9671088ed2d": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[19].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "工程技术研究中心"
+    },
+    "ev_32da39466fac": {
+      "tool_name": "qcc-operation.get_honor_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.荣誉信息[20].名称",
+      "snapshot_ts": "2026-04-27T08:00:59.257172+00:00",
+      "raw_value": "企业技术中心"
+    },
+    "ev_7902f633e547": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[0].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311061703.0"
+    },
+    "ev_23f80b88b71f": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[1].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311056983.6"
+    },
+    "ev_c90ae755305f": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[2].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202310904851.8"
+    },
+    "ev_04d190f8f857": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[3].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202310978266.2"
+    },
+    "ev_ba006d172448": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[4].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111452001.6"
+    },
+    "ev_05082b95f10d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[5].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202130283333.0"
+    },
+    "ev_42d7a49db0f0": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[6].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211534163.9"
+    },
+    "ev_5b407e9bcaf9": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[7].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202510400853.2"
+    },
+    "ev_62546e4f816b": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[8].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111413798.9"
+    },
+    "ev_df12fa19136e": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[9].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211488187.5"
+    },
+    "ev_ccf8bb4bd4fd": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[10].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111425653.0"
+    },
+    "ev_1b88690424ee": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[11].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111654465.5"
+    },
+    "ev_79867be3944a": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[12].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202430186836.X"
+    },
+    "ev_58a8da39ee4e": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[13].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202430130446.0"
+    },
+    "ev_4df883aee0bf": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[14].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202411533710.0"
+    },
+    "ev_78a94909f822": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[15].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111339175.1"
+    },
+    "ev_9b175dc7b3b7": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[16].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211506530.4"
+    },
+    "ev_b992e6ef77f2": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[17].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211108577.5"
+    },
+    "ev_2b4fd96ada3e": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[18].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111432742.8"
+    },
+    "ev_6241aaf7602d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[19].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211507080.0"
+    },
+    "ev_956c875afb66": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[20].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211592748.6"
+    },
+    "ev_e83f877c883e": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[21].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010614460.9"
+    },
+    "ev_15e1804938f4": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[22].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111394265.0"
+    },
+    "ev_6e5cc804e659": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[23].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202430070328.5"
+    },
+    "ev_bfbc33a3962a": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[24].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111596137.4"
+    },
+    "ev_562ab223be6d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[25].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111413705.2"
+    },
+    "ev_1e2707dbf784": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[26].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211152486.1"
+    },
+    "ev_e44bdd36ccfc": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[27].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211370688.3"
+    },
+    "ev_b3a5e4d170bf": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[28].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211654507.X"
+    },
+    "ev_cde58fb5a4d1": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[29].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211040387.4"
+    },
+    "ev_7810f800b53d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[30].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311061707.9"
+    },
+    "ev_e88f3914edf3": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[31].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202330764906.0"
+    },
+    "ev_3d511e174958": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[32].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111426724.9"
+    },
+    "ev_4631e8de0e05": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[33].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111413734.9"
+    },
+    "ev_7f960198d590": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[34].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010809887.4"
+    },
+    "ev_0360a4576268": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[35].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010811716.5"
+    },
+    "ev_31b2258f476e": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[36].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111076618.2"
+    },
+    "ev_9b4cd91bcc50": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[37].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202211067262.0"
+    },
+    "ev_7de6135f7bb9": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[38].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111406160.2"
+    },
+    "ev_b7bea0540f57": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[39].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202011441961.8"
+    },
+    "ev_e0c3bc7ba023": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[40].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111355570.9"
+    },
+    "ev_b338c8b017a2": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[41].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202011036803.4"
+    },
+    "ev_192e7d2f8098": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[42].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202330471835.5"
+    },
+    "ev_3f99ca6fec19": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[43].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110467667.2"
+    },
+    "ev_4749977c0eca": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[44].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202210733052.4"
+    },
+    "ev_81749326be94": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[45].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110948029.2"
+    },
+    "ev_e22d47e851e5": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[46].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110988730.7"
+    },
+    "ev_b57e3ae6b116": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[47].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111404561.4"
+    },
+    "ev_1c0bd4166322": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[48].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311021012.8"
+    },
+    "ev_8ad595b18d31": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[49].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111170628.2"
+    },
+    "ev_b354b4fa54df": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[50].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111063288.3"
+    },
+    "ev_55b3a7ba1679": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[51].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111452515.1"
+    },
+    "ev_b13a77318a78": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[52].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111447005.5"
+    },
+    "ev_eb801bbded5d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[53].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110869651.4"
+    },
+    "ev_e165b2715175": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[54].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202310890150.3"
+    },
+    "ev_57b33c0c4ec5": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[55].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311337972.5"
+    },
+    "ev_3910282d519c": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[56].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111389393.6"
+    },
+    "ev_9420285ff9c8": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[57].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311332139.1"
+    },
+    "ev_8f542a566114": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[58].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202311331721.6"
+    },
+    "ev_f5bbfae3e50f": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[59].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201911233826.1"
+    },
+    "ev_89e478916e94": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[60].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201911314620.1"
+    },
+    "ev_7e5268efca37": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[61].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202011441930.2"
+    },
+    "ev_127181bf1a19": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[62].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201910753636.6"
+    },
+    "ev_73fdbaad0e6e": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[63].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202130470305.X"
+    },
+    "ev_bb7aa68f33c5": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[64].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111296738.3"
+    },
+    "ev_65e35abd3cb7": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[65].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111168325.7"
+    },
+    "ev_5cc32f12be49": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[66].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202130341100.1"
+    },
+    "ev_c41bb927b9b5": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[67].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202111000470.4"
+    },
+    "ev_863a9d7b2341": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[68].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110985000.1"
+    },
+    "ev_63ba95a4a6eb": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[69].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010731494.6"
+    },
+    "ev_2ff1475e82a2": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[70].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202130341117.7"
+    },
+    "ev_c841935e34bc": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[71].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110803816.8"
+    },
+    "ev_5cd7e2df0443": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[72].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110764749.3"
+    },
+    "ev_cdf4d2147f3a": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[73].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202110722582.4"
+    },
+    "ev_a4cdd51cbdc3": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[74].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010436307.1"
+    },
+    "ev_e4d032f9974d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[75].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201810143250.9"
+    },
+    "ev_dde8871e0964": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[76].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201910805559.4"
+    },
+    "ev_4b8f35f9b098": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[77].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201810420988.5"
+    },
+    "ev_dec411c7b26a": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[78].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010735587.6"
+    },
+    "ev_b50b4bfeefaf": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[79].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201811140481.0"
+    },
+    "ev_7e1ed925a7d4": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[80].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202010436308.6"
+    },
+    "ev_4280abade2ff": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[81].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201811140142.2"
+    },
+    "ev_9570bec11a4d": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[82].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202030464478.6"
+    },
+    "ev_5a0b214f31fd": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[83].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201811139358.7"
+    },
+    "ev_3da0a8ed8711": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[84].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201710765288.5"
+    },
+    "ev_092155fff306": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[85].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201810420808.3"
+    },
+    "ev_5a8ed98d4baf": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[86].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN202030190829.9"
+    },
+    "ev_27043858f317": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[87].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201710766191.6"
+    },
+    "ev_230fa3b6af53": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[88].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201810142503.0"
+    },
+    "ev_d7c115ae5df4": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[89].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201810145564.2"
+    },
+    "ev_f5ae51d5b842": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[90].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201810145190.4"
+    },
+    "ev_899dd0089428": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[91].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201610311380.X"
+    },
+    "ev_6cbd9e2e8c0a": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[92].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201610247620.4"
+    },
+    "ev_bb12b7dc5cb7": {
+      "tool_name": "qcc-ipr.get_patent_info",
+      "search_key": "91320594088140947F",
+      "json_path": "$.专利信息[93].申请号",
+      "snapshot_ts": "2026-04-27T08:00:59.257174+00:00",
+      "raw_value": "CN201730033448.8"
+    },
+    "ev_9c44770530e0": {
+      "tool_name": "qcc-risk.get_administrative_penalty",
+      "search_key": "91320594088140947F",
+      "json_path": "$.行政处罚信息[0].决定书文号",
+      "snapshot_ts": "2026-04-27T08:00:59.257173+00:00",
+      "raw_value": "苏银罚决字〔2025〕21号"
+    }
+  }
+}

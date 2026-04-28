@@ -127,21 +127,46 @@ def _split_segments(text: str) -> list[tuple[str, bool]]:
     return segs
 
 
-def _draw_mixed(ax, x: float, y: float, text: str, *,
-                fontsize: float = 10,
-                color: str = DARK_TEXT,
-                ha: str = "left",
-                va: str = "center") -> None:
-    """按字符类型分段，每段用对应字体画。"""
+def _soft_wrap_cjk(text: str, max_weight: float = 24.0,
+                   hard_max_weight: float = 30.0) -> list[str]:
+    """长 CJK 字符串软换行：CJK 算 1，ASCII 算 0.5。
+    优先在地址常见分隔符（号/室/楼/层/幢/栋/座/院/园/路/街）后换行；
+    若超过 hard_max_weight 仍未找到分隔符，则硬断。
+    """
+    if not text:
+        return [""]
+    weight_total = sum(1.0 if _is_cjk(c) else 0.5 for c in text)
+    if weight_total <= max_weight:
+        return [text]
+    break_pat = "号室楼层幢栋座院园区路街道镇)）"
+    lines: list[str] = []
+    cur = ""
+    cur_w = 0.0
+    for ch in text:
+        w = 1.0 if _is_cjk(ch) else 0.5
+        cur += ch
+        cur_w += w
+        if cur_w >= max_weight and ch in break_pat:
+            lines.append(cur)
+            cur, cur_w = "", 0.0
+        elif cur_w >= hard_max_weight:
+            # 没遇到合适分隔符 — 硬断（避免单行过长撑出画布）
+            lines.append(cur)
+            cur, cur_w = "", 0.0
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def _draw_text_line(ax, x: float, y: float, text: str, *,
+                    fontsize: float, color: str, ha: str, va: str) -> None:
+    """单行渲染（不处理换行）。按字符类型分段、各段用对应字体画。"""
     if not text:
         return
-
     fig = ax.get_figure()
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
-
     segments = _split_segments(text)
-    # 测量每段像素宽度
     pixel_widths: list[float] = []
     for seg, is_cjk in segments:
         fp = CJK_FP if is_cjk else ASCII_FP
@@ -153,12 +178,11 @@ def _draw_mixed(ax, x: float, y: float, text: str, *,
             pixel_widths.append(fontsize * (1.1 if is_cjk else 0.55) * len(seg))
         t.remove()
 
-    total_px = sum(pixel_widths)
     trans_inv = ax.transData.inverted()
     p0 = trans_inv.transform((0, 0))
     p1 = trans_inv.transform((1, 0))
     data_per_pixel = abs(p1[0] - p0[0])
-    total_data_w = total_px * data_per_pixel
+    total_data_w = sum(pixel_widths) * data_per_pixel
 
     if ha == "right":
         start_x = x - total_data_w
@@ -173,6 +197,37 @@ def _draw_mixed(ax, x: float, y: float, text: str, *,
         ax.text(cur_x, y, seg, fontsize=fontsize, fontproperties=fp,
                 color=color, ha="left", va=va)
         cur_x += pw * data_per_pixel
+
+
+def _line_height_data(ax, fontsize: float, line_factor: float = 1.25) -> float:
+    """估算一行文本在数据坐标系里占多少高度（用于换行垂直让位）。"""
+    fig = ax.get_figure()
+    fig_h_inch = fig.get_size_inches()[1]
+    if fig_h_inch <= 0:
+        return 0.4
+    y0, y1 = ax.get_ylim()
+    y_range = y1 - y0
+    line_h_inch = fontsize * line_factor / 72.0
+    return (line_h_inch / fig_h_inch) * y_range
+
+
+def _draw_mixed(ax, x: float, y: float, text: str, *,
+                fontsize: float = 10,
+                color: str = DARK_TEXT,
+                ha: str = "left",
+                va: str = "center") -> None:
+    """按字符类型分段、用对应字体画文字；支持 `\n` 多行（每行依次向下偏移）。"""
+    if not text:
+        return
+    if "\n" not in text:
+        _draw_text_line(ax, x, y, text, fontsize=fontsize, color=color,
+                        ha=ha, va=va)
+        return
+    lines = text.split("\n")
+    line_h = _line_height_data(ax, fontsize)
+    for i, line in enumerate(lines):
+        _draw_text_line(ax, x, y - i * line_h, line,
+                        fontsize=fontsize, color=color, ha=ha, va=va)
 
 
 # ---------------------------------------------------------------------------
@@ -198,42 +253,88 @@ def render_single_column_timeline(
 ) -> bytes:
     """通用单列时间轴。items: [{"date": str, "content": str, "sub": str, "known": bool}, ...]
     返回 PNG bytes。
+
+    自适应：长 content（如完整地址）会自动按地址语义软换行成 2~3 行；
+            行数大于 1 的 item 会获得更高的 row 间距，避免文字与上下行重叠。
     """
     if not items:
         return b""
 
-    n = len(items)
-    fig_h = (0.9 if title else 0.3) + row_h * n
+    # Step 1 · 内容预换行 — 决定每个 item 实际占几行（content 行数）
+    #         同时把 line 数累加成 y 坐标（avoid 横向溢出导致 bbox_inches 横向膨胀压缩）
+    prepped: list[dict] = []
+    for it in items:
+        raw_content = it.get("content", "")
+        wrapped_lines = _soft_wrap_cjk(raw_content, max_weight=24.0,
+                                       hard_max_weight=28.0)
+        prepped.append({
+            **it,
+            "content_wrapped": "\n".join(wrapped_lines),
+            "n_lines": max(1, len(wrapped_lines)),
+        })
+
+    # Step 2 · 计算每个 item 的 row 跨度（行数越多，留白越大）
+    #         单行 = 1.0；多行 = 1.0 + (n_lines-1) * 0.4。
+    #         注意：不为 sub 单独加 row span — sub 紧贴 content 最后一行下方渲染，
+    #         挤进当前 row 内的视觉留白即可，避免整体 figure 高度膨胀，
+    #         否则会触发 ReportLab 把时间轴整体推到下一页（出现大片空白）。
+    row_spans: list[float] = []
+    for p in prepped:
+        span = 1.0 + (p["n_lines"] - 1) * 0.4
+        row_spans.append(span)
+
+    total_rows = sum(row_spans)
+    fig_h = (0.9 if title else 0.4) + row_h * total_rows
     fig, ax = plt.subplots(figsize=(width, fig_h))
-    ax.set_xlim(0, 12)
-    ax.set_ylim(0, n + (1.0 if title else 0.5))
+
+    # Step 3 · 拉宽 xlim 给地址留更多列宽；同时把 dot 与 date 的间距加大
+    ax.set_xlim(0, 14)
+    ax.set_ylim(0, total_rows + (1.0 if title else 0.5))
     ax.axis("off")
     fig.canvas.draw()
 
     if title:
-        _draw_mixed(ax, 0.2, n + 0.5, title, fontsize=14, color=BLUE)
+        _draw_mixed(ax, 0.2, total_rows + 0.5, title, fontsize=14, color=BLUE)
 
-    x_date = 1.8
-    x_dot = 2.5
-    x_content = 2.9
+    x_date = 2.0     # 日期右对齐边
+    x_dot = 2.85     # 圆点 — 与 x_date 间距 0.85（之前 0.7），避免被压缩盖住
+    x_content = 3.25 # 内容左起边 — 与 x_dot 间距 0.4
 
-    for i, item in enumerate(items):
-        y = n - i
-        known = item.get("known", True)
-        _draw_mixed(ax, x_date, y, item.get("date", ""), fontsize=10.5,
+    # 用动态行高 — 让 sub 副文本能精准贴在 content 最后一行下方
+    content_fontsize = 11.5
+    sub_fontsize = 9.5
+    content_line_h = _line_height_data(ax, content_fontsize)
+
+    # Step 4 · 反向 y 坐标：第一项在最上方
+    cur_y = total_rows
+    for p, span in zip(prepped, row_spans):
+        # 当前 item 的中心 y（圆点位置）— 在 span 区间靠上 0.4 处
+        y_center = cur_y - 0.4
+        known = p.get("known", True)
+        # 日期 — 始终单行
+        _draw_mixed(ax, x_date, y_center, p.get("date", ""), fontsize=10.5,
                     color=DARK_TEXT if known else GRAY_TEXT, ha="right")
+        # 圆点
         if known:
-            ax.plot(x_dot, y, "o", markersize=9, color=BLUE, zorder=3)
+            ax.plot(x_dot, y_center, "o", markersize=9, color=BLUE, zorder=3)
         else:
-            ax.plot(x_dot, y, "o", markersize=9,
+            ax.plot(x_dot, y_center, "o", markersize=9,
                     mfc="white", mec=GRAY_TEXT, mew=1.5, zorder=3)
-        _draw_mixed(ax, x_content, y + 0.14, item.get("content", ""),
-                    fontsize=11.5, color=DARK_TEXT)
-        sub = item.get("sub", "")
+        # 内容 — 多行依次向下；首行 anchor 略高于圆点
+        _draw_mixed(ax, x_content, y_center + 0.14, p.get("content_wrapped", ""),
+                    fontsize=content_fontsize, color=DARK_TEXT)
+        # 副文本 — 紧贴 content 最后一行下方（按动态行高定位，避免错位）
+        sub = p.get("sub", "")
         if sub:
-            _draw_mixed(ax, x_content, y - 0.2, sub, fontsize=9.5, color=GRAY_TEXT)
+            sub_y = y_center + 0.14 - p["n_lines"] * content_line_h * 0.95
+            _draw_mixed(ax, x_content, sub_y, sub,
+                        fontsize=sub_fontsize, color=GRAY_TEXT)
 
-    ax.plot([x_dot, x_dot], [0.5, n + 0.1], color=LINE_GRAY, linewidth=1.2, zorder=1)
+        cur_y -= span
+
+    # 时间轴竖线 — 从最后一行下方延到最上方
+    ax.plot([x_dot, x_dot], [0.3, total_rows + 0.1],
+            color=LINE_GRAY, linewidth=1.2, zorder=1)
     plt.tight_layout()
     return _render_to_bytes(fig)
 
