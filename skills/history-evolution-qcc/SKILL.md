@@ -36,6 +36,18 @@ metadata:
 
 # 企业历史沿革与发展历程分析 SKILL（V1.2 · schema-driven）
 
+> ## 加载方式（W1-9 整改 · 2026-05-04）
+>
+> 本 SKILL 支持两种加载方式：
+>
+> - **方式 A · 推荐 · 单 SKILL.md 直链**
+>   通过 `https://agent.qcc.com/skill/v1/financial-services-qcc/history-evolution-qcc/SKILL.md` 加载本文件后，AI 工具按本文档内的业务规则、MCP 工具清单与档位策略**直接执行**即可，**无需访问任何 `scripts/` 或 `references/` 文件**——本 SKILL.md 自包含全部业务规则与工具调用约束。
+>
+> - **方式 B · 高级 · GitHub 完整仓库**
+>   通过 `git clone https://github.com/duhu2000/financial-services-qcc` 拉取完整仓库后，可使用 `scripts/mcp_orchestrator.py` / `scripts/cost_counter.py` / `references/05_工具调用清单.md` 等配套 Python 实现做自动化编排（适用于自建产线、批量跑数、想 fork 升级业务规则的高级开发者）。
+>
+> **下文中所有 `scripts/...` 与 `references/...` 路径仅适用于方式 B**。AI 工具用方式 A 加载时按 SKILL.md 描述自行 MCP 调用即可，对应工具列表与成本规则见正文。
+
 > 🚨 **AI 加载本 SKILL 后必须遵守的 5 条防编造硬约束（V1.2 红线）** 🚨
 >
 > 历史教训：本 SKILL V1.1.3 版本的示例报告曾出现 13 项数据错误（统一社会信用代码编造、
