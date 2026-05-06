@@ -23,6 +23,34 @@ metadata:
   industry: "Financial Services - Banking / Credit / SCF"
 ---
 
+## 📖 QCC MCP 术语对照表（强制工具映射）
+
+> **使用约定**：本表列出 SKILL 内业务简写与企查查 MCP 工具的精确映射。AI 执行本 SKILL 时遇到下表"业务简写"列的词汇，**必须调用对应"MCP 工具"列**，禁止使用 web search 或自由文本推测替代。完整规范见 [QCC-MCP-TERMINOLOGY.md](../../QCC-MCP-TERMINOLOGY.md)。
+
+| 业务简写 | 规范全名 | 企查查 MCP 工具 |
+| --- | --- | --- |
+| 失信 | 失信被执行人 | `mcp__qcc-risk__get_dishonest_info` |
+| 被执行 | 被执行人 / 判决债务人 | `mcp__qcc-risk__get_judgment_debtor_info` |
+| 限高 | 限制高消费 | `mcp__qcc-risk__get_high_consumption_restriction` |
+| 限出境 / 限境 | 限制出境 | `mcp__qcc-risk__get_exit_restriction` |
+| 终本 | 终结本次执行案件 | `mcp__qcc-risk__get_terminated_cases` |
+| 破产 / 重整 | 破产重整 | `mcp__qcc-risk__get_bankruptcy_reorganization` |
+| 经营异常 | 经营异常 | `mcp__qcc-risk__get_business_exception` |
+| 严重违法 | 严重违法失信 | `mcp__qcc-risk__get_serious_violation` |
+| 行政处罚 / 重大处罚 | 行政处罚 | `mcp__qcc-risk__get_administrative_penalty` |
+| 股权冻结 | 股权冻结 | `mcp__qcc-risk__get_equity_freeze` |
+| 股权出质 | 股权出质 | `mcp__qcc-risk__get_equity_pledge_info` |
+| 欠税 | 欠税公告 | `mcp__qcc-risk__get_tax_arrears_notice` |
+| 税务异常 / 税务违法 | 税务异常 / 税收违法 | `mcp__qcc-risk__get_tax_abnormal` / `mcp__qcc-risk__get_tax_violation` |
+| 受益所有人 / UBO | 受益所有人 | `mcp__qcc-company__get_beneficial_owners` |
+| 实控人 / 实际控制人 | 实际控制人 | `mcp__qcc-company__get_actual_controller` |
+| 主要人员 / 董监高 | 主要人员 | `mcp__qcc-company__get_key_personnel` |
+| 抽查检查 / 双随机 | 双随机抽查 | `mcp__qcc-operation__get_random_check` |
+| 吊销 | （登记状态字段判断）| 调 `mcp__qcc-company__get_company_registration_info` 取"登记状态" |
+| 资不抵债 | （资产负债率字段判断）| 调 `mcp__qcc-company__get_financial_data` 判断负债率 > 100% |
+
+---
+
 # 授信尽调报告 · 企查查 MCP V2.0 增强版
 
 ## SKILL 定位
