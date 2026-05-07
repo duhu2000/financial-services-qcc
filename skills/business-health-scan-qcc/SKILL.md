@@ -1,5 +1,5 @@
 ---
-name: business-health-scan-qcc
+name: 经营健康度扫描-business-health-scan-qcc
 description: >
   经营健康度扫描 SKILL · 企查查 MCP V2.0 增强版。
   企业经营活跃度与健康度的动态跟踪工具，输出"健康 / 稳定 / 衰退 / 危机"四档评级。

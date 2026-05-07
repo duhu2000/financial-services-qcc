@@ -1,5 +1,5 @@
 ---
-name: equity-structure-qcc
+name: 股权结构穿透分析-equity-structure-qcc
 description: >
   股权结构穿透分析 SKILL · 企查查 MCP V2.0 增强版。
   投资决策前的控制权核查工具。多层股权穿透 + 历史股权变迁双层分析，识别实际控制人、一致行动人、隐性关联关系，帮助投资团队在 DD 阶段快速厘清目标公司的实际控制架构，识别潜在的关联交易风险与控制权争议风险。

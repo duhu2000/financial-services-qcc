@@ -1,5 +1,5 @@
 ---
-name: history-evolution-qcc
+name: 企业历史沿革-history-evolution-qcc
 description: >
   企业历史沿革与发展历程分析 Skill — 企查查MCP驱动的KYB立体叙事报告生成器。
   基于企查查 MCP 146 个工具自动生成 11 章 + 附录的 KYB 历史沿革报告。

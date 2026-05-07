@@ -1,5 +1,5 @@
 ---
-name: competitor-analysis-qcc
+name: 竞品对比分析-competitor-analysis-qcc
 description: >
   竞品对比分析 SKILL · 企查查 MCP V2.0 增强版。
   两家或多家竞争企业的横向对比分析工具，输出"领先者 / 追赶者 / 掉队者"三档评级。

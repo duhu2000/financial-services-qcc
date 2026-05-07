@@ -1,5 +1,5 @@
 ---
-name: ic-memo-qcc
+name: IC Memo 投资备忘录-ic-memo-qcc
 description: >
   IC Memo 投资备忘录 SKILL · 企查查 MCP V2.0 增强版。
   PE / VC 投资决策的核心尽调工具。一次调用并行完成目标公司工商登记、多层股权穿透、真实财务底盘、司法风险、知识产权、核心高管全景六维度扫描，直接输出符合投委会要求的标准格式备忘录。

@@ -1,5 +1,5 @@
 ---
-name: litigation-analysis-qcc
+name: 诉讼风险评估-litigation-analysis-qcc
 description: >
   诉讼风险评估 SKILL · 企查查 MCP V2.0 增强版。
   对目标企业执行"企业现状 + 企业历史 + 核心人员"三层诉讼全景扫描，输出可直接用于立案决策、授信决策、投资决策的司法风险评估报告。

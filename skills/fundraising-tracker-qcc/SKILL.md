@@ -1,5 +1,5 @@
 ---
-name: fundraising-tracker-qcc
+name: 融资历史追踪-fundraising-tracker-qcc
 description: >
   融资动态追踪Skill - 企查查MCP增强版。
   追踪企业融资历史、估值变化、投资方背景，辅助VC/FA进行投资决策。

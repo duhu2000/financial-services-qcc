@@ -1,5 +1,5 @@
 ---
-name: credit-due-diligence-qcc
+name: 授信尽调报告-credit-due-diligence-qcc
 description: >
   授信尽调报告 SKILL · 企查查 MCP V2.0 增强版。
   信贷审批放款前的全维度企业尽调工具。输入目标企业全称后，自动完成工商核验、真实财务底盘、司法风险扫描、信用修复追溯、实控人个人风险五位一体的授信风险画像，输出可直接归档的授信决策底稿。

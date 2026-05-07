@@ -1,5 +1,5 @@
 ---
-name: strip-profile-qcc
+name: 企业画像速览-strip-profile-qcc
 description: >
   企业画像速览 SKILL · 企查查 MCP V2.0 增强版。
   PE / VC / FA 在 LP 推介前、项目初步筛选、内部立项汇报等场景的轻量尽调工具。3 分钟生成一页纸企业画像，整合工商登记、核心风险信号、知识产权资产、V2.0 主体延续性、核心管理层概要五大板块，以结构化方式呈现企业基本面。
