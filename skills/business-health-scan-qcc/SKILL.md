@@ -2,7 +2,17 @@
 name: business-health-scan-qcc
 description: >
   经营健康度扫描 SKILL · 企查查 MCP V2.0 增强版。
-  企业经营活跃度与健康度的动态跟踪工具。V2.0 新增真实财务底盘 + 历史荣誉两层能力。
+  企业经营活跃度与健康度的动态跟踪工具，输出"健康 / 稳定 / 衰退 / 危机"四档评级。
+
+  核心能力：
+  - **招聘活跃度**（`mcp__qcc-operation__get_recruitment_info`）—— 月度招聘速率 / 高薪岗位密度 / 团队扩张方向
+  - **招投标活跃度**（`mcp__qcc-operation__get_bidding_info`）—— 中标频次 / 业务来源结构 / 增长势能
+  - **V2.0 真实财务底盘**（`mcp__qcc-company__get_financial_data`）—— 3 年财报 YoY 健康度，营收 / 毛利 / 现金流真实信号
+  - **V2.0 历史荣誉追溯**（`mcp__qcc-history__get_historical_honor`）—— 已失效 / 过期荣誉资质识别"虚高包装"
+  - 新闻舆情监测（`mcp__qcc-operation__get_news_sentiment`）—— 负面舆情、监管动态、行业事件
+  - 参保人数 YoY 趋势 + 历史从业人数对比 —— 人员收缩信号
+
+  适用场景：投前快速筛查 / 投后被投企业持续健康度跟踪 / 客户经营活跃度复核 / 衰退预警监测。
 
   使用方式：/business-health-scan 企业名称 [--format md|docx|pptx]
 

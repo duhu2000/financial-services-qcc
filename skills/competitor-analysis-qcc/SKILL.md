@@ -2,9 +2,19 @@
 name: competitor-analysis-qcc
 description: >
   竞品对比分析 SKILL · 企查查 MCP V2.0 增强版。
-  两家或多家竞争企业的横向对比分析。V2.0 新增双方真实财报 + 历史专利商标两层能力。
+  两家或多家竞争企业的横向对比分析工具，输出"领先者 / 追赶者 / 掉队者"三档评级。
 
-  使用方式：/competitor-analysis 企业名称 [--format md|docx|pptx]
+  核心能力：
+  - **基础规模对比**：注册资本、参保人数、成立年数、登记状态等工商基础维度（`mcp__qcc-company__get_company_registration_info`）
+  - **V2.0 真实财报对比**（`mcp__qcc-company__get_financial_data`）—— 营收、毛利率、资产负债率三年同比，告别仅靠注册资本推断
+  - **融资历史对比**（`mcp__qcc-operation__get_financing_records` + `mcp__qcc-history__get_historical_shareholders`）—— 还原融资节奏与估值锚
+  - **V2.0 历史专利 / 商标轨迹**（`mcp__qcc-history__get_historical_patent` / `get_historical_trademark`）—— 技术积累曲线对比
+  - 司法风险对比（失信 / 限高 / 经营异常 / 行政处罚等多维风险信号）
+  - 核心团队稳定性对比（创始团队任职稳定性、关键人员流失轨迹）
+
+  适用场景：投前竞品分析 / 投资团队市场调研 / 行业护城河量化 / 战略研究 / 同业 benchmark。
+
+  使用方式：/competitor-analysis 企业名称 1, 企业名称 2, ... [--format md|docx|pptx]
 
 license: Apache-2.0
 metadata:
