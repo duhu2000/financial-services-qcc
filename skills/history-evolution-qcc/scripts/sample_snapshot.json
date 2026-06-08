@@ -117,7 +117,7 @@
         {"姓名": "徐建海", "职务": "董事", "任职日期": "", "卸任日期": "2019-10-14"}
       ]
     },
-    "mcp__qcc-executive__get_personnel_positions": [
+    "mcp__qcc-executive__get_executive_positions": [
       {
         "person": "陈德强",
         "result": {
@@ -131,7 +131,7 @@
         }
       }
     ],
-    "mcp__qcc-executive__get_personnel_controlled_companies": [
+    "mcp__qcc-executive__get_executive_controlled_companies": [
       {
         "person": "陈德强",
         "result": {
@@ -149,7 +149,7 @@
         }
       }
     ],
-    "mcp__qcc-executive__get_personnel_investments": [
+    "mcp__qcc-executive__get_executive_investments": [
       {
         "person": "陈德强",
         "result": {

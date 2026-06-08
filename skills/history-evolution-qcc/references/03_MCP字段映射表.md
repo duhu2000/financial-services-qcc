@@ -65,7 +65,7 @@
 |---|---|---|
 | 实际控制人 | `qcc-company.get_actual_controller` | `Name` / `ControlRatio` |
 | 受益人列表 | `qcc-company.get_beneficial_owners` | `BeneficialOwners[]` |
-| 实控人反查企业 | `qcc-executive.get_personnel_beneficial_owner` | `ControlledCompanies[]` |
+| 实控人反查企业 | `qcc-executive.get_executive_beneficial_owner` | `ControlledCompanies[]` |
 
 ### §4.6 申报前 12 月新增股东（仅上市档 / Pre-IPO）
 
@@ -109,15 +109,15 @@
 | 字段 | MCP 工具 | 返回字段 |
 |---|---|---|
 | 现任董监高 | `qcc-company.get_key_personnel` | `Employees[]` |
-| 董监高历任职位 | `qcc-executive.get_personnel_positions` | `Positions[]` |
+| 董监高历任职位 | `qcc-executive.get_executive_positions` | `Positions[]` |
 | 法人变更 | `qcc-history.get_historical_legal_rep` | 时间序列 |
 
 ### §5.5 关联方网络（条件启用，融资/上市档）
 
 | 字段 | MCP 工具 | 返回字段 |
 |---|---|---|
-| 关键人控制的其他企业 | `qcc-executive.get_personnel_controlled_companies` | `ControlledCompanies[]` |
-| 关键人的其他关联企业 | `qcc-executive.get_personnel_relevant_companies`（V1.8） | `RelevantCompanies[]` |
+| 关键人控制的其他企业 | `qcc-executive.get_executive_controlled_companies` | `ControlledCompanies[]` |
+| 关键人的其他关联企业 | `qcc-executive.get_executive_relevant_companies`（V1.8） | `RelevantCompanies[]` |
 | 参股/子公司 | `qcc-company.get_external_investments` | `InvestCompanies[]` |
 
 ### §5.6 处罚与担保（条件启用）

@@ -552,9 +552,9 @@ def render_section_55_associates(doc: Document, snap: CompanySnapshot) -> None:
 
     person_data_map: dict[str, dict] = {}
     for tool_name in [
-        "mcp__qcc-executive__get_personnel_positions",
-        "mcp__qcc-executive__get_personnel_controlled_companies",
-        "mcp__qcc-executive__get_personnel_investments",
+        "mcp__qcc-executive__get_executive_positions",
+        "mcp__qcc-executive__get_executive_controlled_companies",
+        "mcp__qcc-executive__get_executive_investments",
     ]:
         bucket = snap.raw.get(tool_name)
         if not isinstance(bucket, list):
@@ -580,7 +580,7 @@ def render_section_55_associates(doc: Document, snap: CompanySnapshot) -> None:
     for person, tools in person_data_map.items():
         _add_heading(doc, f"关键人：{person}", level=3)
 
-        pos_data = tools.get("mcp__qcc-executive__get_personnel_positions") or {}
+        pos_data = tools.get("mcp__qcc-executive__get_executive_positions") or {}
         positions = _safe_list(pos_data, "董监高-在外任职信息")
         if positions:
             _add_para(doc, "在外兼职：", bold=True)
@@ -590,18 +590,18 @@ def render_section_55_associates(doc: Document, snap: CompanySnapshot) -> None:
                 for p in positions
             ]
             _add_table(doc, ["企业", "职位", "状态", "地区", "行业"], rows)
-            _add_para(doc, "", source_tag="qcc-executive.get_personnel_positions")
+            _add_para(doc, "", source_tag="qcc-executive.get_executive_positions")
 
-        ctrl_data = tools.get("mcp__qcc-executive__get_personnel_controlled_companies") or {}
+        ctrl_data = tools.get("mcp__qcc-executive__get_executive_controlled_companies") or {}
         controlled = _safe_list(ctrl_data, "董监高-控制企业信息")
         if controlled:
             _add_para(doc, f"直接控制企业（共 {len(controlled)} 家）：", bold=True)
             rows = [[c.get("企业名称") or "", c.get("投资比例") or "",
                      c.get("状态") or "", c.get("所属行业") or ""] for c in controlled]
             _add_table(doc, ["企业", "投资比例", "状态", "行业"], rows)
-            _add_para(doc, "", source_tag="qcc-executive.get_personnel_controlled_companies")
+            _add_para(doc, "", source_tag="qcc-executive.get_executive_controlled_companies")
 
-        inv_data = tools.get("mcp__qcc-executive__get_personnel_investments") or {}
+        inv_data = tools.get("mcp__qcc-executive__get_executive_investments") or {}
         direct_inv = _safe_list(inv_data, "直接对外投资")
         indirect_inv = _safe_list(inv_data, "间接对外投资")
 
@@ -610,7 +610,7 @@ def render_section_55_associates(doc: Document, snap: CompanySnapshot) -> None:
             rows = [[d.get("企业名称") or "", d.get("持股比例") or "",
                      d.get("状态") or "", d.get("地区") or ""] for d in direct_inv]
             _add_table(doc, ["企业", "持股", "状态", "地区"], rows)
-            _add_para(doc, "", source_tag="qcc-executive.get_personnel_investments.直接对外投资")
+            _add_para(doc, "", source_tag="qcc-executive.get_executive_investments.直接对外投资")
 
         if indirect_inv:
             truncated = indirect_inv[:top_n]
@@ -625,7 +625,7 @@ def render_section_55_associates(doc: Document, snap: CompanySnapshot) -> None:
                     f"（共 {len(indirect_inv)} 家间接投资，仅展示前 {top_n} 名）",
                     italic=False, size=8,
                 )
-            _add_para(doc, "", source_tag="qcc-executive.get_personnel_investments.间接对外投资")
+            _add_para(doc, "", source_tag="qcc-executive.get_executive_investments.间接对外投资")
 
 
 def _render_risk_tables(doc: Document, snap: CompanySnapshot) -> None:

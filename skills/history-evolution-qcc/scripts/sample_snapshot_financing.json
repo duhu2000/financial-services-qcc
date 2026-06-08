@@ -96,7 +96,7 @@
     },
     "mcp__qcc-history__get_historical_legal_rep": {"搜索结果": "已全量扫描该主体历史法定代表人数据库，未发现任何记录。"},
     "mcp__qcc-history__get_historical_executives": {"搜索结果": "已全量扫描该主体历史主要人员数据库，未发现任何记录。"},
-    "mcp__qcc-executive__get_personnel_positions": [
+    "mcp__qcc-executive__get_executive_positions": [
       {
         "person": "高始兴",
         "result": {

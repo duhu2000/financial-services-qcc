@@ -81,7 +81,7 @@ V2.0 相对 V1.0 最根本的升级是"**时间维度股权穿透**"——`get_h
 
 工具链：
 - `mcp__qcc-company__get_beneficial_owners` —— 平台算法识别 UBO
-- `mcp__qcc-executive__get_personnel_beneficial_owner` —— 反查法：以自然人为锚反查其 UBO 地位
+- `mcp__qcc-executive__get_executive_beneficial_owner` —— 反查法：以自然人为锚反查其 UBO 地位
 
 **UBO 阈值判定**（对齐央行 3 号令）：
 - 直接 + 间接持股 ≥ 25% 的自然人
@@ -106,8 +106,8 @@ V2.0 相对 V1.0 最根本的升级是"**时间维度股权穿透**"——`get_h
 ### 维度五：一致行动人与关联关系识别
 
 工具链：
-- `mcp__qcc-executive__get_personnel_related_companies` —— UBO 自然人的关联企业
-- `mcp__qcc-executive__get_personnel_historical_partners` —— 历史合作伙伴
+- `mcp__qcc-executive__get_executive_related_companies` —— UBO 自然人的关联企业
+- `mcp__qcc-executive__get_executive_historical_partners` —— 历史合作伙伴
 - `mcp__qcc-company__get_external_investments` —— 企业对外投资
 
 **一致行动人启发式判定**：

@@ -5,7 +5,7 @@ description: >
   PE / VC 投资决策的核心尽调工具。一次调用并行完成目标公司工商登记、多层股权穿透、真实财务底盘、司法风险、知识产权、核心高管全景六维度扫描，直接输出符合投委会要求的标准格式备忘录。
 
   核心能力：
-  - 多层股权穿透 + UBO 识别：`get_beneficial_owners` + `get_personnel_beneficial_owner` 双向锁定
+  - 多层股权穿透 + UBO 识别：`get_beneficial_owners` + `get_executive_beneficial_owner` 双向锁定
   - **V2.0 新能力：真实财务底盘**（`get_financial_data` 3 年完整财报，首次用于投资类场景）
   - 知识产权资产清单：专利 / 商标 / 软件著作权 + 知产出质（V2.0 新工具）
   - 司法风险全景：当前 + 历史双层
@@ -126,8 +126,8 @@ V2.0 相对 V1.0 最具颠覆性的升级是 `get_financial_data` 首次让 IC M
 
 对创始人 + CEO + CFO + CTO 做 qcc-executive 画像：
 
-- `mcp__qcc-executive__get_personnel_dishonest` / `get_personnel_high_consumption_ban` / `get_personnel_judgment_debtor` / `get_personnel_exit_restriction` / `get_personnel_tax_violation`
-- `mcp__qcc-executive__get_personnel_controlled_companies` / `get_personnel_investments` / `get_personnel_positions` / `get_personnel_historical_positions`
+- `mcp__qcc-executive__get_executive_dishonest` / `get_executive_high_consumption_ban` / `get_executive_judgment_debtor` / `get_executive_exit_restriction` / `get_executive_tax_violation`
+- `mcp__qcc-executive__get_executive_controlled_companies` / `get_executive_investments` / `get_executive_positions` / `get_executive_historical_positions`
 
 **投资视角重点**：
 - 创始人其他控制企业是否存在失信 / 破产 → 道德风险信号

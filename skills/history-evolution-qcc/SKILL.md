@@ -140,7 +140,7 @@ metadata:
 | §4.4 实控人认定 | `get_actual_controller` 返回非空 |
 | §4.6 申报前 12 月新增股东 | 档位 = 上市档 或 Pre-IPO |
 | §5.4 董监高与治理 | 档位 ≥ 融资档 |
-| §5.5 关联方网络（公开可查） | 档位 ≥ 融资档 且 `get_personnel_controlled_companies` 返回非空 |
+| §5.5 关联方网络（公开可查） | 档位 ≥ 融资档 且 `get_executive_controlled_companies` 返回非空 |
 | §5.6 处罚与担保 | `get_administrative_penalty` / `get_guarantee_info` / `get_equity_pledge_info` 任一返回非空 |
 | §7 财务摘要 | 档位 = 上市档（A 股 + 发债） 且 `get_financial_key_indicators` 返回非空 |
 

@@ -134,10 +134,10 @@ V2.0 相对 V1.0 的升级在两个方面：
 ### 维度四：核心管理层速览（V2.0 新能力）
 
 对实控人 + 法代做 4 项红线快扫：
-- `mcp__qcc-executive__get_personnel_dishonest`
-- `mcp__qcc-executive__get_personnel_high_consumption_ban`
-- `mcp__qcc-executive__get_personnel_judgment_debtor`
-- `mcp__qcc-executive__get_personnel_exit_restriction`
+- `mcp__qcc-executive__get_executive_dishonest`
+- `mcp__qcc-executive__get_executive_high_consumption_ban`
+- `mcp__qcc-executive__get_executive_judgment_debtor`
+- `mcp__qcc-executive__get_executive_exit_restriction`
 
 **速览输出**：
 - 实控人姓名 + 4 项红线扫描结果（全绿 / 有红）

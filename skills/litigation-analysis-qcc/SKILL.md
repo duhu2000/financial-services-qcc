@@ -197,18 +197,18 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 
 工具链（以 qcc-executive 为核心，每人调用 12-15 个工具）：
 
-- `mcp__qcc-executive__get_personnel_judicial_docs` / `_historical_judicial_docs` — 个人裁判文书现状 × 历史
-- `mcp__qcc-executive__get_personnel_case_filing` / `_historical_case_filing` — 个人立案
-- `mcp__qcc-executive__get_personnel_hearing_notice` / `_historical_hearing_notice` — 个人开庭
-- `mcp__qcc-executive__get_personnel_court_notice` / `_historical_court_notice` — 个人法院公告
-- `mcp__qcc-executive__get_personnel_service_notice` / `_historical_service_notice` — 个人送达
-- `mcp__qcc-executive__get_personnel_pre_litigation_mediation` / `_historical_pre_litigation_mediation` — 个人诉前调解
-- `mcp__qcc-executive__get_personnel_judgment_debtor` / `_historical_judgment_debtor` — 个人被执行（现状 + 历史）
-- `mcp__qcc-executive__get_personnel_dishonest` / `_historical_dishonest` — 个人失信（现状 + 历史）
-- `mcp__qcc-executive__get_personnel_high_consumption_ban` / `_historical_high_consumption_ban` — 个人限高
-- `mcp__qcc-executive__get_personnel_exit_restriction` — 个人限制出境
-- `mcp__qcc-executive__get_personnel_terminated_cases` / `_historical_terminated_cases` — 个人终本
-- `mcp__qcc-executive__get_personnel_property_reward_notice` — 个人财产悬赏
+- `mcp__qcc-executive__get_executive_judicial_docs` / `_historical_judicial_docs` — 个人裁判文书现状 × 历史
+- `mcp__qcc-executive__get_executive_case_filing` / `_historical_case_filing` — 个人立案
+- `mcp__qcc-executive__get_executive_hearing_notice` / `_historical_hearing_notice` — 个人开庭
+- `mcp__qcc-executive__get_executive_court_notice` / `_historical_court_notice` — 个人法院公告
+- `mcp__qcc-executive__get_executive_service_notice` / `_historical_service_notice` — 个人送达
+- `mcp__qcc-executive__get_executive_pre_litigation_mediation` / `_historical_pre_litigation_mediation` — 个人诉前调解
+- `mcp__qcc-executive__get_executive_judgment_debtor` / `_historical_judgment_debtor` — 个人被执行（现状 + 历史）
+- `mcp__qcc-executive__get_executive_dishonest` / `_historical_dishonest` — 个人失信（现状 + 历史）
+- `mcp__qcc-executive__get_executive_high_consumption_ban` / `_historical_high_consumption_ban` — 个人限高
+- `mcp__qcc-executive__get_executive_exit_restriction` — 个人限制出境
+- `mcp__qcc-executive__get_executive_terminated_cases` / `_historical_terminated_cases` — 个人终本
+- `mcp__qcc-executive__get_executive_property_reward_notice` — 个人财产悬赏
 
 **分析要点**：
 

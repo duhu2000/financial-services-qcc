@@ -139,7 +139,7 @@ metadata:
 - `mcp__qcc-company__get_shareholder_info` —— 股东结构
 - `mcp__qcc-company__get_actual_controller` —— 实际控制人
 - `mcp__qcc-company__get_beneficial_owners` —— 受益所有人
-- `mcp__qcc-executive__get_personnel_beneficial_owner` —— 以自然人为锚反查其 UBO 地位
+- `mcp__qcc-executive__get_executive_beneficial_owner` —— 以自然人为锚反查其 UBO 地位
 
 **UBO 识别三层穿透**：
 1. 直接持股 25% 以上的自然人
@@ -156,7 +156,7 @@ metadata:
 识别流程：
 1. 调用维度二 get_historical_shareholders 获取历史股东列表
 2. 对比历史与当前股东——若某股东退出，立即在当前股东中查找持股比例相近的主体
-3. 对该新主体调用 get_beneficial_owners / get_personnel_beneficial_owner 反查其 UBO
+3. 对该新主体调用 get_beneficial_owners / get_executive_beneficial_owner 反查其 UBO
 4. 若 UBO 与退出股东相同 → 标记为"持股形式变更"，不视为股东退出，不触发治理稳定性预警
 5. 若 UBO 与退出股东不同 → 视为实质性股东变更，按维度二治理稳定性规则处理
 ```
@@ -171,9 +171,9 @@ metadata:
 | 其他壳公司/持股平台 | 递归穿透至最终自然人 |
 
 对每个识别出的 UBO 自然人做简化画像扫描：
-- `mcp__qcc-executive__get_personnel_dishonest`
-- `mcp__qcc-executive__get_personnel_high_consumption_ban`
-- `mcp__qcc-executive__get_personnel_exit_restriction`
+- `mcp__qcc-executive__get_executive_dishonest`
+- `mcp__qcc-executive__get_executive_high_consumption_ban`
+- `mcp__qcc-executive__get_executive_exit_restriction`
 
 任何 UBO 存在当前失信 / 限高 / 限出境 → KYB 评级直接触发"高风险"。
 
@@ -199,8 +199,8 @@ metadata:
 工具链：
 - `mcp__qcc-company__get_external_investments` —— 企业对外投资
 - `mcp__qcc-company__get_branches` —— 分支机构
-- `mcp__qcc-executive__get_personnel_related_companies` —— 实控人其他关联企业
-- `mcp__qcc-executive__get_personnel_controlled_companies` —— 实控人控制企业
+- `mcp__qcc-executive__get_executive_related_companies` —— 实控人其他关联企业
+- `mcp__qcc-executive__get_executive_controlled_companies` —— 实控人控制企业
 
 **排查清单**：
 - 同一实控人控制的其他企业是否存在失信 / 破产

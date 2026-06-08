@@ -157,13 +157,13 @@ metadata:
 ### 维度五：实控人 × 法代个人风险
 
 工具链（对法代和实控人分别扫描）：
-- `mcp__qcc-executive__get_personnel_dishonest` — 个人失信
-- `mcp__qcc-executive__get_personnel_high_consumption_ban` — 个人限高
-- `mcp__qcc-executive__get_personnel_judgment_debtor` — 个人被执行
-- `mcp__qcc-executive__get_personnel_exit_restriction` — 个人限制出境
-- `mcp__qcc-executive__get_personnel_controlled_companies` — 个人其他控制企业
-- `mcp__qcc-executive__get_personnel_investments` — 个人对外投资
-- `mcp__qcc-executive__get_personnel_historical_dishonest` — 个人历史失信
+- `mcp__qcc-executive__get_executive_dishonest` — 个人失信
+- `mcp__qcc-executive__get_executive_high_consumption_ban` — 个人限高
+- `mcp__qcc-executive__get_executive_judgment_debtor` — 个人被执行
+- `mcp__qcc-executive__get_executive_exit_restriction` — 个人限制出境
+- `mcp__qcc-executive__get_executive_controlled_companies` — 个人其他控制企业
+- `mcp__qcc-executive__get_executive_investments` — 个人对外投资
+- `mcp__qcc-executive__get_executive_historical_dishonest` — 个人历史失信
 
 分析要点：
 

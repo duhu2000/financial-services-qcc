@@ -83,12 +83,12 @@ MCP_TOOL_COST = {
     "mcp__qcc-history__get_historical_investments": 5,
     "mcp__qcc-history__get_historical_listing": 5,
     # qcc-executive
-    "mcp__qcc-executive__get_personnel_positions": 5,
-    "mcp__qcc-executive__get_personnel_controlled_companies": 5,
-    "mcp__qcc-executive__get_personnel_beneficial_owner": 5,
-    "mcp__qcc-executive__get_personnel_investments": 5,
-    "mcp__qcc-executive__get_personnel_legal_rep_roles": 5,
-    "mcp__qcc-executive__get_personnel_related_companies": 5,
+    "mcp__qcc-executive__get_executive_positions": 5,
+    "mcp__qcc-executive__get_executive_controlled_companies": 5,
+    "mcp__qcc-executive__get_executive_beneficial_owner": 5,
+    "mcp__qcc-executive__get_executive_investments": 5,
+    "mcp__qcc-executive__get_executive_legal_rep_roles": 5,
+    "mcp__qcc-executive__get_executive_related_companies": 5,
 }
 
 
@@ -197,17 +197,17 @@ EXECUTIVE_EXPANSION_PLAN: dict[str, dict] = {
     TIER_FINANCING: {
         "max_persons": 1,
         "tools": [
-            "mcp__qcc-executive__get_personnel_positions",
-            "mcp__qcc-executive__get_personnel_controlled_companies",
-            "mcp__qcc-executive__get_personnel_investments",
+            "mcp__qcc-executive__get_executive_positions",
+            "mcp__qcc-executive__get_executive_controlled_companies",
+            "mcp__qcc-executive__get_executive_investments",
         ],
     },
     TIER_LISTED: {
         "max_persons": 3,
         "tools": [
-            "mcp__qcc-executive__get_personnel_positions",
-            "mcp__qcc-executive__get_personnel_controlled_companies",
-            "mcp__qcc-executive__get_personnel_investments",
+            "mcp__qcc-executive__get_executive_positions",
+            "mcp__qcc-executive__get_executive_controlled_companies",
+            "mcp__qcc-executive__get_executive_investments",
         ],
     },
 }

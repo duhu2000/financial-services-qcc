@@ -122,34 +122,34 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 **现状扫描工具链（18 个）**：
 
 身份限制与失信类：
-- `mcp__qcc-executive__get_personnel_dishonest` — 当前是否为失信被执行人
-- `mcp__qcc-executive__get_personnel_high_consumption_ban` — 当前是否被限制高消费
-- `mcp__qcc-executive__get_personnel_exit_restriction` — 当前是否被限制出境
-- `mcp__qcc-executive__get_personnel_property_reward_notice` — 是否被发布财产悬赏公告
+- `mcp__qcc-executive__get_executive_dishonest` — 当前是否为失信被执行人
+- `mcp__qcc-executive__get_executive_high_consumption_ban` — 当前是否被限制高消费
+- `mcp__qcc-executive__get_executive_exit_restriction` — 当前是否被限制出境
+- `mcp__qcc-executive__get_executive_property_reward_notice` — 是否被发布财产悬赏公告
 
 执行与资产冻结类：
-- `mcp__qcc-executive__get_personnel_judgment_debtor` — 当前是否作为被执行人
-- `mcp__qcc-executive__get_personnel_terminated_cases` — 终本案件记录
-- `mcp__qcc-executive__get_personnel_equity_freeze` — 名下股权是否被司法冻结
-- `mcp__qcc-executive__get_personnel_equity_pledge` — 名下股权出质情况
-- `mcp__qcc-executive__get_personnel_stock_pledge` — 上市公司股东股票质押
-- `mcp__qcc-executive__get_personnel_valuation_inquiry` — 资产询价评估记录
+- `mcp__qcc-executive__get_executive_judgment_debtor` — 当前是否作为被执行人
+- `mcp__qcc-executive__get_executive_terminated_cases` — 终本案件记录
+- `mcp__qcc-executive__get_executive_equity_freeze` — 名下股权是否被司法冻结
+- `mcp__qcc-executive__get_executive_equity_pledge` — 名下股权出质情况
+- `mcp__qcc-executive__get_executive_stock_pledge` — 上市公司股东股票质押
+- `mcp__qcc-executive__get_executive_valuation_inquiry` — 资产询价评估记录
 
 行政与税务类：
-- `mcp__qcc-executive__get_personnel_admin_penalty` — 行政处罚记录
-- `mcp__qcc-executive__get_personnel_tax_violation` — 税收违法记录
+- `mcp__qcc-executive__get_executive_admin_penalty` — 行政处罚记录
+- `mcp__qcc-executive__get_executive_tax_violation` — 税收违法记录
 
 司法程序类：
-- `mcp__qcc-executive__get_personnel_case_filing` — 涉及的法院立案信息
-- `mcp__qcc-executive__get_personnel_hearing_notice` — 开庭公告
-- `mcp__qcc-executive__get_personnel_court_notice` — 法院公告
-- `mcp__qcc-executive__get_personnel_service_notice` — 送达公告
-- `mcp__qcc-executive__get_personnel_judicial_docs` — 裁判文书
-- `mcp__qcc-executive__get_personnel_pre_litigation_mediation` — 诉前调解
+- `mcp__qcc-executive__get_executive_case_filing` — 涉及的法院立案信息
+- `mcp__qcc-executive__get_executive_hearing_notice` — 开庭公告
+- `mcp__qcc-executive__get_executive_court_notice` — 法院公告
+- `mcp__qcc-executive__get_executive_service_notice` — 送达公告
+- `mcp__qcc-executive__get_executive_judicial_docs` — 裁判文书
+- `mcp__qcc-executive__get_executive_pre_litigation_mediation` — 诉前调解
 
 **历史追溯工具链（14 个）**：对应上述工具的 historical 版本，用于识别"已解决但曾经发生"的风险事件。
 
-- `mcp__qcc-executive__get_personnel_historical_dishonest` / `_high_consumption_ban` / `_judgment_debtor` / `_terminated_cases` / `_equity_freeze` / `_equity_pledge` / `_admin_penalty` / `_case_filing` / `_hearing_notice` / `_court_notice` / `_service_notice` / `_judicial_docs` / `_pre_litigation_mediation`
+- `mcp__qcc-executive__get_executive_historical_dishonest` / `_high_consumption_ban` / `_judgment_debtor` / `_terminated_cases` / `_equity_freeze` / `_equity_pledge` / `_admin_penalty` / `_case_filing` / `_hearing_notice` / `_court_notice` / `_service_notice` / `_judicial_docs` / `_pre_litigation_mediation`
 
 **分析要点**：
 
@@ -167,10 +167,10 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 **目标**：还原每位背调对象的完整职业履历，识别任职稳定性、职业梯度、跳槽可疑点。
 
 工具链：
-- `mcp__qcc-executive__get_personnel_positions` — 当前在外任职（该人员在其他企业当前担任的职务）
-- `mcp__qcc-executive__get_personnel_historical_positions` — 历史在外任职（已离职的职务）
-- `mcp__qcc-executive__get_personnel_legal_rep_roles` — 当前担任法定代表人的企业列表
-- `mcp__qcc-executive__get_personnel_historical_legal_rep_roles` — 历史担任法定代表人的企业列表
+- `mcp__qcc-executive__get_executive_positions` — 当前在外任职（该人员在其他企业当前担任的职务）
+- `mcp__qcc-executive__get_executive_historical_positions` — 历史在外任职（已离职的职务）
+- `mcp__qcc-executive__get_executive_legal_rep_roles` — 当前担任法定代表人的企业列表
+- `mcp__qcc-executive__get_executive_historical_legal_rep_roles` — 历史担任法定代表人的企业列表
 - `mcp__qcc-history__get_historical_executives` — 目标企业自身的历届高管（上下文用）
 - `mcp__qcc-history__get_historical_legal_rep` — 目标企业自身的历届法定代表人（上下文用）
 
@@ -187,12 +187,12 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 **目标**：围绕每位背调对象绘制其直接控制、间接控制、任职、投资覆盖的完整关联企业网络。
 
 工具链：
-- `mcp__qcc-executive__get_personnel_controlled_companies` — 当前实际控制的企业
-- `mcp__qcc-executive__get_personnel_related_companies` — 当前全部关联企业（涵盖任何角色）
-- `mcp__qcc-executive__get_personnel_investments` — 当前对外投资（直接 + 间接双维度）
-- `mcp__qcc-executive__get_personnel_beneficial_owner` — 作为最终受益人的企业
-- `mcp__qcc-executive__get_personnel_historical_related_companies` — 历史全部关联企业
-- `mcp__qcc-executive__get_personnel_historical_investments` — 历史对外投资
+- `mcp__qcc-executive__get_executive_controlled_companies` — 当前实际控制的企业
+- `mcp__qcc-executive__get_executive_related_companies` — 当前全部关联企业（涵盖任何角色）
+- `mcp__qcc-executive__get_executive_investments` — 当前对外投资（直接 + 间接双维度）
+- `mcp__qcc-executive__get_executive_beneficial_owner` — 作为最终受益人的企业
+- `mcp__qcc-executive__get_executive_historical_related_companies` — 历史全部关联企业
+- `mcp__qcc-executive__get_executive_historical_investments` — 历史对外投资
 - `mcp__qcc-company__get_external_investments` — 目标企业自身对外投资（用于交叉比对）
 
 **分析要点**：
@@ -209,7 +209,7 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 
 工具链：
 - 维度四产出的关联企业全集（作为输入）
-- `mcp__qcc-executive__get_personnel_historical_partners` — 历史合作伙伴链路（V2.0 新开放）
+- `mcp__qcc-executive__get_executive_historical_partners` — 历史合作伙伴链路（V2.0 新开放）
 - `mcp__qcc-operation__get_bidding_info` — 目标企业招投标对手方，用于识别关联交易
 - `mcp__qcc-company__get_external_investments` — 目标企业对外投资
 - 对关联企业集合与目标企业上下游集合做交叉比对
