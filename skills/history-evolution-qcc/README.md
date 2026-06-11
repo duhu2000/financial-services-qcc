@@ -124,7 +124,7 @@ qcc-history-skill-v1.0/
 
 - 财务摘要（§7）仅 A 股上市或发债企业可用（企查查 API 限制）
 - 私募基金备案（中基协 AMAC 数据）当前 MCP 无工具覆盖
-- 部分规划工具（`qcc-history` 34 个 / `qcc-executive` 35 个 / `get_financial_key_indicators` 1 个）尚未全量上线，V1.0 会在工具可用时自动启用
+- 历史存档（`qcc-history` 34 个）、董监高画像（`qcc-executive` 42 个）及财务数据（`get_financial_data`）工具已上线，SKILL 在工具可用时自动启用对应章节
 
 ## 许可证
 

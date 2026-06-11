@@ -78,7 +78,7 @@ export QCC_MCP_API_KEY="your_api_key_here"
 
 **企查查MCP调用**:
 - 工商变更记录 (qcc_company/get_change_records) - 股权变更
-- 融资信息 (qcc_company/get_financing_info)
+- 融资信息 (qcc_operation/get_financing_records)
 
 **融资历程**:
 ```

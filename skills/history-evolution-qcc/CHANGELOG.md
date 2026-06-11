@@ -292,7 +292,7 @@ V1.1 尝试在 §0 使用了 PPT P5 风格的淡蓝渐变上升曲线图，但�
 
 - 67 个现有 MCP 工具（qcc-company 14 / qcc-risk 34 / qcc-ipr 6 / qcc-operation 14）
 - 70 个规划 MCP 工具（qcc-history 34 / qcc-executive 35 规划 Phase 1–3）
-- 1 个财务工具（`get_financial_key_indicators`，A 股 + 发债）
+- 1 个财务工具（`get_financial_data`，A 股 + 发债）
 - 合计 138 个工具
 
 ### 覆盖率
