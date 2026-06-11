@@ -197,6 +197,7 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 
 工具链（以 qcc-executive 为核心，每人调用 12-15 个工具）：
 
+**【个人风险先扫后钻 · 2026-06-08 · 对齐 A 层铁律 5 个人维度】** 对每位目标人（法代/实控人/董监高），**先调 `mcp__qcc-executive__get_executive_risk_scan`（searchKey=企业完整名/USCC + personName=姓名，双锚定）一次返回其 18 项个人风险维度命中计数 → 仅对 count>0 维度下钻下列对应 `get_executive_*` 原子工具取明细**；count=0 跳过。❌ 禁止不先扫、逐个散弹枪调个人风险原子。单人工具：多人则逐人各扫一次，不对全体董监高自动循环。
 - `mcp__qcc-executive__get_executive_judicial_docs` / `_historical_judicial_docs` — 个人裁判文书现状 × 历史
 - `mcp__qcc-executive__get_executive_case_filing` / `_historical_case_filing` — 个人立案
 - `mcp__qcc-executive__get_executive_hearing_notice` / `_historical_hearing_notice` — 个人开庭

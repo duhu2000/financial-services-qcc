@@ -121,6 +121,7 @@ SKILL 运行前必须确保以下 MCP Server 已配置：
 
 **现状扫描工具链（18 个）**：
 
+**【个人风险先扫后钻 · 2026-06-08 · 对齐 A 层铁律 5 个人维度】** 对每位目标人（法代/实控人/董监高），**先调 `mcp__qcc-executive__get_executive_risk_scan`（searchKey=企业完整名/USCC + personName=姓名，双锚定）一次返回其 18 项个人风险维度命中计数 → 仅对 count>0 维度下钻下列对应 `get_executive_*` 原子工具取明细**；count=0 跳过。❌ 禁止不先扫、逐个散弹枪调个人风险原子。单人工具：多人则逐人各扫一次，不对全体董监高自动循环。
 身份限制与失信类：
 - `mcp__qcc-executive__get_executive_dishonest` — 当前是否为失信被执行人
 - `mcp__qcc-executive__get_executive_high_consumption_ban` — 当前是否被限制高消费

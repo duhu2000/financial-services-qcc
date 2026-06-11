@@ -126,6 +126,7 @@ V2.0 相对 V1.0 最具颠覆性的升级是 `get_financial_data` 首次让 IC M
 
 对创始人 + CEO + CFO + CTO 做 qcc-executive 画像：
 
+**【个人风险先扫后钻 · 2026-06-08 · 对齐 A 层铁律 5 个人维度】** 对每位目标人（法代/实控人/董监高），**先调 `mcp__qcc-executive__get_executive_risk_scan`（searchKey=企业完整名/USCC + personName=姓名，双锚定）一次返回其 18 项个人风险维度命中计数 → 仅对 count>0 维度下钻下列对应 `get_executive_*` 原子工具取明细**；count=0 跳过。❌ 禁止不先扫、逐个散弹枪调个人风险原子。单人工具：多人则逐人各扫一次，不对全体董监高自动循环。
 - `mcp__qcc-executive__get_executive_dishonest` / `get_executive_high_consumption_ban` / `get_executive_judgment_debtor` / `get_executive_exit_restriction` / `get_executive_tax_violation`
 - `mcp__qcc-executive__get_executive_controlled_companies` / `get_executive_investments` / `get_executive_positions` / `get_executive_historical_positions`
 
