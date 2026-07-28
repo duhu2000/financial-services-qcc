@@ -1,0 +1,59 @@
+{
+  "expectations": [
+    {
+      "text": "不使用被告案件数 50 件等绝对阈值直接扣分",
+      "passed": true,
+      "evidence": "输出明确写明“80 件被告立案仅作数量型观察，不扣分”，并拒绝使用原 50 件阈值。"
+    },
+    {
+      "text": "撤诉、驳回原告诉请和本方胜诉不进入诉讼金额评分",
+      "passed": true,
+      "evidence": "输出将三类有利结果的诉讼金额扣分列为 0，并说明未形成不利给付义务。"
+    },
+    {
+      "text": "处罚金额使用年度营业收入而不是净资产或注册资本归一化",
+      "passed": true,
+      "evidence": "输出使用“20 万元 ÷ 50 亿元年度营收 = 0.004%”，并另行说明诉讼才使用正数净资产。"
+    },
+    {
+      "text": "当前普通处罚触发最终评级最高 B",
+      "passed": true,
+      "evidence": "输出明确应用当前普通行政处罚的 B 级事件上限。"
+    },
+    {
+      "text": "缺少处罚性质或确定性计算结果时明确标记待核验或部分评分",
+      "passed": true,
+      "evidence": "输出要求处罚性质、主营关系和确定性计算证据；缺失时不自动扣分，并标记部分评分或待核验。"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 5,
+    "errors_encountered": 0,
+    "output_chars": 1972
+  },
+  "claims": [
+    {
+      "claim": "题设条件成立且其余红线清洁时参考评级为 B",
+      "type": "quality",
+      "verified": true,
+      "evidence": "分数落入 B 且当前普通处罚评级上限为 B；输出同时把未完成的正式核验列为条件。"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": ["题设未提供完整实体、风险扫描、UBO 和处罚原文证据"],
+    "needs_review": ["80 件立案与已下钻文书的覆盖关系"],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "断言能区分绝对件数模型、风险类型分母和缺失数据处理，区分度良好。"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "同一决定书跨行政与环保维度只计一次",
+      "passed": true,
+      "evidence": "基线输出识别相同决定书文号并合并为一项处罚事实，没有重复降级。"
+    },
+    {
+      "text": "营收缺失时不得改用注册资本或净资产套用处罚金额阈值",
+      "passed": true,
+      "evidence": "基线输出明确不估算营收、不以注册资本替代，也未将净资产作为处罚金额阈值分母。"
+    },
+    {
+      "text": "不得臆测处罚事由、公示状态或主营业务关系",
+      "passed": true,
+      "evidence": "基线输出将违法事实、处罚依据、公示状态和主营关系列为缺失证据，没有自行补全。"
+    },
+    {
+      "text": "裁判文书未明确给付义务和金额时不进入自动累计",
+      "passed": true,
+      "evidence": "基线输出明确不能把案件标示金额直接当作企业负债、败诉金额或未履行余额。"
+    },
+    {
+      "text": "数据覆盖不完整时不输出 A 级正式评级",
+      "passed": true,
+      "evidence": "基线输出为暂定 C 且最终评级暂缓，没有输出 A 级正式评级。"
+    },
+    {
+      "text": "没有服务端或确定性计算器结果时不自行输出 40% 等比值",
+      "passed": false,
+      "evidence": "基线输出自行给出了案件金额占净资产 40% 和罚款占净资产 1% 的比值。"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.8333333333
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 4,
+    "errors_encountered": 0,
+    "output_chars": 1797
+  },
+  "claims": [
+    {
+      "claim": "旧版能处理部分证据边界但缺少统一确定性计算纪律",
+      "type": "quality",
+      "verified": true,
+      "evidence": "输出正确去重并保留待核验状态，但仍自行计算了两个比例。"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": ["处罚性质、公示状态、最终给付义务及完整 KYB 核验均缺失"],
+    "needs_review": ["旧版模型对小企业场景的金额归一化缺乏可执行规则"],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "该基线场景显示旧版能避免部分事实臆测，但无法稳定约束比例计算。"
+  }
+}

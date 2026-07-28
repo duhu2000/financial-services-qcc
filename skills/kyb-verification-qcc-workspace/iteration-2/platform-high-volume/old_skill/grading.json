@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "不使用被告案件数 50 件等绝对阈值直接扣分",
+      "passed": false,
+      "evidence": "基线输出按旧规则将 80 件被告立案机械触发 A→B 降级。"
+    },
+    {
+      "text": "撤诉、驳回原告诉请和本方胜诉不进入诉讼金额评分",
+      "passed": true,
+      "evidence": "基线输出承认这些结果未形成不利裁判损失，但旧模型仍按案件数量扣级。"
+    },
+    {
+      "text": "处罚金额使用年度营业收入而不是净资产或注册资本归一化",
+      "passed": false,
+      "evidence": "基线输出明确说明营收和净资产没有进入旧版评级计算。"
+    },
+    {
+      "text": "当前普通处罚触发最终评级最高 B",
+      "passed": false,
+      "evidence": "旧模型将普通处罚再下调一级并得到暂定 C，没有事件评级上限机制。"
+    },
+    {
+      "text": "缺少处罚性质或确定性计算结果时明确标记待核验或部分评分",
+      "passed": true,
+      "evidence": "基线输出列出处罚严重度证据缺口，并把结果标为暂定而非最终评级。"
+    },
+    {
+      "text": "没有服务端或确定性计算器结果时不自行输出 0.004% 等比值",
+      "passed": false,
+      "evidence": "基线输出自行给出了罚款占营收 0.004% 和占净资产 0.025% 的比值。"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 4,
+    "total": 6,
+    "pass_rate": 0.3333333333
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 4,
+    "errors_encountered": 0,
+    "output_chars": 2059
+  },
+  "claims": [
+    {
+      "claim": "旧规则在假设其他维度清洁时机械得到暂定 C",
+      "type": "quality",
+      "verified": true,
+      "evidence": "80 件触发一次降级，普通处罚再触发一次降级；输出同时说明证据不足时不能作为最终评级。"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": ["处罚严重度和案件覆盖证据不足"],
+    "needs_review": ["旧模型没有规模归一化和事件去重规则"],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "基线在绝对件数、归一化分母、评级上限及确定性计算纪律上失败，能够体现新版规则价值。"
+  }
+}

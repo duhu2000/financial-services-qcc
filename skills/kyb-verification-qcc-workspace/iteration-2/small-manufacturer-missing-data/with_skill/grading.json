@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "同一决定书跨行政与环保维度只计一次",
+      "passed": true,
+      "evidence": "输出按决定书文号将行政处罚和环保处罚归并为同一事件，只保留一笔 30 万元原始罚款记录。"
+    },
+    {
+      "text": "营收缺失时不得改用注册资本或净资产套用处罚金额阈值",
+      "passed": true,
+      "evidence": "输出明确处罚影响比不可计算，不得改用净资产、注册资本或实缴资本作为替代分母。"
+    },
+    {
+      "text": "不得臆测处罚事由、公示状态或主营业务关系",
+      "passed": true,
+      "evidence": "输出逐项标记违法事实、公示状态和主营关系缺失，并禁止根据机关、金额或行业常识猜测。"
+    },
+    {
+      "text": "裁判文书未明确给付义务和金额时不进入自动累计",
+      "passed": true,
+      "evidence": "输出将案件标示金额列为待核验，未作为企业最终给付义务或诉讼金额评分输入。"
+    },
+    {
+      "text": "数据覆盖不完整时不输出 A 级正式评级",
+      "passed": true,
+      "evidence": "输出仅在基础核验均完成且无其他异常的条件下暂定 B，否则不可评分；没有输出 A 级正式评级。"
+    },
+    {
+      "text": "没有服务端或确定性计算器结果时不自行输出 40% 等比值",
+      "passed": true,
+      "evidence": "输出明确未自行计算处罚影响比、诉讼承压比或最终总分，未输出 40% 等比值。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 6,
+    "errors_encountered": 0,
+    "output_chars": 2714
+  },
+  "claims": [
+    {
+      "claim": "数据缺失场景只能形成条件性部分评分",
+      "type": "quality",
+      "verified": true,
+      "evidence": "输出将去重、缺失分母、未确认给付义务和基础核验前提分别处理，没有用推测填补评分。"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": ["处罚性质、主营关系、公示状态、营收及裁判效力仍待核验"],
+    "needs_review": ["补齐证据后的确定性计算结果"],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "新版在小企业缺失数据场景中能稳定执行去重、缺失值和计算边界。"
+  }
+}

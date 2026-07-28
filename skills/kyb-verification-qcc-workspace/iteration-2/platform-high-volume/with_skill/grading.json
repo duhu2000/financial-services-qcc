@@ -1,0 +1,66 @@
+{
+  "expectations": [
+    {
+      "text": "不使用被告案件数 50 件等绝对阈值直接扣分",
+      "passed": true,
+      "evidence": "输出明确写明 80 件被告立案只作观察，不适用超过 50 件下调一级的绝对数量规则。"
+    },
+    {
+      "text": "撤诉、驳回原告诉请和本方胜诉不进入诉讼金额评分",
+      "passed": true,
+      "evidence": "输出将三类有利裁判结果排除在已确认不利给付义务之外，不纳入诉讼金额评分。"
+    },
+    {
+      "text": "处罚金额使用年度营业收入而不是净资产或注册资本归一化",
+      "passed": true,
+      "evidence": "输出将最近完整年度营业收入作为处罚金额分母，并明确净资产仅可用于诉讼偿付基准。"
+    },
+    {
+      "text": "当前普通处罚触发最终评级最高 B",
+      "passed": true,
+      "evidence": "输出明确当前普通市场监管处罚触发最高 B 的事件上限，同时说明该上限不等于直接确定为 B。"
+    },
+    {
+      "text": "缺少处罚性质或确定性计算结果时明确标记待核验或部分评分",
+      "passed": true,
+      "evidence": "输出将处罚性质、主营关系、案件覆盖关系和确定性计算结果列为证据缺口，并标记为部分评分。"
+    },
+    {
+      "text": "没有服务端或确定性计算器结果时不自行输出 0.004% 等比值",
+      "passed": true,
+      "evidence": "输出只保留营收和罚款为待计算输入，明确拒绝自行计算处罚影响比，未输出 0.004% 等比值。"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1
+  },
+  "execution_metrics": {
+    "tool_calls": {},
+    "total_tool_calls": 0,
+    "total_steps": 6,
+    "errors_encountered": 0,
+    "output_chars": 1823
+  },
+  "claims": [
+    {
+      "claim": "现有证据只能形成部分评分并触发最高 B 的事件上限",
+      "type": "quality",
+      "verified": true,
+      "evidence": "输出未把上限误写成最终评级，且没有自行计算比值或总分。"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [
+      "处罚性质、主营关系、案件覆盖关系及完整 KYB 核验尚未提供"
+    ],
+    "needs_review": ["服务端或客户侧确定性计算结果"],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "新版同时满足规模归一化、事实证据和确定性计算边界。"
+  }
+}
